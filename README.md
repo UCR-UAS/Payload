@@ -34,13 +34,13 @@ Code header:
 Please include a header with this format:
 
 /*
-Name: <your name>
+Name: < your name >
 
-Date: <date of last modification>
+Date: < date of last modification >
 
-Functionality: <what does it do>
+Functionality: < what does it do >
 
-Version: <Version #>
+Version: < Version # >
 
 Changes log: < changes since preious version >
 
