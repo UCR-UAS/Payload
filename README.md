@@ -16,9 +16,9 @@ Folders:
 =========
 All folders should contain the following information for future teams
   
-  -Code for each subsystem
+  -Code for subsystem
   
-  -Test procedures
+  -fSubsystem test procedures
   
   -Test results
   
