@@ -38,8 +38,10 @@ Name: <your name>
 
 Date: <date of last modification>
 
+Functionality: <what does it do>
+
 Version: <Version #>
 
-Functionality: <what does it do>
+Changes log: < changes since preious version >
 
 */
