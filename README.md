@@ -26,7 +26,7 @@ All folders should contain the following information for future teams
 
 File Naming Convention:
 ==================
-< functionality > - < version >.< h/cpp >
+< functionality >-< version >.< h/cpp >
 
 
 Code header:
