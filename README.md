@@ -15,8 +15,12 @@ detection algorithms being run on it. This will allow for completion of the emer
 FOLDERS:
 =========
 All folders should contain the following information for future teams
+  
   -Code for each subsystem
+  
   -Test procedures
+  
   -Test results
+  
   -Test analysis
 
