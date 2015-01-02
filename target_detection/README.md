@@ -27,41 +27,41 @@ The algorithm will consist of three parts:
 
 -Image preprocessing
 
-  -First we segment the image into 3 three different colors
-  
-  -the next step is to convert the image to the luv color space
-  
-  -Next we sum the u* and  v* channels together
-  
-  -Then we use a sobel filter to find changes in color
-  
-  -next we use canny edge detection
-  
-    -This will allow the detector to detect the geometry of the target. If features arent drawn from the canny image then
-    the surf features will detect the intensity of the image. This is not the point of the algorithm. The algorithm is only 
-    meant to detect shapes not color.
+                -First we segment the image into 3 three different colors
+                
+                -the next step is to convert the image to the luv color space
+                
+                -Next we sum the u* and  v* channels together
+                
+                -Then we use a sobel filter to find changes in color
+                
+                -next we use canny edge detection
+                
+                  -This will allow the detector to detect the geometry of the target. If features arent drawn from the canny image then
+                  the surf features will detect the intensity of the image. This is not the point of the algorithm. The algorithm is only 
+                  meant to detect shapes not color.
     
 -surf feature detection
-
-  -just uses opencv's surf library
-  
-    -should be faster than sift
+              
+                -just uses opencv's surf library
+                
+                  -should be faster than sift
     
 -machine learning portion
 
-  -still doing research on this portion going to try to impliment three types
-  
-    -FLANN matching: currently being developed
-    
-      link: http://bit.ly/1tH9a6P
-      
-    -knn
-    
-      link: http://bit.ly/1vzLlba
-      
-    -svm
-    
-      link: http://bit.ly/1HjINq4
+                -still doing research on this portion going to try to impliment three types
+                
+                  -FLANN matching: currently being developed
+                  
+                    link: http://bit.ly/1tH9a6P
+                    
+                  -knn
+                  
+                    link: http://bit.ly/1vzLlba
+                    
+                  -svm
+                  
+                    link: http://bit.ly/1HjINq4
 
 Whats been done
 ===============
@@ -81,8 +81,8 @@ Matching-1: basic flann implementation still under development
 
 meanClust-1: implementation/test of prepocessing algorithm
 
-  -outputs the clustered image and edges detected from that image
+                -outputs the clustered image and edges detected from that image
   
 surf_det-1: implementation/test of surf detector
 
-  -shows the feautures being detected in the preprocessed image
+                -shows the feautures being detected in the preprocessed image
