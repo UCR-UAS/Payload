@@ -1,7 +1,19 @@
-import cv2
+###################################################
+##Name: Andrew Olguin
+##
+##Date: 1-1-15
+##
+##Functionality: This code is meant to show the functionality of k means clustering.
+##It is a test harness for image preprocessing. The output of this file is meant for
+##the object detection module.
+##
+##Version: 1
+##
+##Changes log: none
+###################################################
+
 import numpy as np
-import os
-import msvcrt as m
+import cv2
 
 def Sobel(gray):
     scale = 1
@@ -24,7 +36,7 @@ def Sobel(gray):
 
     return dst
 
-def Clust(img):
+def Clust(img, K):
     Z = img.reshape((-1,3))
 
     # convert to np.float32
@@ -32,7 +44,7 @@ def Clust(img):
 
     # define criteria, number of clusters(K) and apply kmeans()
     criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
-    K = 3
+
     #ret,label,center=cv2.kmeans(Z,K,None,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
     ret, label, center = cv2.kmeans(Z, K, criteria, 10, 0)
 
@@ -43,33 +55,30 @@ def Clust(img):
 
     return res2
 
-###############################################################
+#################################################################
 
-#os.chdir('..')
+img = cv2.imread('target\IMG_0490_1.jpg')
 
-img = cv2.imread('IMG_0494_22.jpg')
 
-img = Clust(img)
+lb = 50
+ub = 300
+k  = 2
 
-surf = cv2.SURF(3000)
+img = Clust(img, k)
 
-img = cv2.cvtColor(img, cv2.COLOR_RGB2LUV)
+img1 = cv2.cvtColor(img, cv2.COLOR_RGB2LUV)
 
-uv_img = img[:,:,1]+ img[:,:,2]
+uv_img = img1[:,:,1]+ img1[:,:,2]
 
 img2 = cv2.pyrUp(uv_img)
 img2 = cv2.pyrUp(img2)
 
-##cv2.imshow("image", img2)
-##cv2.waitKey()
-
 grad = Sobel(img2)
-edges = cv2.Canny(grad,100,200)
+edges = cv2.Canny(grad,lb,ub)
 
-kp, des = surf.detectAndCompute(edges, None)
-print len(kp)
-
-img2 = cv2.drawKeypoints(grad,kp,None,(255,0,0),4)
-
-cv2.imshow('image',img2)
-cv2.waitKey()
+cv2.imwrite('img_0490_clustered.png', img)
+cv2.imwrite('img_0490_edges.png', edges)
+cv2.imshow('res2',img2)
+cv2.imshow('edges', edges)
+cv2.waitKey(0)
+cv2.destroyAllWindows()

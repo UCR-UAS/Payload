@@ -1,3 +1,17 @@
+###################################################
+##Name: Andrew Olguin
+##
+##Date: 1-1-15
+##
+##Functionality: This code is meant to match objects in an image to a objects in training set.
+##it uses FLANN and surf features to match two images together. This code is still
+##under development.
+##
+##Version: 1
+##
+##Changes log: none
+###################################################
+
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
@@ -45,10 +59,18 @@ def Clust(img, K):
 
     return res2
 
+#this function is meant to detect surf features in an image and uses an image pyramid to upscale an image
+#it uses the image preprocessing methods show in the meanClust-1 script
+#Parameters:
+#K= number of colors in the clustered output
+#lb/ub= the bounds for the canny edge detection
+#surfVal= surf feature threshold, higher the number the less feautures
+#img- input image
 def SURFINPYR(img, K, lb, ub, srfVal):
-    img1 = Clust(img, K)
 
-    surf = cv2.SIFT(srfVal)
+    img1 = Clust(img, K)
+#
+    surf = cv2.SURF(srfVal)
 
     img1 = cv2.cvtColor(img1, cv2.COLOR_RGB2LUV)
 
@@ -64,10 +86,18 @@ def SURFINPYR(img, K, lb, ub, srfVal):
 
     return kp, des
 
+
+#this function is meant to detect surf features in an image
+#it uses the image preprocessing methods show in the meanClust-1 script
+#Parameters:
+#K= number of colors in the clustered output
+#lb/ub= the bounds for the canny edge detection
+#surfVal= surf feature threshold, higher the number the less feautures
+#img- input image
 def SURFIN(img, K, lb, ub, srfVal):
     img = Clust(img, K)
 
-    surf = cv2.SIFT(srfVal)
+    surf = cv2.SURF(srfVal)
 
     img = cv2.cvtColor(img, cv2.COLOR_RGB2LUV)
 
