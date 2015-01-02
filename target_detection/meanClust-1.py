@@ -6,6 +6,7 @@
 ##Functionality: This code is meant to show the functionality of k means clustering.
 ##It is a test harness for image preprocessing. The output of this file is meant for
 ##the object detection module.
+##Link for references: http://bit.ly/1zYj71j
 ##
 ##Version: 1
 ##

@@ -6,6 +6,7 @@
 ##Functionality: This code is meant to match objects in an image to a objects in training set.
 ##it uses FLANN and surf features to match two images together. This code is still
 ##under development.
+##See this link for documentation: http://bit.ly/1tH9a6P
 ##
 ##Version: 1
 ##

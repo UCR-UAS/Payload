@@ -4,6 +4,8 @@
 ##Date: 1-1-15
 ##
 ##Functionality: This code is meant to to test surf feature detection.
+##See this link for detailed explanation of surf features:
+##http://docs.opencv.org/trunk/doc/py_tutorials/py_feature2d/py_surf_intro/py_surf_intro.html
 ##
 ##Version: 1
 ##
