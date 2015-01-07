@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( salient_det )
+find_package( OpenCV REQUIRED )
+add_executable( salient_det salient_detection.cpp )
+target_link_libraries( salient_det ${OpenCV_LIBS} )

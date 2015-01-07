@@ -46,7 +46,9 @@ convert to LUV colorspace
 
 Whats been done
 ===============
--Everything has been implemented
+-Code has been implemented
+
+-Basic testing has been done
 
 TODO
 ====
@@ -56,3 +58,24 @@ TODO
 
 Files in folder
 ================
+salient_detection.cpp - this is the main file that needs to be run
+
+IMG_0494/0526 - test images that the code uses to crop
+
+croppedImg - the file where detected roi of interest are saved
+
+competitionPhotos - the folder that contains the test data set of photos taken during previous competitions
+
+How to run
+==========
+cmake CMakeLists.txt 
+
+make
+
+./salient_det
+
+Requirements
+============
+most recent version of cmake
+
+opencv version 2.4.10

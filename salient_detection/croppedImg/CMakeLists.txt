@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( shapeDet )
+find_package( OpenCV REQUIRED )
+add_executable( shapeDet shapeDet.cpp )
+target_link_libraries( shapeDet ${OpenCV_LIBS} )
