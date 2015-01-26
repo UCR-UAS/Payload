@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrew/Payload/salient_detection
+CMAKE_SOURCE_DIR = /home/andrew/Payload/shape_characterization/SURF_homography
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrew/Payload/salient_detection
+CMAKE_BINARY_DIR = /home/andrew/Payload/shape_characterization/SURF_homography
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/salient_detection/CMakeFiles /home/andrew/Payload/salient_detection/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/shape_characterization/SURF_homography/CMakeFiles /home/andrew/Payload/shape_characterization/SURF_homography/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/salient_detection/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/shape_characterization/SURF_homography/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -99,41 +99,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named salient_det
+# Target rules for targets named surf_det
 
 # Build rule for target.
-salient_det: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 salient_det
-.PHONY : salient_det
+surf_det: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 surf_det
+.PHONY : surf_det
 
 # fast build rule for target.
-salient_det/fast:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/build
-.PHONY : salient_det/fast
+surf_det/fast:
+	$(MAKE) -f CMakeFiles/surf_det.dir/build.make CMakeFiles/surf_det.dir/build
+.PHONY : surf_det/fast
 
-salient_detection.o: salient_detection.cpp.o
-.PHONY : salient_detection.o
+SURF_Homography.o: SURF_Homography.cpp.o
+.PHONY : SURF_Homography.o
 
 # target to build an object file
-salient_detection.cpp.o:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/salient_detection.cpp.o
-.PHONY : salient_detection.cpp.o
+SURF_Homography.cpp.o:
+	$(MAKE) -f CMakeFiles/surf_det.dir/build.make CMakeFiles/surf_det.dir/SURF_Homography.cpp.o
+.PHONY : SURF_Homography.cpp.o
 
-salient_detection.i: salient_detection.cpp.i
-.PHONY : salient_detection.i
+SURF_Homography.i: SURF_Homography.cpp.i
+.PHONY : SURF_Homography.i
 
 # target to preprocess a source file
-salient_detection.cpp.i:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/salient_detection.cpp.i
-.PHONY : salient_detection.cpp.i
+SURF_Homography.cpp.i:
+	$(MAKE) -f CMakeFiles/surf_det.dir/build.make CMakeFiles/surf_det.dir/SURF_Homography.cpp.i
+.PHONY : SURF_Homography.cpp.i
 
-salient_detection.s: salient_detection.cpp.s
-.PHONY : salient_detection.s
+SURF_Homography.s: SURF_Homography.cpp.s
+.PHONY : SURF_Homography.s
 
 # target to generate assembly for a file
-salient_detection.cpp.s:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/salient_detection.cpp.s
-.PHONY : salient_detection.cpp.s
+SURF_Homography.cpp.s:
+	$(MAKE) -f CMakeFiles/surf_det.dir/build.make CMakeFiles/surf_det.dir/SURF_Homography.cpp.s
+.PHONY : SURF_Homography.cpp.s
 
 # Help Target
 help:
@@ -143,10 +143,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... salient_det"
-	@echo "... salient_detection.o"
-	@echo "... salient_detection.i"
-	@echo "... salient_detection.s"
+	@echo "... surf_det"
+	@echo "... SURF_Homography.o"
+	@echo "... SURF_Homography.i"
+	@echo "... SURF_Homography.s"
 .PHONY : help
 
 

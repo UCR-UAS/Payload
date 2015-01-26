@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrew/Payload/salient_detection
+CMAKE_SOURCE_DIR = /home/andrew/Payload/shape_characterization/Bag_of_features
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrew/Payload/salient_detection
+CMAKE_BINARY_DIR = /home/andrew/Payload/shape_characterization/Bag_of_features
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/salient_detection/CMakeFiles /home/andrew/Payload/salient_detection/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/shape_characterization/Bag_of_features/CMakeFiles /home/andrew/Payload/shape_characterization/Bag_of_features/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/salient_detection/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/shape_characterization/Bag_of_features/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -99,41 +99,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named salient_det
+# Target rules for targets named shape_char
 
 # Build rule for target.
-salient_det: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 salient_det
-.PHONY : salient_det
+shape_char: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 shape_char
+.PHONY : shape_char
 
 # fast build rule for target.
-salient_det/fast:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/build
-.PHONY : salient_det/fast
+shape_char/fast:
+	$(MAKE) -f CMakeFiles/shape_char.dir/build.make CMakeFiles/shape_char.dir/build
+.PHONY : shape_char/fast
 
-salient_detection.o: salient_detection.cpp.o
-.PHONY : salient_detection.o
+BoFSURF.o: BoFSURF.cpp.o
+.PHONY : BoFSURF.o
 
 # target to build an object file
-salient_detection.cpp.o:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/salient_detection.cpp.o
-.PHONY : salient_detection.cpp.o
+BoFSURF.cpp.o:
+	$(MAKE) -f CMakeFiles/shape_char.dir/build.make CMakeFiles/shape_char.dir/BoFSURF.cpp.o
+.PHONY : BoFSURF.cpp.o
 
-salient_detection.i: salient_detection.cpp.i
-.PHONY : salient_detection.i
+BoFSURF.i: BoFSURF.cpp.i
+.PHONY : BoFSURF.i
 
 # target to preprocess a source file
-salient_detection.cpp.i:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/salient_detection.cpp.i
-.PHONY : salient_detection.cpp.i
+BoFSURF.cpp.i:
+	$(MAKE) -f CMakeFiles/shape_char.dir/build.make CMakeFiles/shape_char.dir/BoFSURF.cpp.i
+.PHONY : BoFSURF.cpp.i
 
-salient_detection.s: salient_detection.cpp.s
-.PHONY : salient_detection.s
+BoFSURF.s: BoFSURF.cpp.s
+.PHONY : BoFSURF.s
 
 # target to generate assembly for a file
-salient_detection.cpp.s:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/salient_detection.cpp.s
-.PHONY : salient_detection.cpp.s
+BoFSURF.cpp.s:
+	$(MAKE) -f CMakeFiles/shape_char.dir/build.make CMakeFiles/shape_char.dir/BoFSURF.cpp.s
+.PHONY : BoFSURF.cpp.s
 
 # Help Target
 help:
@@ -143,10 +143,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... salient_det"
-	@echo "... salient_detection.o"
-	@echo "... salient_detection.i"
-	@echo "... salient_detection.s"
+	@echo "... shape_char"
+	@echo "... BoFSURF.o"
+	@echo "... BoFSURF.i"
+	@echo "... BoFSURF.s"
 .PHONY : help
 
 

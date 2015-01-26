@@ -20,26 +20,25 @@ Mat gradient(Mat src);
 void findObject(Mat mask, Mat src);
 //////////////////////////////////////////////////////////////////
 
-int imageCounter = 490;
-string imgName = "IMG_0526.JPG";
+int imageCounter = 494;
+string imgName = "IMG_0494.JPG";
 
 int main() {
 	Mat targetImg, salientMask;
 
 	targetImg = imread(imgName);
 
-	while (1) {
-		
+	//while (1) {
 		salientMask = salient_detection(targetImg);		
 		cout << imgName << endl;
 		findObject(salientMask, targetImg);
-		imgName = readNewImg(&imgName);
-		cout << imgName << endl;
-		targetImg = imread(imgName);	
+		//imgName = readNewImg(&imgName);
+		//cout << imgName << endl;
+		//targetImg = imread(imgName);	
 		//cout << "done reading" << endl;	
 		//namedWindow("target image", WINDOW_NORMAL);
 		//imshow("target image", targetImg);
-	}
+	//}
 
 	
 	return 0;

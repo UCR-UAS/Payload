@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrew/Payload/salient_detection
+CMAKE_SOURCE_DIR = /home/andrew/Payload/base_station/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrew/Payload/salient_detection
+CMAKE_BINARY_DIR = /home/andrew/Payload/base_station/src
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/salient_detection/CMakeFiles /home/andrew/Payload/salient_detection/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/base_station/src/CMakeFiles /home/andrew/Payload/base_station/src/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/salient_detection/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrew/Payload/base_station/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -99,41 +99,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named salient_det
+# Target rules for targets named main
 
 # Build rule for target.
-salient_det: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 salient_det
-.PHONY : salient_det
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-salient_det/fast:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/build
-.PHONY : salient_det/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
-salient_detection.o: salient_detection.cpp.o
-.PHONY : salient_detection.o
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-salient_detection.cpp.o:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/salient_detection.cpp.o
-.PHONY : salient_detection.cpp.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-salient_detection.i: salient_detection.cpp.i
-.PHONY : salient_detection.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-salient_detection.cpp.i:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/salient_detection.cpp.i
-.PHONY : salient_detection.cpp.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-salient_detection.s: salient_detection.cpp.s
-.PHONY : salient_detection.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-salient_detection.cpp.s:
-	$(MAKE) -f CMakeFiles/salient_det.dir/build.make CMakeFiles/salient_det.dir/salient_detection.cpp.s
-.PHONY : salient_detection.cpp.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -142,11 +142,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... main"
 	@echo "... rebuild_cache"
-	@echo "... salient_det"
-	@echo "... salient_detection.o"
-	@echo "... salient_detection.i"
-	@echo "... salient_detection.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

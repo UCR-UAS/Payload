@@ -28,18 +28,17 @@ int main() {
 
 	targetImg = imread(imgName);
 
-	while (1) {
-		
+	//while (1) {
 		salientMask = salient_detection(targetImg);		
 		cout << imgName << endl;
 		findObject(salientMask, targetImg);
-		imgName = readNewImg(&imgName);
-		cout << imgName << endl;
-		targetImg = imread(imgName);	
+		//imgName = readNewImg(&imgName);
+		//cout << imgName << endl;
+		//targetImg = imread(imgName);	
 		//cout << "done reading" << endl;	
 		//namedWindow("target image", WINDOW_NORMAL);
 		//imshow("target image", targetImg);
-	}
+	//}
 
 	
 	return 0;
@@ -145,13 +144,13 @@ void findObject(Mat mask, Mat src) {
 
 	/// Find contours
 	findContours(mask, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE, Point(0, 0));
-	cout << "contours found" << endl;
+
 	/// Approximate contours to polygons + get bounding rects and circles
 	vector<vector<Point> > contours_poly(contours.size());
 	vector<Rect> boundRect(contours.size());
 	vector<Point2f>center(contours.size());
 	vector<float>radius(contours.size());
-	//cout << contours.size() << endl;
+
 	for (int i = 0; i < contours.size(); i++)
 	{
 		cout << contourArea(contours[i]) << endl;
