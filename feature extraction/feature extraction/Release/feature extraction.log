@@ -1,0 +1,26 @@
+﻿Build started 9/6/2011 7:30:25 PM.
+     1>Project "D:\documents\arshad\sharif\mysite\feature extraction\feature extraction\feature extraction.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\feature extraction.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\feature extraction.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "feature extraction.cpp"
+         feature extraction.cpp
+     1>C:\OpenCV2.2\include\opencv2/flann/logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+       Link:
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\documents\arshad\sharif\mysite\feature extraction\Release\feature extraction.exe" /INCREMENTAL:NO /NOLOGO C:\OpenCV2.2\lib\opencv_core220d.lib C:\OpenCV2.2\lib\opencv_highgui220d.lib C:\OpenCV2.2\lib\opencv_video220d.lib C:\OpenCV2.2\lib\opencv_ml220d.lib C:\OpenCV2.2\lib\opencv_legacy220d.lib C:\OpenCV2.2\lib\opencv_imgproc220d.lib C:\OpenCV2.2\lib\opencv_objdetect220d.lib C:\OpenCV2.2\lib\opencv_objdetect220.lib C:\OpenCV2.2\lib\opencv_features2d220.lib C:\OpenCV2.2\lib\opencv_features2d220d.lib C:\OpenCV2.2\lib\opencv_flann220.lib C:\OpenCV2.2\lib\opencv_flann220d.lib C:\OpenCV2.2\lib\opencv_calib3d220.lib C:\OpenCV2.2\lib\opencv_calib3d220d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\feature extraction.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\documents\arshad\sharif\mysite\feature extraction\Release\feature extraction.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\documents\arshad\sharif\mysite\feature extraction\Release\feature extraction.lib" /MACHINE:X86 "Release\feature extraction.obj"
+         Release\stdafx.obj
+         Generating code
+         Finished generating code
+         feature extraction.vcxproj -> D:\documents\arshad\sharif\mysite\feature extraction\Release\feature extraction.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\documents\arshad\sharif\mysite\feature extraction\Release\feature extraction.exe;#1" /manifest "Release\feature extraction.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Deleting file "Release\feature extraction.unsuccessfulbuild".
+         Touching "Release\feature extraction.lastbuildstate".
+     1>Done Building Project "D:\documents\arshad\sharif\mysite\feature extraction\feature extraction\feature extraction.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.07

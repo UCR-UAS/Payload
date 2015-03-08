@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( BOF )
+find_package( OpenCV REQUIRED )
+add_executable( BOF feature_extraction.cpp )
+target_link_libraries( BOF ${OpenCV_LIBS} )
