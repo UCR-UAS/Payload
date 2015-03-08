@@ -32,8 +32,9 @@ int minHessian = 100; //Hessian Threshold
 	SurfDescriptorExtractor detector(minHessian,4,2,false);		
 	Mat sz;
 	//I select 20 (1000/50) images from 1000 images to extract feature descriptors and build the vocabulary
-	for(int f=1;f<5;f++){		
+	for(int f=1;f<6;f++){		
 		//create the file name of an image
+		cout << f << endl;
 		sprintf(filename,"training_img/%i.jpg",f);
 		//open the file
 		input = imread(filename, CV_LOAD_IMAGE_GRAYSCALE); //Load as grayscale				

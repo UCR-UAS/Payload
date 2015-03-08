@@ -8,7 +8,7 @@
 using namespace cv;
 using namespace std;
 
-#define DICTIONARY_BUILD 2 // set DICTIONARY_BUILD 1 to do Step 1, otherwise it goes to step 2
+#define DICTIONARY_BUILD 1 // set DICTIONARY_BUILD 1 to do Step 1, otherwise it goes to step 2
 
 int main(int argc, char* argv[])
 {	
@@ -32,8 +32,9 @@ int minHessian = 100; //Hessian Threshold
 	SurfDescriptorExtractor detector(minHessian,4,2,false);		
 	Mat sz;
 	//I select 20 (1000/50) images from 1000 images to extract feature descriptors and build the vocabulary
-	for(int f=1;f<5;f++){		
+	for(int f=1;f<6;f++){		
 		//create the file name of an image
+		cout << f << endl;
 		sprintf(filename,"training_img/%i.jpg",f);
 		//open the file
 		input = imread(filename, CV_LOAD_IMAGE_GRAYSCALE); //Load as grayscale				
@@ -96,7 +97,7 @@ int minHessian = 100; //Hessian Threshold
 	FileStorage fs1("descriptor.yml", FileStorage::WRITE);	
 	
 	//the image file with the location. change it according to your image file location
-	sprintf(filename,"training_img/3.jpg");		
+	sprintf(filename,"training_img/img_0490_clustered.png");		
 	//read the image
 	Mat img=imread(filename,CV_LOAD_IMAGE_GRAYSCALE);		
 	//To store the keypoints that will be extracted by SURF

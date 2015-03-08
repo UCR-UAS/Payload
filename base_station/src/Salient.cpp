@@ -59,16 +59,17 @@ Mat CannyThreshold(Mat src, Mat grad)
 void Dimage::salient_detection() {
 	Mat hsl,h,s,l,hg,lg, blkWhte, grad, img;
 	vector<vector<Point> > contours;
-	vector<vector<Point> > contours_poly(contours.size());
-	vector<Rect> boundRect(contours.size());
+	Mat src = this->image;
+	Mat cropped;
+	string buffer;
 
 	GaussianBlur(this->image, img, Size(3, 3), 0, 0, BORDER_DEFAULT);
-
+	cout << "blurred" << endl;
 	vector<Mat> channels(3);
 
 	cvtColor(img, hsl, CV_RGB2HLS);
 	split(hsl, channels);
-
+	cout << "splitted" << endl;
 
 	h = channels[1];
 	s = channels[0];
@@ -82,22 +83,38 @@ void Dimage::salient_detection() {
 	grad = CannyThreshold(grad,grad);
 
 	h = CannyThreshold(h,h);
-
+	
+	cout << "thresholded" << endl;
 	grad = (grad & h);
 		
 
 	/// Find contours
 	findContours(grad, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE, Point(0, 0));
+	vector<vector<Point> > contours_poly(contours.size());
+	vector<Rect> boundRect(contours.size());
 	/// Approximate contours to polygons + get bounding rects and circles
-	
+	cout << "countours found" << endl;
+	cout << contours.size() << endl;	
 	for (int i = 0; i < contours.size(); i++)
 	{
+		cout << "i: " << i << endl;
 
-		if (contourArea(contours[i]) < 600)
-		{	
-			approxPolyDP(Mat(contours[i]), contours_poly[i], 3, true);
-			this->ROI.at(i) = boundingRect(Mat(contours[i]));
+		if (contourArea(contours.at(i)) < 600)
+		{	cout << "in da if" << endl;
+			
+			approxPolyDP(Mat(contours.at(i)), contours_poly.at(i), 3, true);
+			cout << "at roi" << endl;
+			//boundingRect(Mat(contours[i]));
+			Rect roi = boundingRect(Mat(contours.at(i)));
+			
+			/*cropped = src(roi);
+			
+			imshow("Cropped image", cropped);
+			cvWaitKey(0);*/ 
+			this->ROI.push_back(roi);
+			cout << "size of victor: " << this->ROI.size() << endl;
 		}
 	
 	}
+	cout << "bounding rect found" << endl;
 };
