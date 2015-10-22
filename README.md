@@ -1,3 +1,5 @@
+Stanley Okwuoma
+
 Payload
 ========
 This folder contains all code for the UAV payload, the base station code for controling the payload, and testing data sets.
