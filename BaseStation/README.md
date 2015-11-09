@@ -11,7 +11,11 @@ This directory contains all of the code for the base station, including the Base
 **ADLC**
 --- All of the image processing code running on the base station.
 
-**Base Station Layout**
+**Base Station Class Diagram**
 ![Class Diagram](../Documentation/BaseStation.png?raw=true "Class Diagram")
+
+**Star Packet Inheritance Tree**
+
+![Inheritance Tree](../Documentation/StarPacketInheritance.png?raw=true "Inheritance Tree")
 
 
