@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo > $1.h
-echo class $1{ >> $1.h
-echo \ \ \ \ public: >> $1.h
-echo \ \ \ \ private: >> $1.h
-echo }\; >> $1.h
-
-touch $1.cpp

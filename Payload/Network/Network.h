@@ -1,5 +1,0 @@
-
-class Network{
-    public:
-    private:
-};

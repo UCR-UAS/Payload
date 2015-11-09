@@ -1,5 +1,0 @@
-
-class PacketFramer{
-    public:
-    private:
-};
