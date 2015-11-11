@@ -1,1 +1,0 @@
-/home/andrew/Payload/base_station/src/CMakeFiles/main.dir

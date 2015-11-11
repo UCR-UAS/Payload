@@ -1,1 +1,0 @@
-/home/andrew/Payload/shape_characterization/SURF_homography/CMakeFiles/surf_det.dir

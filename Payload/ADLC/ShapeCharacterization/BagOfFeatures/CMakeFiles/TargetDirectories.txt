@@ -1,1 +1,0 @@
-/home/andrew/Payload/shape_characterization/Bag_of_features/CMakeFiles/shape_char.dir

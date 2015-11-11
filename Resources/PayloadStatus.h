@@ -1,5 +1,0 @@
-
-class PayloadStatus{
-    public:
-    private:
-};
