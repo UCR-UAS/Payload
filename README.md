@@ -24,10 +24,6 @@ All folders should contain the following information for future teams
   
   -Test analysis
 
-File Naming Convention:
-==================
-< functionality >-< version >.< h/cpp >
-
 
 Code header:
 =============

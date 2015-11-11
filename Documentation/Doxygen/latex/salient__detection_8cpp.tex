@@ -1,0 +1,99 @@
+\hypertarget{salient__detection_8cpp}{\section{Payload/\-A\-D\-L\-C/\-Salient\-Detection/salient\-\_\-detection.cpp File Reference}
+\label{salient__detection_8cpp}\index{Payload/\-A\-D\-L\-C/\-Salient\-Detection/salient\-\_\-detection.\-cpp@{Payload/\-A\-D\-L\-C/\-Salient\-Detection/salient\-\_\-detection.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}opencv2/core/core.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/highgui/highgui.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}opencv2/imgproc/imgproc.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{salient__detection_8cpp_a2c259f1cc814bd6ed08317c61521a746}{read\-New\-Img} (string $\ast$\hyperlink{salient__detection_8cpp_a3e7cb740787e3d34789794189850e768}{img\-Name})
+\item 
+Mat \hyperlink{salient__detection_8cpp_a1a2bec3cfc31133af2c33d80d7a677a9}{salient\-\_\-detection} (Mat img)
+\item 
+Mat \hyperlink{salient__detection_8cpp_a72a85ee7c487dde945adeb0fee10d98e}{Canny\-Threshold} (Mat src, Mat grad)
+\item 
+Mat \hyperlink{salient__detection_8cpp_ad2a03c2e19c75a7a5d55f8e8c5e497cd}{gradient} (Mat src)
+\item 
+void \hyperlink{salient__detection_8cpp_a22d19b1a0d8f584c8275ebefc9e50396}{find\-Object} (Mat mask, Mat src)
+\item 
+int \hyperlink{salient__detection_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{salient__detection_8cpp_add58ab8323b65c3c8862fbc0008ada05}{image\-Counter} = 494
+\item 
+string \hyperlink{salient__detection_8cpp_a3e7cb740787e3d34789794189850e768}{img\-Name} = \char`\"{}I\-M\-G\-\_\-0494.\-J\-P\-G\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{salient__detection_8cpp_a72a85ee7c487dde945adeb0fee10d98e}{\index{salient\-\_\-detection.\-cpp@{salient\-\_\-detection.\-cpp}!Canny\-Threshold@{Canny\-Threshold}}
+\index{Canny\-Threshold@{Canny\-Threshold}!salient_detection.cpp@{salient\-\_\-detection.\-cpp}}
+\subsubsection[{Canny\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}Mat Canny\-Threshold (
+\begin{DoxyParamCaption}
+\item[{Mat}]{src, }
+\item[{Mat}]{grad}
+\end{DoxyParamCaption}
+)}}\label{salient__detection_8cpp_a72a85ee7c487dde945adeb0fee10d98e}
+Reduce noise with a kernel 3x3
+
+Canny detector \hypertarget{salient__detection_8cpp_a22d19b1a0d8f584c8275ebefc9e50396}{\index{salient\-\_\-detection.\-cpp@{salient\-\_\-detection.\-cpp}!find\-Object@{find\-Object}}
+\index{find\-Object@{find\-Object}!salient_detection.cpp@{salient\-\_\-detection.\-cpp}}
+\subsubsection[{find\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void find\-Object (
+\begin{DoxyParamCaption}
+\item[{Mat}]{mask, }
+\item[{Mat}]{src}
+\end{DoxyParamCaption}
+)}}\label{salient__detection_8cpp_a22d19b1a0d8f584c8275ebefc9e50396}
+Find contours
+
+Approximate contours to polygons + get bounding rects and circles
+
+Draw polygonal contour + bonding rects + circles \hypertarget{salient__detection_8cpp_ad2a03c2e19c75a7a5d55f8e8c5e497cd}{\index{salient\-\_\-detection.\-cpp@{salient\-\_\-detection.\-cpp}!gradient@{gradient}}
+\index{gradient@{gradient}!salient_detection.cpp@{salient\-\_\-detection.\-cpp}}
+\subsubsection[{gradient}]{\setlength{\rightskip}{0pt plus 5cm}Mat gradient (
+\begin{DoxyParamCaption}
+\item[{Mat}]{src}
+\end{DoxyParamCaption}
+)}}\label{salient__detection_8cpp_ad2a03c2e19c75a7a5d55f8e8c5e497cd}
+Gradient X
+
+Gradient Y
+
+Total Gradient (approximate) \hypertarget{salient__detection_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{salient\-\_\-detection.\-cpp@{salient\-\_\-detection.\-cpp}!main@{main}}
+\index{main@{main}!salient_detection.cpp@{salient\-\_\-detection.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{salient__detection_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+\hypertarget{salient__detection_8cpp_a2c259f1cc814bd6ed08317c61521a746}{\index{salient\-\_\-detection.\-cpp@{salient\-\_\-detection.\-cpp}!read\-New\-Img@{read\-New\-Img}}
+\index{read\-New\-Img@{read\-New\-Img}!salient_detection.cpp@{salient\-\_\-detection.\-cpp}}
+\subsubsection[{read\-New\-Img}]{\setlength{\rightskip}{0pt plus 5cm}string read\-New\-Img (
+\begin{DoxyParamCaption}
+\item[{string $\ast$}]{img\-Name}
+\end{DoxyParamCaption}
+)}}\label{salient__detection_8cpp_a2c259f1cc814bd6ed08317c61521a746}
+\hypertarget{salient__detection_8cpp_a1a2bec3cfc31133af2c33d80d7a677a9}{\index{salient\-\_\-detection.\-cpp@{salient\-\_\-detection.\-cpp}!salient\-\_\-detection@{salient\-\_\-detection}}
+\index{salient\-\_\-detection@{salient\-\_\-detection}!salient_detection.cpp@{salient\-\_\-detection.\-cpp}}
+\subsubsection[{salient\-\_\-detection}]{\setlength{\rightskip}{0pt plus 5cm}Mat salient\-\_\-detection (
+\begin{DoxyParamCaption}
+\item[{Mat}]{img}
+\end{DoxyParamCaption}
+)}}\label{salient__detection_8cpp_a1a2bec3cfc31133af2c33d80d7a677a9}
+
+
+\subsection{Variable Documentation}
+\hypertarget{salient__detection_8cpp_add58ab8323b65c3c8862fbc0008ada05}{\index{salient\-\_\-detection.\-cpp@{salient\-\_\-detection.\-cpp}!image\-Counter@{image\-Counter}}
+\index{image\-Counter@{image\-Counter}!salient_detection.cpp@{salient\-\_\-detection.\-cpp}}
+\subsubsection[{image\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}int image\-Counter = 494}}\label{salient__detection_8cpp_add58ab8323b65c3c8862fbc0008ada05}
+\hypertarget{salient__detection_8cpp_a3e7cb740787e3d34789794189850e768}{\index{salient\-\_\-detection.\-cpp@{salient\-\_\-detection.\-cpp}!img\-Name@{img\-Name}}
+\index{img\-Name@{img\-Name}!salient_detection.cpp@{salient\-\_\-detection.\-cpp}}
+\subsubsection[{img\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string img\-Name = \char`\"{}I\-M\-G\-\_\-0494.\-J\-P\-G\char`\"{}}}\label{salient__detection_8cpp_a3e7cb740787e3d34789794189850e768}

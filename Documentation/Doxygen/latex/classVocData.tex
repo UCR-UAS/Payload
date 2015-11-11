@@ -1,0 +1,603 @@
+\hypertarget{classVocData}{\section{Voc\-Data Class Reference}
+\label{classVocData}\index{Voc\-Data@{Voc\-Data}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structVocData_1_1orderingSorter}{ordering\-Sorter}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVocData_add6a2dc980a8e27ac39d6d03c08bc1cd}{Voc\-Data} (const string \&voc\-Path, bool use\-Test\-Dataset)
+\item 
+\hyperlink{classVocData_a575a2fec25b9ba78e6ff9bdc33336ad3}{$\sim$\-Voc\-Data} ()
+\item 
+void \hyperlink{classVocData_a92f58a9b3f73c2fbea3d80df27a5d1fc}{get\-Class\-Images} (const string \&obj\-\_\-class, const \hyperlink{bagofwords__classification_8cpp_a769a10790da271430ddd42e42073a0ea}{Obd\-Dataset\-Type} dataset, vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, vector$<$ char $>$ \&object\-\_\-present)
+\item 
+void \hyperlink{classVocData_aee09184f35d00681609ff4605021a083}{get\-Class\-Objects} (const string \&obj\-\_\-class, const \hyperlink{bagofwords__classification_8cpp_a769a10790da271430ddd42e42073a0ea}{Obd\-Dataset\-Type} dataset, vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, vector$<$ vector$<$ \hyperlink{classObdObject}{Obd\-Object} $>$ $>$ \&objects)
+\item 
+void \hyperlink{classVocData_a8ceef9c32fa3cbc4094e924c46732e9f}{get\-Class\-Objects} (const string \&obj\-\_\-class, const \hyperlink{bagofwords__classification_8cpp_a769a10790da271430ddd42e42073a0ea}{Obd\-Dataset\-Type} dataset, vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, vector$<$ vector$<$ \hyperlink{classObdObject}{Obd\-Object} $>$ $>$ \&objects, vector$<$ vector$<$ \hyperlink{classVocObjectData}{Voc\-Object\-Data} $>$ $>$ \&object\-\_\-data, vector$<$ \hyperlink{bagofwords__classification_8cpp_a79995288ef1b2b5890517068e9bdfed8}{Voc\-G\-T} $>$ \&ground\-\_\-truth)
+\item 
+\hyperlink{classObdImage}{Obd\-Image} \hyperlink{classVocData_a6e4ecde19100ecfeb8c1f9afc12fc977}{get\-Objects} (const string \&id, vector$<$ \hyperlink{classObdObject}{Obd\-Object} $>$ \&objects)
+\item 
+\hyperlink{classObdImage}{Obd\-Image} \hyperlink{classVocData_a70c269f14e0e71abdc207c9910a74aab}{get\-Objects} (const string \&id, vector$<$ \hyperlink{classObdObject}{Obd\-Object} $>$ \&objects, vector$<$ \hyperlink{classVocObjectData}{Voc\-Object\-Data} $>$ \&object\-\_\-data)
+\item 
+\hyperlink{classObdImage}{Obd\-Image} \hyperlink{classVocData_a427c35f84d11424b071d5bfc11ac8fda}{get\-Objects} (const string \&obj\-\_\-class, const string \&id, vector$<$ \hyperlink{classObdObject}{Obd\-Object} $>$ \&objects, vector$<$ \hyperlink{classVocObjectData}{Voc\-Object\-Data} $>$ \&object\-\_\-data, \hyperlink{bagofwords__classification_8cpp_a79995288ef1b2b5890517068e9bdfed8}{Voc\-G\-T} \&ground\-\_\-truth)
+\item 
+void \hyperlink{classVocData_ab9527dd6557bf03b8fd253ae0066fa37}{get\-Classifier\-Ground\-Truth} (const string \&obj\-\_\-class, const vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, vector$<$ char $>$ \&ground\-\_\-truth)
+\item 
+void \hyperlink{classVocData_ab90b59b732020d531a83bdf5afde7459}{get\-Classifier\-Ground\-Truth} (const string \&obj\-\_\-class, const vector$<$ string $>$ \&images, vector$<$ char $>$ \&ground\-\_\-truth)
+\item 
+int \hyperlink{classVocData_a95d562193b551c733fba22d2ca9fab3e}{get\-Detector\-Ground\-Truth} (const string \&obj\-\_\-class, const \hyperlink{bagofwords__classification_8cpp_a769a10790da271430ddd42e42073a0ea}{Obd\-Dataset\-Type} dataset, const vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, const vector$<$ vector$<$ Rect $>$ $>$ \&bounding\-\_\-boxes, const vector$<$ vector$<$ float $>$ $>$ \&scores, vector$<$ vector$<$ char $>$ $>$ \&ground\-\_\-truth, vector$<$ vector$<$ char $>$ $>$ \&detection\-\_\-difficult, bool ignore\-\_\-difficult=true)
+\item 
+void \hyperlink{classVocData_a440a1a9cfd6e9ca080ce338f5c8a047d}{write\-Classifier\-Results\-File} (const string \&out\-\_\-dir, const string \&obj\-\_\-class, const \hyperlink{bagofwords__classification_8cpp_a769a10790da271430ddd42e42073a0ea}{Obd\-Dataset\-Type} dataset, const vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, const vector$<$ float $>$ \&scores, const int competition=1, const bool overwrite\-\_\-ifexists=false)
+\item 
+string \hyperlink{classVocData_a50835c8bd8628e0d1ca61e3b3e8bc189}{get\-Results\-Filename} (const string \&obj\-\_\-class, const \hyperlink{bagofwords__classification_8cpp_a8453e90c379aabdea39070a17a9f63e2}{Voc\-Task} task, const \hyperlink{bagofwords__classification_8cpp_a769a10790da271430ddd42e42073a0ea}{Obd\-Dataset\-Type} dataset, const int competition=-\/1, const int number=-\/1)
+\item 
+void \hyperlink{classVocData_ac6dc007f256c36d8fe6ef395ed39dd8a}{calc\-Classifier\-Prec\-Recall} (const string \&obj\-\_\-class, const vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, const vector$<$ float $>$ \&scores, vector$<$ float $>$ \&precision, vector$<$ float $>$ \&recall, float \&ap, vector$<$ size\-\_\-t $>$ \&ranking)
+\item 
+void \hyperlink{classVocData_aa1a71e116eabd997fe6fd76d0abe70a8}{calc\-Classifier\-Prec\-Recall} (const string \&obj\-\_\-class, const vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, const vector$<$ float $>$ \&scores, vector$<$ float $>$ \&precision, vector$<$ float $>$ \&recall, float \&ap)
+\item 
+void \hyperlink{classVocData_a9e92b6a7403e18cf25df6165fd56a0bd}{calc\-Classifier\-Prec\-Recall} (const string \&input\-\_\-file, vector$<$ float $>$ \&precision, vector$<$ float $>$ \&recall, float \&ap, bool output\-Ranking\-File=false)
+\item 
+void \hyperlink{classVocData_ae8de46ec58d21ee43a44e8a771cbfaab}{calc\-Classifier\-Conf\-Mat\-Row} (const string \&obj\-\_\-class, const vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, const vector$<$ float $>$ \&scores, const \hyperlink{bagofwords__classification_8cpp_a86b3fb0f82f82bd78e829cbb81032301}{Voc\-Conf\-Cond} cond, const float threshold, vector$<$ string $>$ \&output\-\_\-headers, vector$<$ float $>$ \&output\-\_\-values)
+\item 
+void \hyperlink{classVocData_a7b90894f21fbadf8aaf2c3eefa73fb8c}{calc\-Detector\-Conf\-Mat\-Row} (const string \&obj\-\_\-class, const \hyperlink{bagofwords__classification_8cpp_a769a10790da271430ddd42e42073a0ea}{Obd\-Dataset\-Type} dataset, const vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, const vector$<$ vector$<$ float $>$ $>$ \&scores, const vector$<$ vector$<$ Rect $>$ $>$ \&bounding\-\_\-boxes, const \hyperlink{bagofwords__classification_8cpp_a86b3fb0f82f82bd78e829cbb81032301}{Voc\-Conf\-Cond} cond, const float threshold, vector$<$ string $>$ \&output\-\_\-headers, vector$<$ float $>$ \&output\-\_\-values, bool ignore\-\_\-difficult=true)
+\item 
+void \hyperlink{classVocData_aa6ac26da0ba7878beec8fb3598eaba96}{save\-Prec\-Recall\-To\-Gnuplot} (const string \&output\-\_\-file, const vector$<$ float $>$ \&precision, const vector$<$ float $>$ \&recall, const float ap, const string title=string(), const \hyperlink{bagofwords__classification_8cpp_a9d6bcb462c68f9c035a89cc559acb63f}{Voc\-Plot\-Type} plot\-\_\-type=\hyperlink{bagofwords__classification_8cpp_a9d6bcb462c68f9c035a89cc559acb63fac23aa01b33a316698ea57d9d594bf851}{C\-V\-\_\-\-V\-O\-C\-\_\-\-P\-L\-O\-T\-\_\-\-S\-C\-R\-E\-E\-N})
+\item 
+void \hyperlink{classVocData_a9580d183da05a4abd31a84699ab23302}{read\-Classifier\-Ground\-Truth} (const string \&obj\-\_\-class, const \hyperlink{bagofwords__classification_8cpp_a769a10790da271430ddd42e42073a0ea}{Obd\-Dataset\-Type} dataset, vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, vector$<$ char $>$ \&object\-\_\-present)
+\item 
+void \hyperlink{classVocData_ad947e69a36f9569a2f479ac51786a365}{read\-Classifier\-Results\-File} (const std\-::string \&input\-\_\-file, vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, vector$<$ float $>$ \&scores)
+\item 
+void \hyperlink{classVocData_aa09be545cbd6f37a76ba5d9d664bf402}{read\-Detector\-Results\-File} (const string \&input\-\_\-file, vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, vector$<$ vector$<$ float $>$ $>$ \&scores, vector$<$ vector$<$ Rect $>$ $>$ \&bounding\-\_\-boxes)
+\item 
+const vector$<$ string $>$ \& \hyperlink{classVocData_a08fa5badaacbc8152ddb13bb3b27ea38}{get\-Object\-Classes} ()
+\item 
+string \hyperlink{classVocData_a87a3c312091a53dbd291f7b686d51d51}{get\-Results\-Directory} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVocData_ab71bb7378a0a0356d43492790f9ba187}{init\-Voc} (const string \&voc\-Path, const bool use\-Test\-Dataset)
+\item 
+void \hyperlink{classVocData_a26b0aee0bfa9621852db92d6fb5de147}{init\-Voc2007to2010} (const string \&voc\-Path, const bool use\-Test\-Dataset)
+\item 
+void \hyperlink{classVocData_a664471c4279bd2ac2e5bb6a0ef8de9c1}{read\-Classifier\-Ground\-Truth} (const string \&filename, vector$<$ string $>$ \&image\-\_\-codes, vector$<$ char $>$ \&object\-\_\-present)
+\item 
+void \hyperlink{classVocData_aac2d3f030a95224c8dafde8e2e4b3d06}{read\-Classifier\-Results\-File} (const string \&input\-\_\-file, vector$<$ string $>$ \&image\-\_\-codes, vector$<$ float $>$ \&scores)
+\item 
+void \hyperlink{classVocData_a4c31fa584e7b47c578d44376e2ef8e86}{read\-Detector\-Results\-File} (const string \&input\-\_\-file, vector$<$ string $>$ \&image\-\_\-codes, vector$<$ vector$<$ float $>$ $>$ \&scores, vector$<$ vector$<$ Rect $>$ $>$ \&bounding\-\_\-boxes)
+\item 
+void \hyperlink{classVocData_a1a41aa13a88461655386bb1225853df7}{extract\-Voc\-Objects} (const string filename, vector$<$ \hyperlink{classObdObject}{Obd\-Object} $>$ \&objects, vector$<$ \hyperlink{classVocObjectData}{Voc\-Object\-Data} $>$ \&object\-\_\-data)
+\item 
+string \hyperlink{classVocData_a752e19ab7762411e1e8697cf708b1595}{get\-Image\-Path} (const string \&input\-\_\-str)
+\item 
+void \hyperlink{classVocData_ae153b6a3a13738cf35b1c264028de279}{get\-Class\-Images\-\_\-impl} (const string \&obj\-\_\-class, const string \&dataset\-\_\-str, vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images, vector$<$ char $>$ \&object\-\_\-present)
+\item 
+void \hyperlink{classVocData_af04f6b1b7d377efb8022416cb7c2452a}{calc\-Prec\-Recall\-\_\-impl} (const vector$<$ char $>$ \&ground\-\_\-truth, const vector$<$ float $>$ \&scores, vector$<$ float $>$ \&precision, vector$<$ float $>$ \&recall, float \&ap, vector$<$ size\-\_\-t $>$ \&ranking, int recall\-\_\-normalization=-\/1)
+\item 
+float \hyperlink{classVocData_a1cbbaf80dd0d3180a94868c1bdc5b3b5}{test\-Bounding\-Boxes\-For\-Overlap} (const Rect detection, const Rect ground\-\_\-truth)
+\item 
+void \hyperlink{classVocData_a12f52ec04b326eed957b02883f8da836}{extract\-Data\-From\-Results\-Filename} (const string \&input\-\_\-file, string \&class\-\_\-name, string \&dataset\-\_\-name)
+\item 
+bool \hyperlink{classVocData_a1d313e61c54cf27ec2500b38d9f16eda}{get\-Classifier\-Ground\-Truth\-Image} (const string \&obj\-\_\-class, const string \&id)
+\item 
+void \hyperlink{classVocData_aecc9f83f5e0ab63fc09e60679982342d}{get\-Sort\-Order} (const vector$<$ float $>$ \&values, vector$<$ size\-\_\-t $>$ \&order, bool descending=true)
+\item 
+int \hyperlink{classVocData_aecd0e31768fb9a202224d0dde4a05178}{string\-To\-Integer} (const string input\-\_\-str)
+\item 
+void \hyperlink{classVocData_aa556074b41f8f5a1ac611b6b4fa06c2d}{read\-File\-To\-String} (const string filename, string \&file\-\_\-contents)
+\item 
+string \hyperlink{classVocData_afcc3d337fc5c33e53cdaef5f8589ac1d}{integer\-To\-String} (const int input\-\_\-int)
+\item 
+string \hyperlink{classVocData_a33d4a839f14d65bc5f4bdb4e89d625d1}{check\-Filename\-Pathsep} (const string filename, bool add\-\_\-trailing\-\_\-slash=false)
+\item 
+void \hyperlink{classVocData_a9542ea7c7c7d2f500637b7e4dbee8de8}{convert\-Image\-Codes\-To\-Obd\-Images} (const vector$<$ string $>$ \&image\-\_\-codes, vector$<$ \hyperlink{classObdImage}{Obd\-Image} $>$ \&images)
+\item 
+int \hyperlink{classVocData_a9509a28cfed76d7f8a4c1768462a01a9}{extract\-X\-M\-L\-Block} (const string src, const string tag, const int searchpos, string \&tag\-\_\-contents)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classVocData_ab5991ec812cb9c53716188ea67f52e51}{m\-\_\-voc\-Path}
+\item 
+string \hyperlink{classVocData_a292154bce82b205ce3946d7c66be9dff}{m\-\_\-voc\-Name}
+\item 
+string \hyperlink{classVocData_a4cea52c78090ef0d0c7ac380221802ab}{m\-\_\-annotation\-\_\-path}
+\item 
+string \hyperlink{classVocData_abab33911d384984e37e91b8ae1217f05}{m\-\_\-image\-\_\-path}
+\item 
+string \hyperlink{classVocData_af2aae5c6b4b430d3bf098f9557daea6a}{m\-\_\-imageset\-\_\-path}
+\item 
+string \hyperlink{classVocData_a456472463a937a9da9fd723b5aae65b8}{m\-\_\-class\-\_\-imageset\-\_\-path}
+\item 
+vector$<$ string $>$ \hyperlink{classVocData_aafde0db81fa35c5d46c4ce06b460b78e}{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-ids}
+\item 
+vector$<$ char $>$ \hyperlink{classVocData_a02141120f0e5086a4f53113409b6d159}{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-present}
+\item 
+string \hyperlink{classVocData_a35fe10bbcca7681acc0365cb18ca3920}{m\-\_\-classifier\-\_\-gt\-\_\-class}
+\item 
+string \hyperlink{classVocData_a6e63a9455ea3a21e08a493c5c2f26b5a}{m\-\_\-train\-\_\-set}
+\item 
+string \hyperlink{classVocData_ace1c925120f1b37c1fe536350aa42346}{m\-\_\-test\-\_\-set}
+\item 
+vector$<$ string $>$ \hyperlink{classVocData_a3b6160c9706be61b4abe53a2d672ca76}{m\-\_\-object\-\_\-classes}
+\item 
+float \hyperlink{classVocData_a8f6be5bd01a56f1fdf3ff6a1756e1ff6}{m\-\_\-min\-\_\-overlap}
+\item 
+bool \hyperlink{classVocData_a90dc858323c9074eef60dd14aebb611e}{m\-\_\-sampled\-\_\-ap}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVocData_add6a2dc980a8e27ac39d6d03c08bc1cd}{\index{Voc\-Data@{Voc\-Data}!Voc\-Data@{Voc\-Data}}
+\index{Voc\-Data@{Voc\-Data}!VocData@{Voc\-Data}}
+\subsubsection[{Voc\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Voc\-Data\-::\-Voc\-Data (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{voc\-Path, }
+\item[{bool}]{use\-Test\-Dataset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVocData_add6a2dc980a8e27ac39d6d03c08bc1cd}
+\hypertarget{classVocData_a575a2fec25b9ba78e6ff9bdc33336ad3}{\index{Voc\-Data@{Voc\-Data}!$\sim$\-Voc\-Data@{$\sim$\-Voc\-Data}}
+\index{$\sim$\-Voc\-Data@{$\sim$\-Voc\-Data}!VocData@{Voc\-Data}}
+\subsubsection[{$\sim$\-Voc\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Voc\-Data\-::$\sim$\-Voc\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVocData_a575a2fec25b9ba78e6ff9bdc33336ad3}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVocData_ae8de46ec58d21ee43a44e8a771cbfaab}{\index{Voc\-Data@{Voc\-Data}!calc\-Classifier\-Conf\-Mat\-Row@{calc\-Classifier\-Conf\-Mat\-Row}}
+\index{calc\-Classifier\-Conf\-Mat\-Row@{calc\-Classifier\-Conf\-Mat\-Row}!VocData@{Voc\-Data}}
+\subsubsection[{calc\-Classifier\-Conf\-Mat\-Row}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::calc\-Classifier\-Conf\-Mat\-Row (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{const vector$<$ float $>$ \&}]{scores, }
+\item[{const {\bf Voc\-Conf\-Cond}}]{cond, }
+\item[{const float}]{threshold, }
+\item[{vector$<$ string $>$ \&}]{output\-\_\-headers, }
+\item[{vector$<$ float $>$ \&}]{output\-\_\-values}
+\end{DoxyParamCaption}
+)}}\label{classVocData_ae8de46ec58d21ee43a44e8a771cbfaab}
+\hypertarget{classVocData_ac6dc007f256c36d8fe6ef395ed39dd8a}{\index{Voc\-Data@{Voc\-Data}!calc\-Classifier\-Prec\-Recall@{calc\-Classifier\-Prec\-Recall}}
+\index{calc\-Classifier\-Prec\-Recall@{calc\-Classifier\-Prec\-Recall}!VocData@{Voc\-Data}}
+\subsubsection[{calc\-Classifier\-Prec\-Recall}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::calc\-Classifier\-Prec\-Recall (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{const vector$<$ float $>$ \&}]{scores, }
+\item[{vector$<$ float $>$ \&}]{precision, }
+\item[{vector$<$ float $>$ \&}]{recall, }
+\item[{float \&}]{ap, }
+\item[{vector$<$ size\-\_\-t $>$ \&}]{ranking}
+\end{DoxyParamCaption}
+)}}\label{classVocData_ac6dc007f256c36d8fe6ef395ed39dd8a}
+\hypertarget{classVocData_aa1a71e116eabd997fe6fd76d0abe70a8}{\index{Voc\-Data@{Voc\-Data}!calc\-Classifier\-Prec\-Recall@{calc\-Classifier\-Prec\-Recall}}
+\index{calc\-Classifier\-Prec\-Recall@{calc\-Classifier\-Prec\-Recall}!VocData@{Voc\-Data}}
+\subsubsection[{calc\-Classifier\-Prec\-Recall}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::calc\-Classifier\-Prec\-Recall (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{const vector$<$ float $>$ \&}]{scores, }
+\item[{vector$<$ float $>$ \&}]{precision, }
+\item[{vector$<$ float $>$ \&}]{recall, }
+\item[{float \&}]{ap}
+\end{DoxyParamCaption}
+)}}\label{classVocData_aa1a71e116eabd997fe6fd76d0abe70a8}
+\hypertarget{classVocData_a9e92b6a7403e18cf25df6165fd56a0bd}{\index{Voc\-Data@{Voc\-Data}!calc\-Classifier\-Prec\-Recall@{calc\-Classifier\-Prec\-Recall}}
+\index{calc\-Classifier\-Prec\-Recall@{calc\-Classifier\-Prec\-Recall}!VocData@{Voc\-Data}}
+\subsubsection[{calc\-Classifier\-Prec\-Recall}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::calc\-Classifier\-Prec\-Recall (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{input\-\_\-file, }
+\item[{vector$<$ float $>$ \&}]{precision, }
+\item[{vector$<$ float $>$ \&}]{recall, }
+\item[{float \&}]{ap, }
+\item[{bool}]{output\-Ranking\-File = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a9e92b6a7403e18cf25df6165fd56a0bd}
+\hypertarget{classVocData_a7b90894f21fbadf8aaf2c3eefa73fb8c}{\index{Voc\-Data@{Voc\-Data}!calc\-Detector\-Conf\-Mat\-Row@{calc\-Detector\-Conf\-Mat\-Row}}
+\index{calc\-Detector\-Conf\-Mat\-Row@{calc\-Detector\-Conf\-Mat\-Row}!VocData@{Voc\-Data}}
+\subsubsection[{calc\-Detector\-Conf\-Mat\-Row}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::calc\-Detector\-Conf\-Mat\-Row (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const {\bf Obd\-Dataset\-Type}}]{dataset, }
+\item[{const vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{const vector$<$ vector$<$ float $>$ $>$ \&}]{scores, }
+\item[{const vector$<$ vector$<$ Rect $>$ $>$ \&}]{bounding\-\_\-boxes, }
+\item[{const {\bf Voc\-Conf\-Cond}}]{cond, }
+\item[{const float}]{threshold, }
+\item[{vector$<$ string $>$ \&}]{output\-\_\-headers, }
+\item[{vector$<$ float $>$ \&}]{output\-\_\-values, }
+\item[{bool}]{ignore\-\_\-difficult = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a7b90894f21fbadf8aaf2c3eefa73fb8c}
+\hypertarget{classVocData_af04f6b1b7d377efb8022416cb7c2452a}{\index{Voc\-Data@{Voc\-Data}!calc\-Prec\-Recall\-\_\-impl@{calc\-Prec\-Recall\-\_\-impl}}
+\index{calc\-Prec\-Recall\-\_\-impl@{calc\-Prec\-Recall\-\_\-impl}!VocData@{Voc\-Data}}
+\subsubsection[{calc\-Prec\-Recall\-\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::calc\-Prec\-Recall\-\_\-impl (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ char $>$ \&}]{ground\-\_\-truth, }
+\item[{const vector$<$ float $>$ \&}]{scores, }
+\item[{vector$<$ float $>$ \&}]{precision, }
+\item[{vector$<$ float $>$ \&}]{recall, }
+\item[{float \&}]{ap, }
+\item[{vector$<$ size\-\_\-t $>$ \&}]{ranking, }
+\item[{int}]{recall\-\_\-normalization = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_af04f6b1b7d377efb8022416cb7c2452a}
+\hypertarget{classVocData_a33d4a839f14d65bc5f4bdb4e89d625d1}{\index{Voc\-Data@{Voc\-Data}!check\-Filename\-Pathsep@{check\-Filename\-Pathsep}}
+\index{check\-Filename\-Pathsep@{check\-Filename\-Pathsep}!VocData@{Voc\-Data}}
+\subsubsection[{check\-Filename\-Pathsep}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::check\-Filename\-Pathsep (
+\begin{DoxyParamCaption}
+\item[{const string}]{filename, }
+\item[{bool}]{add\-\_\-trailing\-\_\-slash = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a33d4a839f14d65bc5f4bdb4e89d625d1}
+\hypertarget{classVocData_a9542ea7c7c7d2f500637b7e4dbee8de8}{\index{Voc\-Data@{Voc\-Data}!convert\-Image\-Codes\-To\-Obd\-Images@{convert\-Image\-Codes\-To\-Obd\-Images}}
+\index{convert\-Image\-Codes\-To\-Obd\-Images@{convert\-Image\-Codes\-To\-Obd\-Images}!VocData@{Voc\-Data}}
+\subsubsection[{convert\-Image\-Codes\-To\-Obd\-Images}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::convert\-Image\-Codes\-To\-Obd\-Images (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ string $>$ \&}]{image\-\_\-codes, }
+\item[{vector$<$ {\bf Obd\-Image} $>$ \&}]{images}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a9542ea7c7c7d2f500637b7e4dbee8de8}
+\hypertarget{classVocData_a12f52ec04b326eed957b02883f8da836}{\index{Voc\-Data@{Voc\-Data}!extract\-Data\-From\-Results\-Filename@{extract\-Data\-From\-Results\-Filename}}
+\index{extract\-Data\-From\-Results\-Filename@{extract\-Data\-From\-Results\-Filename}!VocData@{Voc\-Data}}
+\subsubsection[{extract\-Data\-From\-Results\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::extract\-Data\-From\-Results\-Filename (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{input\-\_\-file, }
+\item[{string \&}]{class\-\_\-name, }
+\item[{string \&}]{dataset\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a12f52ec04b326eed957b02883f8da836}
+\hypertarget{classVocData_a1a41aa13a88461655386bb1225853df7}{\index{Voc\-Data@{Voc\-Data}!extract\-Voc\-Objects@{extract\-Voc\-Objects}}
+\index{extract\-Voc\-Objects@{extract\-Voc\-Objects}!VocData@{Voc\-Data}}
+\subsubsection[{extract\-Voc\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::extract\-Voc\-Objects (
+\begin{DoxyParamCaption}
+\item[{const string}]{filename, }
+\item[{vector$<$ {\bf Obd\-Object} $>$ \&}]{objects, }
+\item[{vector$<$ {\bf Voc\-Object\-Data} $>$ \&}]{object\-\_\-data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a1a41aa13a88461655386bb1225853df7}
+\hypertarget{classVocData_a9509a28cfed76d7f8a4c1768462a01a9}{\index{Voc\-Data@{Voc\-Data}!extract\-X\-M\-L\-Block@{extract\-X\-M\-L\-Block}}
+\index{extract\-X\-M\-L\-Block@{extract\-X\-M\-L\-Block}!VocData@{Voc\-Data}}
+\subsubsection[{extract\-X\-M\-L\-Block}]{\setlength{\rightskip}{0pt plus 5cm}int Voc\-Data\-::extract\-X\-M\-L\-Block (
+\begin{DoxyParamCaption}
+\item[{const string}]{src, }
+\item[{const string}]{tag, }
+\item[{const int}]{searchpos, }
+\item[{string \&}]{tag\-\_\-contents}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a9509a28cfed76d7f8a4c1768462a01a9}
+\hypertarget{classVocData_ab9527dd6557bf03b8fd253ae0066fa37}{\index{Voc\-Data@{Voc\-Data}!get\-Classifier\-Ground\-Truth@{get\-Classifier\-Ground\-Truth}}
+\index{get\-Classifier\-Ground\-Truth@{get\-Classifier\-Ground\-Truth}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Classifier\-Ground\-Truth}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::get\-Classifier\-Ground\-Truth (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{vector$<$ char $>$ \&}]{ground\-\_\-truth}
+\end{DoxyParamCaption}
+)}}\label{classVocData_ab9527dd6557bf03b8fd253ae0066fa37}
+\hypertarget{classVocData_ab90b59b732020d531a83bdf5afde7459}{\index{Voc\-Data@{Voc\-Data}!get\-Classifier\-Ground\-Truth@{get\-Classifier\-Ground\-Truth}}
+\index{get\-Classifier\-Ground\-Truth@{get\-Classifier\-Ground\-Truth}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Classifier\-Ground\-Truth}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::get\-Classifier\-Ground\-Truth (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const vector$<$ string $>$ \&}]{images, }
+\item[{vector$<$ char $>$ \&}]{ground\-\_\-truth}
+\end{DoxyParamCaption}
+)}}\label{classVocData_ab90b59b732020d531a83bdf5afde7459}
+\hypertarget{classVocData_a1d313e61c54cf27ec2500b38d9f16eda}{\index{Voc\-Data@{Voc\-Data}!get\-Classifier\-Ground\-Truth\-Image@{get\-Classifier\-Ground\-Truth\-Image}}
+\index{get\-Classifier\-Ground\-Truth\-Image@{get\-Classifier\-Ground\-Truth\-Image}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Classifier\-Ground\-Truth\-Image}]{\setlength{\rightskip}{0pt plus 5cm}bool Voc\-Data\-::get\-Classifier\-Ground\-Truth\-Image (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const string \&}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a1d313e61c54cf27ec2500b38d9f16eda}
+\hypertarget{classVocData_a92f58a9b3f73c2fbea3d80df27a5d1fc}{\index{Voc\-Data@{Voc\-Data}!get\-Class\-Images@{get\-Class\-Images}}
+\index{get\-Class\-Images@{get\-Class\-Images}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Class\-Images}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::get\-Class\-Images (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const {\bf Obd\-Dataset\-Type}}]{dataset, }
+\item[{vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{vector$<$ char $>$ \&}]{object\-\_\-present}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a92f58a9b3f73c2fbea3d80df27a5d1fc}
+\hypertarget{classVocData_ae153b6a3a13738cf35b1c264028de279}{\index{Voc\-Data@{Voc\-Data}!get\-Class\-Images\-\_\-impl@{get\-Class\-Images\-\_\-impl}}
+\index{get\-Class\-Images\-\_\-impl@{get\-Class\-Images\-\_\-impl}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Class\-Images\-\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::get\-Class\-Images\-\_\-impl (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const string \&}]{dataset\-\_\-str, }
+\item[{vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{vector$<$ char $>$ \&}]{object\-\_\-present}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_ae153b6a3a13738cf35b1c264028de279}
+\hypertarget{classVocData_aee09184f35d00681609ff4605021a083}{\index{Voc\-Data@{Voc\-Data}!get\-Class\-Objects@{get\-Class\-Objects}}
+\index{get\-Class\-Objects@{get\-Class\-Objects}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Class\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::get\-Class\-Objects (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const {\bf Obd\-Dataset\-Type}}]{dataset, }
+\item[{vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{vector$<$ vector$<$ {\bf Obd\-Object} $>$ $>$ \&}]{objects}
+\end{DoxyParamCaption}
+)}}\label{classVocData_aee09184f35d00681609ff4605021a083}
+\hypertarget{classVocData_a8ceef9c32fa3cbc4094e924c46732e9f}{\index{Voc\-Data@{Voc\-Data}!get\-Class\-Objects@{get\-Class\-Objects}}
+\index{get\-Class\-Objects@{get\-Class\-Objects}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Class\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::get\-Class\-Objects (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const {\bf Obd\-Dataset\-Type}}]{dataset, }
+\item[{vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{vector$<$ vector$<$ {\bf Obd\-Object} $>$ $>$ \&}]{objects, }
+\item[{vector$<$ vector$<$ {\bf Voc\-Object\-Data} $>$ $>$ \&}]{object\-\_\-data, }
+\item[{vector$<$ {\bf Voc\-G\-T} $>$ \&}]{ground\-\_\-truth}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a8ceef9c32fa3cbc4094e924c46732e9f}
+\hypertarget{classVocData_a95d562193b551c733fba22d2ca9fab3e}{\index{Voc\-Data@{Voc\-Data}!get\-Detector\-Ground\-Truth@{get\-Detector\-Ground\-Truth}}
+\index{get\-Detector\-Ground\-Truth@{get\-Detector\-Ground\-Truth}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Detector\-Ground\-Truth}]{\setlength{\rightskip}{0pt plus 5cm}int Voc\-Data\-::get\-Detector\-Ground\-Truth (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const {\bf Obd\-Dataset\-Type}}]{dataset, }
+\item[{const vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{const vector$<$ vector$<$ Rect $>$ $>$ \&}]{bounding\-\_\-boxes, }
+\item[{const vector$<$ vector$<$ float $>$ $>$ \&}]{scores, }
+\item[{vector$<$ vector$<$ char $>$ $>$ \&}]{ground\-\_\-truth, }
+\item[{vector$<$ vector$<$ char $>$ $>$ \&}]{detection\-\_\-difficult, }
+\item[{bool}]{ignore\-\_\-difficult = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a95d562193b551c733fba22d2ca9fab3e}
+\hypertarget{classVocData_a752e19ab7762411e1e8697cf708b1595}{\index{Voc\-Data@{Voc\-Data}!get\-Image\-Path@{get\-Image\-Path}}
+\index{get\-Image\-Path@{get\-Image\-Path}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Image\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::get\-Image\-Path (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{input\-\_\-str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a752e19ab7762411e1e8697cf708b1595}
+\hypertarget{classVocData_a08fa5badaacbc8152ddb13bb3b27ea38}{\index{Voc\-Data@{Voc\-Data}!get\-Object\-Classes@{get\-Object\-Classes}}
+\index{get\-Object\-Classes@{get\-Object\-Classes}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Object\-Classes}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ string $>$ \& Voc\-Data\-::get\-Object\-Classes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a08fa5badaacbc8152ddb13bb3b27ea38}
+\hypertarget{classVocData_a6e4ecde19100ecfeb8c1f9afc12fc977}{\index{Voc\-Data@{Voc\-Data}!get\-Objects@{get\-Objects}}
+\index{get\-Objects@{get\-Objects}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Obd\-Image} Voc\-Data\-::get\-Objects (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{id, }
+\item[{vector$<$ {\bf Obd\-Object} $>$ \&}]{objects}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a6e4ecde19100ecfeb8c1f9afc12fc977}
+\hypertarget{classVocData_a70c269f14e0e71abdc207c9910a74aab}{\index{Voc\-Data@{Voc\-Data}!get\-Objects@{get\-Objects}}
+\index{get\-Objects@{get\-Objects}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Obd\-Image} Voc\-Data\-::get\-Objects (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{id, }
+\item[{vector$<$ {\bf Obd\-Object} $>$ \&}]{objects, }
+\item[{vector$<$ {\bf Voc\-Object\-Data} $>$ \&}]{object\-\_\-data}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a70c269f14e0e71abdc207c9910a74aab}
+\hypertarget{classVocData_a427c35f84d11424b071d5bfc11ac8fda}{\index{Voc\-Data@{Voc\-Data}!get\-Objects@{get\-Objects}}
+\index{get\-Objects@{get\-Objects}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Obd\-Image} Voc\-Data\-::get\-Objects (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const string \&}]{id, }
+\item[{vector$<$ {\bf Obd\-Object} $>$ \&}]{objects, }
+\item[{vector$<$ {\bf Voc\-Object\-Data} $>$ \&}]{object\-\_\-data, }
+\item[{{\bf Voc\-G\-T} \&}]{ground\-\_\-truth}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a427c35f84d11424b071d5bfc11ac8fda}
+\hypertarget{classVocData_a87a3c312091a53dbd291f7b686d51d51}{\index{Voc\-Data@{Voc\-Data}!get\-Results\-Directory@{get\-Results\-Directory}}
+\index{get\-Results\-Directory@{get\-Results\-Directory}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Results\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::get\-Results\-Directory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a87a3c312091a53dbd291f7b686d51d51}
+\hypertarget{classVocData_a50835c8bd8628e0d1ca61e3b3e8bc189}{\index{Voc\-Data@{Voc\-Data}!get\-Results\-Filename@{get\-Results\-Filename}}
+\index{get\-Results\-Filename@{get\-Results\-Filename}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Results\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::get\-Results\-Filename (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const {\bf Voc\-Task}}]{task, }
+\item[{const {\bf Obd\-Dataset\-Type}}]{dataset, }
+\item[{const int}]{competition = {\ttfamily -\/1}, }
+\item[{const int}]{number = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a50835c8bd8628e0d1ca61e3b3e8bc189}
+\hypertarget{classVocData_aecc9f83f5e0ab63fc09e60679982342d}{\index{Voc\-Data@{Voc\-Data}!get\-Sort\-Order@{get\-Sort\-Order}}
+\index{get\-Sort\-Order@{get\-Sort\-Order}!VocData@{Voc\-Data}}
+\subsubsection[{get\-Sort\-Order}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::get\-Sort\-Order (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ float $>$ \&}]{values, }
+\item[{vector$<$ size\-\_\-t $>$ \&}]{order, }
+\item[{bool}]{descending = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_aecc9f83f5e0ab63fc09e60679982342d}
+\hypertarget{classVocData_ab71bb7378a0a0356d43492790f9ba187}{\index{Voc\-Data@{Voc\-Data}!init\-Voc@{init\-Voc}}
+\index{init\-Voc@{init\-Voc}!VocData@{Voc\-Data}}
+\subsubsection[{init\-Voc}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::init\-Voc (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{voc\-Path, }
+\item[{const bool}]{use\-Test\-Dataset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_ab71bb7378a0a0356d43492790f9ba187}
+\hypertarget{classVocData_a26b0aee0bfa9621852db92d6fb5de147}{\index{Voc\-Data@{Voc\-Data}!init\-Voc2007to2010@{init\-Voc2007to2010}}
+\index{init\-Voc2007to2010@{init\-Voc2007to2010}!VocData@{Voc\-Data}}
+\subsubsection[{init\-Voc2007to2010}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::init\-Voc2007to2010 (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{voc\-Path, }
+\item[{const bool}]{use\-Test\-Dataset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a26b0aee0bfa9621852db92d6fb5de147}
+\hypertarget{classVocData_afcc3d337fc5c33e53cdaef5f8589ac1d}{\index{Voc\-Data@{Voc\-Data}!integer\-To\-String@{integer\-To\-String}}
+\index{integer\-To\-String@{integer\-To\-String}!VocData@{Voc\-Data}}
+\subsubsection[{integer\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::integer\-To\-String (
+\begin{DoxyParamCaption}
+\item[{const int}]{input\-\_\-int}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_afcc3d337fc5c33e53cdaef5f8589ac1d}
+\hypertarget{classVocData_a9580d183da05a4abd31a84699ab23302}{\index{Voc\-Data@{Voc\-Data}!read\-Classifier\-Ground\-Truth@{read\-Classifier\-Ground\-Truth}}
+\index{read\-Classifier\-Ground\-Truth@{read\-Classifier\-Ground\-Truth}!VocData@{Voc\-Data}}
+\subsubsection[{read\-Classifier\-Ground\-Truth}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::read\-Classifier\-Ground\-Truth (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const {\bf Obd\-Dataset\-Type}}]{dataset, }
+\item[{vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{vector$<$ char $>$ \&}]{object\-\_\-present}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a9580d183da05a4abd31a84699ab23302}
+\hypertarget{classVocData_a664471c4279bd2ac2e5bb6a0ef8de9c1}{\index{Voc\-Data@{Voc\-Data}!read\-Classifier\-Ground\-Truth@{read\-Classifier\-Ground\-Truth}}
+\index{read\-Classifier\-Ground\-Truth@{read\-Classifier\-Ground\-Truth}!VocData@{Voc\-Data}}
+\subsubsection[{read\-Classifier\-Ground\-Truth}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::read\-Classifier\-Ground\-Truth (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filename, }
+\item[{vector$<$ string $>$ \&}]{image\-\_\-codes, }
+\item[{vector$<$ char $>$ \&}]{object\-\_\-present}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a664471c4279bd2ac2e5bb6a0ef8de9c1}
+\hypertarget{classVocData_ad947e69a36f9569a2f479ac51786a365}{\index{Voc\-Data@{Voc\-Data}!read\-Classifier\-Results\-File@{read\-Classifier\-Results\-File}}
+\index{read\-Classifier\-Results\-File@{read\-Classifier\-Results\-File}!VocData@{Voc\-Data}}
+\subsubsection[{read\-Classifier\-Results\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::read\-Classifier\-Results\-File (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{input\-\_\-file, }
+\item[{vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{vector$<$ float $>$ \&}]{scores}
+\end{DoxyParamCaption}
+)}}\label{classVocData_ad947e69a36f9569a2f479ac51786a365}
+\hypertarget{classVocData_aac2d3f030a95224c8dafde8e2e4b3d06}{\index{Voc\-Data@{Voc\-Data}!read\-Classifier\-Results\-File@{read\-Classifier\-Results\-File}}
+\index{read\-Classifier\-Results\-File@{read\-Classifier\-Results\-File}!VocData@{Voc\-Data}}
+\subsubsection[{read\-Classifier\-Results\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::read\-Classifier\-Results\-File (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{input\-\_\-file, }
+\item[{vector$<$ string $>$ \&}]{image\-\_\-codes, }
+\item[{vector$<$ float $>$ \&}]{scores}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_aac2d3f030a95224c8dafde8e2e4b3d06}
+\hypertarget{classVocData_aa09be545cbd6f37a76ba5d9d664bf402}{\index{Voc\-Data@{Voc\-Data}!read\-Detector\-Results\-File@{read\-Detector\-Results\-File}}
+\index{read\-Detector\-Results\-File@{read\-Detector\-Results\-File}!VocData@{Voc\-Data}}
+\subsubsection[{read\-Detector\-Results\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::read\-Detector\-Results\-File (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{input\-\_\-file, }
+\item[{vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{vector$<$ vector$<$ float $>$ $>$ \&}]{scores, }
+\item[{vector$<$ vector$<$ Rect $>$ $>$ \&}]{bounding\-\_\-boxes}
+\end{DoxyParamCaption}
+)}}\label{classVocData_aa09be545cbd6f37a76ba5d9d664bf402}
+\hypertarget{classVocData_a4c31fa584e7b47c578d44376e2ef8e86}{\index{Voc\-Data@{Voc\-Data}!read\-Detector\-Results\-File@{read\-Detector\-Results\-File}}
+\index{read\-Detector\-Results\-File@{read\-Detector\-Results\-File}!VocData@{Voc\-Data}}
+\subsubsection[{read\-Detector\-Results\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::read\-Detector\-Results\-File (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{input\-\_\-file, }
+\item[{vector$<$ string $>$ \&}]{image\-\_\-codes, }
+\item[{vector$<$ vector$<$ float $>$ $>$ \&}]{scores, }
+\item[{vector$<$ vector$<$ Rect $>$ $>$ \&}]{bounding\-\_\-boxes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a4c31fa584e7b47c578d44376e2ef8e86}
+\hypertarget{classVocData_aa556074b41f8f5a1ac611b6b4fa06c2d}{\index{Voc\-Data@{Voc\-Data}!read\-File\-To\-String@{read\-File\-To\-String}}
+\index{read\-File\-To\-String@{read\-File\-To\-String}!VocData@{Voc\-Data}}
+\subsubsection[{read\-File\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::read\-File\-To\-String (
+\begin{DoxyParamCaption}
+\item[{const string}]{filename, }
+\item[{string \&}]{file\-\_\-contents}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_aa556074b41f8f5a1ac611b6b4fa06c2d}
+\hypertarget{classVocData_aa6ac26da0ba7878beec8fb3598eaba96}{\index{Voc\-Data@{Voc\-Data}!save\-Prec\-Recall\-To\-Gnuplot@{save\-Prec\-Recall\-To\-Gnuplot}}
+\index{save\-Prec\-Recall\-To\-Gnuplot@{save\-Prec\-Recall\-To\-Gnuplot}!VocData@{Voc\-Data}}
+\subsubsection[{save\-Prec\-Recall\-To\-Gnuplot}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::save\-Prec\-Recall\-To\-Gnuplot (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{output\-\_\-file, }
+\item[{const vector$<$ float $>$ \&}]{precision, }
+\item[{const vector$<$ float $>$ \&}]{recall, }
+\item[{const float}]{ap, }
+\item[{const string}]{title = {\ttfamily string()}, }
+\item[{const {\bf Voc\-Plot\-Type}}]{plot\-\_\-type = {\ttfamily {\bf C\-V\-\_\-\-V\-O\-C\-\_\-\-P\-L\-O\-T\-\_\-\-S\-C\-R\-E\-E\-N}}}
+\end{DoxyParamCaption}
+)}}\label{classVocData_aa6ac26da0ba7878beec8fb3598eaba96}
+\hypertarget{classVocData_aecd0e31768fb9a202224d0dde4a05178}{\index{Voc\-Data@{Voc\-Data}!string\-To\-Integer@{string\-To\-Integer}}
+\index{string\-To\-Integer@{string\-To\-Integer}!VocData@{Voc\-Data}}
+\subsubsection[{string\-To\-Integer}]{\setlength{\rightskip}{0pt plus 5cm}int Voc\-Data\-::string\-To\-Integer (
+\begin{DoxyParamCaption}
+\item[{const string}]{input\-\_\-str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_aecd0e31768fb9a202224d0dde4a05178}
+\hypertarget{classVocData_a1cbbaf80dd0d3180a94868c1bdc5b3b5}{\index{Voc\-Data@{Voc\-Data}!test\-Bounding\-Boxes\-For\-Overlap@{test\-Bounding\-Boxes\-For\-Overlap}}
+\index{test\-Bounding\-Boxes\-For\-Overlap@{test\-Bounding\-Boxes\-For\-Overlap}!VocData@{Voc\-Data}}
+\subsubsection[{test\-Bounding\-Boxes\-For\-Overlap}]{\setlength{\rightskip}{0pt plus 5cm}float Voc\-Data\-::test\-Bounding\-Boxes\-For\-Overlap (
+\begin{DoxyParamCaption}
+\item[{const Rect}]{detection, }
+\item[{const Rect}]{ground\-\_\-truth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a1cbbaf80dd0d3180a94868c1bdc5b3b5}
+\hypertarget{classVocData_a440a1a9cfd6e9ca080ce338f5c8a047d}{\index{Voc\-Data@{Voc\-Data}!write\-Classifier\-Results\-File@{write\-Classifier\-Results\-File}}
+\index{write\-Classifier\-Results\-File@{write\-Classifier\-Results\-File}!VocData@{Voc\-Data}}
+\subsubsection[{write\-Classifier\-Results\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Voc\-Data\-::write\-Classifier\-Results\-File (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{out\-\_\-dir, }
+\item[{const string \&}]{obj\-\_\-class, }
+\item[{const {\bf Obd\-Dataset\-Type}}]{dataset, }
+\item[{const vector$<$ {\bf Obd\-Image} $>$ \&}]{images, }
+\item[{const vector$<$ float $>$ \&}]{scores, }
+\item[{const int}]{competition = {\ttfamily 1}, }
+\item[{const bool}]{overwrite\-\_\-ifexists = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classVocData_a440a1a9cfd6e9ca080ce338f5c8a047d}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classVocData_a4cea52c78090ef0d0c7ac380221802ab}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-annotation\-\_\-path@{m\-\_\-annotation\-\_\-path}}
+\index{m\-\_\-annotation\-\_\-path@{m\-\_\-annotation\-\_\-path}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-annotation\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::m\-\_\-annotation\-\_\-path\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a4cea52c78090ef0d0c7ac380221802ab}
+\hypertarget{classVocData_a456472463a937a9da9fd723b5aae65b8}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-class\-\_\-imageset\-\_\-path@{m\-\_\-class\-\_\-imageset\-\_\-path}}
+\index{m\-\_\-class\-\_\-imageset\-\_\-path@{m\-\_\-class\-\_\-imageset\-\_\-path}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-class\-\_\-imageset\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::m\-\_\-class\-\_\-imageset\-\_\-path\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a456472463a937a9da9fd723b5aae65b8}
+\hypertarget{classVocData_aafde0db81fa35c5d46c4ce06b460b78e}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-ids@{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-ids}}
+\index{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-ids@{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-ids}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-ids}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ Voc\-Data\-::m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-ids\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_aafde0db81fa35c5d46c4ce06b460b78e}
+\hypertarget{classVocData_a02141120f0e5086a4f53113409b6d159}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-present@{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-present}}
+\index{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-present@{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-present}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-present}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$char$>$ Voc\-Data\-::m\-\_\-classifier\-\_\-gt\-\_\-all\-\_\-present\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a02141120f0e5086a4f53113409b6d159}
+\hypertarget{classVocData_a35fe10bbcca7681acc0365cb18ca3920}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-classifier\-\_\-gt\-\_\-class@{m\-\_\-classifier\-\_\-gt\-\_\-class}}
+\index{m\-\_\-classifier\-\_\-gt\-\_\-class@{m\-\_\-classifier\-\_\-gt\-\_\-class}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-classifier\-\_\-gt\-\_\-class}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::m\-\_\-classifier\-\_\-gt\-\_\-class\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a35fe10bbcca7681acc0365cb18ca3920}
+\hypertarget{classVocData_abab33911d384984e37e91b8ae1217f05}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-image\-\_\-path@{m\-\_\-image\-\_\-path}}
+\index{m\-\_\-image\-\_\-path@{m\-\_\-image\-\_\-path}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-image\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::m\-\_\-image\-\_\-path\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_abab33911d384984e37e91b8ae1217f05}
+\hypertarget{classVocData_af2aae5c6b4b430d3bf098f9557daea6a}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-imageset\-\_\-path@{m\-\_\-imageset\-\_\-path}}
+\index{m\-\_\-imageset\-\_\-path@{m\-\_\-imageset\-\_\-path}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-imageset\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::m\-\_\-imageset\-\_\-path\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_af2aae5c6b4b430d3bf098f9557daea6a}
+\hypertarget{classVocData_a8f6be5bd01a56f1fdf3ff6a1756e1ff6}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-min\-\_\-overlap@{m\-\_\-min\-\_\-overlap}}
+\index{m\-\_\-min\-\_\-overlap@{m\-\_\-min\-\_\-overlap}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-min\-\_\-overlap}]{\setlength{\rightskip}{0pt plus 5cm}float Voc\-Data\-::m\-\_\-min\-\_\-overlap\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a8f6be5bd01a56f1fdf3ff6a1756e1ff6}
+\hypertarget{classVocData_a3b6160c9706be61b4abe53a2d672ca76}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-object\-\_\-classes@{m\-\_\-object\-\_\-classes}}
+\index{m\-\_\-object\-\_\-classes@{m\-\_\-object\-\_\-classes}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-object\-\_\-classes}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ Voc\-Data\-::m\-\_\-object\-\_\-classes\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a3b6160c9706be61b4abe53a2d672ca76}
+\hypertarget{classVocData_a90dc858323c9074eef60dd14aebb611e}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-sampled\-\_\-ap@{m\-\_\-sampled\-\_\-ap}}
+\index{m\-\_\-sampled\-\_\-ap@{m\-\_\-sampled\-\_\-ap}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-sampled\-\_\-ap}]{\setlength{\rightskip}{0pt plus 5cm}bool Voc\-Data\-::m\-\_\-sampled\-\_\-ap\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a90dc858323c9074eef60dd14aebb611e}
+\hypertarget{classVocData_ace1c925120f1b37c1fe536350aa42346}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-test\-\_\-set@{m\-\_\-test\-\_\-set}}
+\index{m\-\_\-test\-\_\-set@{m\-\_\-test\-\_\-set}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-test\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::m\-\_\-test\-\_\-set\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_ace1c925120f1b37c1fe536350aa42346}
+\hypertarget{classVocData_a6e63a9455ea3a21e08a493c5c2f26b5a}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-train\-\_\-set@{m\-\_\-train\-\_\-set}}
+\index{m\-\_\-train\-\_\-set@{m\-\_\-train\-\_\-set}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-train\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::m\-\_\-train\-\_\-set\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a6e63a9455ea3a21e08a493c5c2f26b5a}
+\hypertarget{classVocData_a292154bce82b205ce3946d7c66be9dff}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-voc\-Name@{m\-\_\-voc\-Name}}
+\index{m\-\_\-voc\-Name@{m\-\_\-voc\-Name}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-voc\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::m\-\_\-voc\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_a292154bce82b205ce3946d7c66be9dff}
+\hypertarget{classVocData_ab5991ec812cb9c53716188ea67f52e51}{\index{Voc\-Data@{Voc\-Data}!m\-\_\-voc\-Path@{m\-\_\-voc\-Path}}
+\index{m\-\_\-voc\-Path@{m\-\_\-voc\-Path}!VocData@{Voc\-Data}}
+\subsubsection[{m\-\_\-voc\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string Voc\-Data\-::m\-\_\-voc\-Path\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVocData_ab5991ec812cb9c53716188ea67f52e51}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Payload/\-A\-D\-L\-C/\-Shape\-Characterization/\-Open\-C\-V\-Example/\hyperlink{bagofwords__classification_8cpp}{bagofwords\-\_\-classification.\-cpp}\end{DoxyCompactItemize}

@@ -12,10 +12,10 @@ This directory contains all of the code for the base station, including the Base
 --- All of the image processing code running on the base station.
 
 **Base Station Class Diagram**
-![Class Diagram](../Documentation/BaseStation.png?raw=true "Class Diagram")
+![Class Diagram](../Documentation/Diagrams/BaseStation.png?raw=true "Class Diagram")
 
 **Star Packet Inheritance Tree**
 
-![Inheritance Tree](../Documentation/StarPacketInheritance.png?raw=true "Inheritance Tree")
+![Inheritance Tree](../Documentation/Diagrams/StarPacketInheritance.png?raw=true "Inheritance Tree")
 
 

@@ -1,0 +1,17 @@
+var searchData=
+[
+  ['getclassifiergroundtruth',['getClassifierGroundTruth',['../classVocData.html#ab9527dd6557bf03b8fd253ae0066fa37',1,'VocData::getClassifierGroundTruth(const string &amp;obj_class, const vector&lt; ObdImage &gt; &amp;images, vector&lt; char &gt; &amp;ground_truth)'],['../classVocData.html#ab90b59b732020d531a83bdf5afde7459',1,'VocData::getClassifierGroundTruth(const string &amp;obj_class, const vector&lt; string &gt; &amp;images, vector&lt; char &gt; &amp;ground_truth)']]],
+  ['getclassifiergroundtruthimage',['getClassifierGroundTruthImage',['../classVocData.html#a1d313e61c54cf27ec2500b38d9f16eda',1,'VocData']]],
+  ['getclassimages',['getClassImages',['../classVocData.html#a92f58a9b3f73c2fbea3d80df27a5d1fc',1,'VocData']]],
+  ['getclassimages_5fimpl',['getClassImages_impl',['../classVocData.html#ae153b6a3a13738cf35b1c264028de279',1,'VocData']]],
+  ['getclassobjects',['getClassObjects',['../classVocData.html#aee09184f35d00681609ff4605021a083',1,'VocData::getClassObjects(const string &amp;obj_class, const ObdDatasetType dataset, vector&lt; ObdImage &gt; &amp;images, vector&lt; vector&lt; ObdObject &gt; &gt; &amp;objects)'],['../classVocData.html#a8ceef9c32fa3cbc4094e924c46732e9f',1,'VocData::getClassObjects(const string &amp;obj_class, const ObdDatasetType dataset, vector&lt; ObdImage &gt; &amp;images, vector&lt; vector&lt; ObdObject &gt; &gt; &amp;objects, vector&lt; vector&lt; VocObjectData &gt; &gt; &amp;object_data, vector&lt; VocGT &gt; &amp;ground_truth)']]],
+  ['getdetectorgroundtruth',['getDetectorGroundTruth',['../classVocData.html#a95d562193b551c733fba22d2ca9fab3e',1,'VocData']]],
+  ['getimagepath',['getImagePath',['../classVocData.html#a752e19ab7762411e1e8697cf708b1595',1,'VocData']]],
+  ['getobjectclasses',['getObjectClasses',['../classVocData.html#a08fa5badaacbc8152ddb13bb3b27ea38',1,'VocData']]],
+  ['getobjects',['getObjects',['../classVocData.html#a6e4ecde19100ecfeb8c1f9afc12fc977',1,'VocData::getObjects(const string &amp;id, vector&lt; ObdObject &gt; &amp;objects)'],['../classVocData.html#a70c269f14e0e71abdc207c9910a74aab',1,'VocData::getObjects(const string &amp;id, vector&lt; ObdObject &gt; &amp;objects, vector&lt; VocObjectData &gt; &amp;object_data)'],['../classVocData.html#a427c35f84d11424b071d5bfc11ac8fda',1,'VocData::getObjects(const string &amp;obj_class, const string &amp;id, vector&lt; ObdObject &gt; &amp;objects, vector&lt; VocObjectData &gt; &amp;object_data, VocGT &amp;ground_truth)']]],
+  ['getresultsdirectory',['getResultsDirectory',['../classVocData.html#a87a3c312091a53dbd291f7b686d51d51',1,'VocData']]],
+  ['getresultsfilename',['getResultsFilename',['../classVocData.html#a50835c8bd8628e0d1ca61e3b3e8bc189',1,'VocData']]],
+  ['getsortorder',['getSortOrder',['../classVocData.html#aecc9f83f5e0ab63fc09e60679982342d',1,'VocData']]],
+  ['getxid',['getXid',['../classStarPacket.html#a61cf57919ceab8123336d74065f3aefe',1,'StarPacket']]],
+  ['gradient',['gradient',['../classSalient.html#a048dcc50160b175791c55d794916c02a',1,'Salient::gradient()'],['../Salient_8cpp.html#ad2a03c2e19c75a7a5d55f8e8c5e497cd',1,'gradient(Mat src):&#160;Salient.cpp'],['../shapeDet_8cpp.html#ad2a03c2e19c75a7a5d55f8e8c5e497cd',1,'gradient(Mat src):&#160;shapeDet.cpp'],['../salient__detection_8cpp.html#ad2a03c2e19c75a7a5d55f8e8c5e497cd',1,'gradient(Mat src):&#160;salient_detection.cpp'],['../SVM__detection_8cpp.html#ad2a03c2e19c75a7a5d55f8e8c5e497cd',1,'gradient(Mat src):&#160;SVM_detection.cpp']]]
+];

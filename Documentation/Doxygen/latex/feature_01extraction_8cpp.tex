@@ -1,0 +1,117 @@
+\hypertarget{feature_01extraction_8cpp}{\section{Payload/\-A\-D\-L\-C/\-Feature\-Extraction/\-Feature\-Extraction/feature extraction.\-cpp File Reference}
+\label{feature_01extraction_8cpp}\index{Payload/\-A\-D\-L\-C/\-Feature\-Extraction/\-Feature\-Extraction/feature extraction.\-cpp@{Payload/\-A\-D\-L\-C/\-Feature\-Extraction/\-Feature\-Extraction/feature extraction.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}cv.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}highgui.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ml.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}opencv2/core/core.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/features2d/features2d.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/imgproc/imgproc.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/highgui/highgui.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/nonfree/features2d.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Surf\-Feature\-Detector \hyperlink{feature_01extraction_8cpp_a07e45ca250a4396de8ebed66321e4fa3}{detector} (500)
+\item 
+Term\-Criteria \hyperlink{feature_01extraction_8cpp_aa380bdd48f8c91e2343254a8fb5ccc1a}{tc} (C\-V\-\_\-\-T\-E\-R\-M\-C\-R\-I\-T\-\_\-\-I\-T\-E\-R, 10, 0.\-001)
+\item 
+B\-O\-W\-K\-Means\-Trainer \hyperlink{feature_01extraction_8cpp_a5d37feefba69eef2339e0e6bfe7e2573}{bow\-Trainer} (\hyperlink{feature__extraction_8cpp_a3c2d5bc5aab6e388a7fc9988137cf536}{dictionary\-Size}, \hyperlink{feature__extraction_8cpp_aa380bdd48f8c91e2343254a8fb5ccc1a}{tc}, \hyperlink{feature__extraction_8cpp_a8ba735ab56b2afeb844916994c86f3f5}{retries}, \hyperlink{feature__extraction_8cpp_ac8bf36fe0577cba66bccda3a6f7e80a4}{flags})
+\item 
+B\-O\-W\-Img\-Descriptor\-Extractor \hyperlink{feature_01extraction_8cpp_aee3ae9905a003e8601c6b38128678e2d}{bow\-D\-E} (\hyperlink{feature__extraction_8cpp_a2645006f3bdf98943c6f88e624c3a6c5}{extractor}, \hyperlink{feature__extraction_8cpp_a25fe953864deabc02d3f5c7d2fa274c4}{matcher})
+\item 
+void \hyperlink{feature_01extraction_8cpp_ab933b47c6e4aacd36e7752d8de33abd2}{collectclasscentroids} ()
+\item 
+int \hyperlink{feature_01extraction_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{feature_01extraction_8cpp_aceb0ef64b2b4e50fc7f5f358986c44a0}{ch} \mbox{[}30\mbox{]}
+\item 
+Ptr$<$ Descriptor\-Matcher $>$ \hyperlink{feature_01extraction_8cpp_a25fe953864deabc02d3f5c7d2fa274c4}{matcher} = Descriptor\-Matcher\-::create(\char`\"{}Flann\-Based\char`\"{})
+\item 
+Ptr$<$ Descriptor\-Extractor $>$ \hyperlink{feature_01extraction_8cpp_a2645006f3bdf98943c6f88e624c3a6c5}{extractor} = new Surf\-Descriptor\-Extractor()
+\item 
+int \hyperlink{feature_01extraction_8cpp_a3c2d5bc5aab6e388a7fc9988137cf536}{dictionary\-Size} = 1500
+\item 
+int \hyperlink{feature_01extraction_8cpp_a8ba735ab56b2afeb844916994c86f3f5}{retries} = 1
+\item 
+int \hyperlink{feature_01extraction_8cpp_ac8bf36fe0577cba66bccda3a6f7e80a4}{flags} = K\-M\-E\-A\-N\-S\-\_\-\-P\-P\-\_\-\-C\-E\-N\-T\-E\-R\-S
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{feature_01extraction_8cpp_aee3ae9905a003e8601c6b38128678e2d}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!bow\-D\-E@{bow\-D\-E}}
+\index{bow\-D\-E@{bow\-D\-E}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{bow\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-W\-Img\-Descriptor\-Extractor bow\-D\-E (
+\begin{DoxyParamCaption}
+\item[{{\bf extractor}}]{, }
+\item[{{\bf matcher}}]{}
+\end{DoxyParamCaption}
+)}}\label{feature_01extraction_8cpp_aee3ae9905a003e8601c6b38128678e2d}
+\hypertarget{feature_01extraction_8cpp_a5d37feefba69eef2339e0e6bfe7e2573}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!bow\-Trainer@{bow\-Trainer}}
+\index{bow\-Trainer@{bow\-Trainer}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{bow\-Trainer}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-W\-K\-Means\-Trainer bow\-Trainer (
+\begin{DoxyParamCaption}
+\item[{{\bf dictionary\-Size}}]{, }
+\item[{{\bf tc}}]{, }
+\item[{{\bf retries}}]{, }
+\item[{{\bf flags}}]{}
+\end{DoxyParamCaption}
+)}}\label{feature_01extraction_8cpp_a5d37feefba69eef2339e0e6bfe7e2573}
+\hypertarget{feature_01extraction_8cpp_ab933b47c6e4aacd36e7752d8de33abd2}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!collectclasscentroids@{collectclasscentroids}}
+\index{collectclasscentroids@{collectclasscentroids}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{collectclasscentroids}]{\setlength{\rightskip}{0pt plus 5cm}void collectclasscentroids (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{feature_01extraction_8cpp_ab933b47c6e4aacd36e7752d8de33abd2}
+\hypertarget{feature_01extraction_8cpp_a07e45ca250a4396de8ebed66321e4fa3}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!detector@{detector}}
+\index{detector@{detector}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{detector}]{\setlength{\rightskip}{0pt plus 5cm}Surf\-Feature\-Detector detector (
+\begin{DoxyParamCaption}
+\item[{500}]{}
+\end{DoxyParamCaption}
+)}}\label{feature_01extraction_8cpp_a07e45ca250a4396de8ebed66321e4fa3}
+\hypertarget{feature_01extraction_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!main@{main}}
+\index{main@{main}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{feature_01extraction_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+\hypertarget{feature_01extraction_8cpp_aa380bdd48f8c91e2343254a8fb5ccc1a}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!tc@{tc}}
+\index{tc@{tc}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{tc}]{\setlength{\rightskip}{0pt plus 5cm}Term\-Criteria tc (
+\begin{DoxyParamCaption}
+\item[{C\-V\-\_\-\-T\-E\-R\-M\-C\-R\-I\-T\-\_\-\-I\-T\-E\-R}]{, }
+\item[{10}]{, }
+\item[{0.}]{001}
+\end{DoxyParamCaption}
+)}}\label{feature_01extraction_8cpp_aa380bdd48f8c91e2343254a8fb5ccc1a}
+
+
+\subsection{Variable Documentation}
+\hypertarget{feature_01extraction_8cpp_aceb0ef64b2b4e50fc7f5f358986c44a0}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!ch@{ch}}
+\index{ch@{ch}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{ch}]{\setlength{\rightskip}{0pt plus 5cm}char ch\mbox{[}30\mbox{]}}}\label{feature_01extraction_8cpp_aceb0ef64b2b4e50fc7f5f358986c44a0}
+\hypertarget{feature_01extraction_8cpp_a3c2d5bc5aab6e388a7fc9988137cf536}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!dictionary\-Size@{dictionary\-Size}}
+\index{dictionary\-Size@{dictionary\-Size}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{dictionary\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int dictionary\-Size = 1500}}\label{feature_01extraction_8cpp_a3c2d5bc5aab6e388a7fc9988137cf536}
+\hypertarget{feature_01extraction_8cpp_a2645006f3bdf98943c6f88e624c3a6c5}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!extractor@{extractor}}
+\index{extractor@{extractor}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{extractor}]{\setlength{\rightskip}{0pt plus 5cm}Ptr$<$Descriptor\-Extractor$>$ extractor = new Surf\-Descriptor\-Extractor()}}\label{feature_01extraction_8cpp_a2645006f3bdf98943c6f88e624c3a6c5}
+\hypertarget{feature_01extraction_8cpp_ac8bf36fe0577cba66bccda3a6f7e80a4}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!flags@{flags}}
+\index{flags@{flags}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}int flags = K\-M\-E\-A\-N\-S\-\_\-\-P\-P\-\_\-\-C\-E\-N\-T\-E\-R\-S}}\label{feature_01extraction_8cpp_ac8bf36fe0577cba66bccda3a6f7e80a4}
+\hypertarget{feature_01extraction_8cpp_a25fe953864deabc02d3f5c7d2fa274c4}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!matcher@{matcher}}
+\index{matcher@{matcher}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{matcher}]{\setlength{\rightskip}{0pt plus 5cm}Ptr$<$Descriptor\-Matcher$>$ matcher = Descriptor\-Matcher\-::create(\char`\"{}Flann\-Based\char`\"{})}}\label{feature_01extraction_8cpp_a25fe953864deabc02d3f5c7d2fa274c4}
+\hypertarget{feature_01extraction_8cpp_a8ba735ab56b2afeb844916994c86f3f5}{\index{feature extraction.\-cpp@{feature extraction.\-cpp}!retries@{retries}}
+\index{retries@{retries}!feature extraction.cpp@{feature extraction.\-cpp}}
+\subsubsection[{retries}]{\setlength{\rightskip}{0pt plus 5cm}int retries = 1}}\label{feature_01extraction_8cpp_a8ba735ab56b2afeb844916994c86f3f5}

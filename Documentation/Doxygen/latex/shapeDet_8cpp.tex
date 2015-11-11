@@ -1,0 +1,100 @@
+\hypertarget{shapeDet_8cpp}{\section{Payload/\-A\-D\-L\-C/\-Salient\-Detection/cropped\-Img/shape\-Det.cpp File Reference}
+\label{shapeDet_8cpp}\index{Payload/\-A\-D\-L\-C/\-Salient\-Detection/cropped\-Img/shape\-Det.\-cpp@{Payload/\-A\-D\-L\-C/\-Salient\-Detection/cropped\-Img/shape\-Det.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}opencv2/core/core.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/highgui/highgui.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}opencv2/imgproc/imgproc.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Mat \hyperlink{shapeDet_8cpp_ae5e311eebc0f29aa7d7b42444bab0336}{segmentation} (Mat roi)
+\item 
+Mat \hyperlink{shapeDet_8cpp_ad2a03c2e19c75a7a5d55f8e8c5e497cd}{gradient} (Mat src)
+\item 
+Mat \hyperlink{shapeDet_8cpp_a72a85ee7c487dde945adeb0fee10d98e}{Canny\-Threshold} (Mat src, Mat grad)
+\item 
+void \hyperlink{shapeDet_8cpp_a22d19b1a0d8f584c8275ebefc9e50396}{find\-Object} (Mat mask, Mat src)
+\item 
+int \hyperlink{shapeDet_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{shapeDet_8cpp_add58ab8323b65c3c8862fbc0008ada05}{image\-Counter} = 490
+\item 
+string \hyperlink{shapeDet_8cpp_a3e7cb740787e3d34789794189850e768}{img\-Name} = \char`\"{}I\-M\-G\-\_\-0494\-\_\-22.\-J\-P\-G\char`\"{}
+\item 
+Mat \hyperlink{shapeDet_8cpp_a465e011a99c7d9445e0773d610d82e6d}{letter}
+\item 
+Mat \hyperlink{shapeDet_8cpp_a5cd739fee03388468b06bb972244cb74}{shape}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{shapeDet_8cpp_a72a85ee7c487dde945adeb0fee10d98e}{\index{shape\-Det.\-cpp@{shape\-Det.\-cpp}!Canny\-Threshold@{Canny\-Threshold}}
+\index{Canny\-Threshold@{Canny\-Threshold}!shapeDet.cpp@{shape\-Det.\-cpp}}
+\subsubsection[{Canny\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}Mat Canny\-Threshold (
+\begin{DoxyParamCaption}
+\item[{Mat}]{src, }
+\item[{Mat}]{grad}
+\end{DoxyParamCaption}
+)}}\label{shapeDet_8cpp_a72a85ee7c487dde945adeb0fee10d98e}
+Reduce noise with a kernel 3x3
+
+Canny detector \hypertarget{shapeDet_8cpp_a22d19b1a0d8f584c8275ebefc9e50396}{\index{shape\-Det.\-cpp@{shape\-Det.\-cpp}!find\-Object@{find\-Object}}
+\index{find\-Object@{find\-Object}!shapeDet.cpp@{shape\-Det.\-cpp}}
+\subsubsection[{find\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void find\-Object (
+\begin{DoxyParamCaption}
+\item[{Mat}]{mask, }
+\item[{Mat}]{src}
+\end{DoxyParamCaption}
+)}}\label{shapeDet_8cpp_a22d19b1a0d8f584c8275ebefc9e50396}
+Find contours
+
+Approximate contours to polygons + get bounding rects and circles
+
+Draw polygonal contour + bonding rects + circles \hypertarget{shapeDet_8cpp_ad2a03c2e19c75a7a5d55f8e8c5e497cd}{\index{shape\-Det.\-cpp@{shape\-Det.\-cpp}!gradient@{gradient}}
+\index{gradient@{gradient}!shapeDet.cpp@{shape\-Det.\-cpp}}
+\subsubsection[{gradient}]{\setlength{\rightskip}{0pt plus 5cm}Mat gradient (
+\begin{DoxyParamCaption}
+\item[{Mat}]{src}
+\end{DoxyParamCaption}
+)}}\label{shapeDet_8cpp_ad2a03c2e19c75a7a5d55f8e8c5e497cd}
+Gradient X
+
+Gradient Y
+
+Total Gradient (approximate) \hypertarget{shapeDet_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{shape\-Det.\-cpp@{shape\-Det.\-cpp}!main@{main}}
+\index{main@{main}!shapeDet.cpp@{shape\-Det.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{shapeDet_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+\hypertarget{shapeDet_8cpp_ae5e311eebc0f29aa7d7b42444bab0336}{\index{shape\-Det.\-cpp@{shape\-Det.\-cpp}!segmentation@{segmentation}}
+\index{segmentation@{segmentation}!shapeDet.cpp@{shape\-Det.\-cpp}}
+\subsubsection[{segmentation}]{\setlength{\rightskip}{0pt plus 5cm}Mat segmentation (
+\begin{DoxyParamCaption}
+\item[{Mat}]{roi}
+\end{DoxyParamCaption}
+)}}\label{shapeDet_8cpp_ae5e311eebc0f29aa7d7b42444bab0336}
+
+
+\subsection{Variable Documentation}
+\hypertarget{shapeDet_8cpp_add58ab8323b65c3c8862fbc0008ada05}{\index{shape\-Det.\-cpp@{shape\-Det.\-cpp}!image\-Counter@{image\-Counter}}
+\index{image\-Counter@{image\-Counter}!shapeDet.cpp@{shape\-Det.\-cpp}}
+\subsubsection[{image\-Counter}]{\setlength{\rightskip}{0pt plus 5cm}int image\-Counter = 490}}\label{shapeDet_8cpp_add58ab8323b65c3c8862fbc0008ada05}
+\hypertarget{shapeDet_8cpp_a3e7cb740787e3d34789794189850e768}{\index{shape\-Det.\-cpp@{shape\-Det.\-cpp}!img\-Name@{img\-Name}}
+\index{img\-Name@{img\-Name}!shapeDet.cpp@{shape\-Det.\-cpp}}
+\subsubsection[{img\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string img\-Name = \char`\"{}I\-M\-G\-\_\-0494\-\_\-22.\-J\-P\-G\char`\"{}}}\label{shapeDet_8cpp_a3e7cb740787e3d34789794189850e768}
+\hypertarget{shapeDet_8cpp_a465e011a99c7d9445e0773d610d82e6d}{\index{shape\-Det.\-cpp@{shape\-Det.\-cpp}!letter@{letter}}
+\index{letter@{letter}!shapeDet.cpp@{shape\-Det.\-cpp}}
+\subsubsection[{letter}]{\setlength{\rightskip}{0pt plus 5cm}Mat letter}}\label{shapeDet_8cpp_a465e011a99c7d9445e0773d610d82e6d}
+\hypertarget{shapeDet_8cpp_a5cd739fee03388468b06bb972244cb74}{\index{shape\-Det.\-cpp@{shape\-Det.\-cpp}!shape@{shape}}
+\index{shape@{shape}!shapeDet.cpp@{shape\-Det.\-cpp}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Mat shape}}\label{shapeDet_8cpp_a5cd739fee03388468b06bb972244cb74}

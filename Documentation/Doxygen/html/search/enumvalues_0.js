@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['cv_5fobd_5ftest',['CV_OBD_TEST',['../bagofwords__classification_8cpp.html#a769a10790da271430ddd42e42073a0eaaf131af54d5f12b4dd526a8b12ae294be',1,'bagofwords_classification.cpp']]],
+  ['cv_5fobd_5ftrain',['CV_OBD_TRAIN',['../bagofwords__classification_8cpp.html#a769a10790da271430ddd42e42073a0eaad892506109e94cdd1cc3e2028a2e951c',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fccond_5frecall',['CV_VOC_CCOND_RECALL',['../bagofwords__classification_8cpp.html#a86b3fb0f82f82bd78e829cbb81032301a2ec08b65495cd8d294be58cb58b0807f',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fccond_5fscorethresh',['CV_VOC_CCOND_SCORETHRESH',['../bagofwords__classification_8cpp.html#a86b3fb0f82f82bd78e829cbb81032301aa210d3ac13f482f803a062b3929ebcef',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fgt_5fdifficult',['CV_VOC_GT_DIFFICULT',['../bagofwords__classification_8cpp.html#a79995288ef1b2b5890517068e9bdfed8a52985bec7323477ce0ef236dbbebfd49',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fgt_5fnone',['CV_VOC_GT_NONE',['../bagofwords__classification_8cpp.html#a79995288ef1b2b5890517068e9bdfed8a5745facae5cc429de7edf2b5ae3ad50f',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fgt_5fpresent',['CV_VOC_GT_PRESENT',['../bagofwords__classification_8cpp.html#a79995288ef1b2b5890517068e9bdfed8aef4036dd6ee6a84eb480faa7ba7b7fd8',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fplot_5fpng',['CV_VOC_PLOT_PNG',['../bagofwords__classification_8cpp.html#a9d6bcb462c68f9c035a89cc559acb63fae605a8b8481622d36f4b14221c9ab1b9',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fplot_5fscreen',['CV_VOC_PLOT_SCREEN',['../bagofwords__classification_8cpp.html#a9d6bcb462c68f9c035a89cc559acb63fac23aa01b33a316698ea57d9d594bf851',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fpose_5ffrontal',['CV_VOC_POSE_FRONTAL',['../bagofwords__classification_8cpp.html#a64c3a5177131019758d4a386d8b18150a9ce464c9df7260d2038f43f4ac7008a2',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fpose_5fleft',['CV_VOC_POSE_LEFT',['../bagofwords__classification_8cpp.html#a64c3a5177131019758d4a386d8b18150a5638de2ed3ba3addb07ea674fd70c1a5',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fpose_5frear',['CV_VOC_POSE_REAR',['../bagofwords__classification_8cpp.html#a64c3a5177131019758d4a386d8b18150ab285d7abc0b630b00ef221fc68219313',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fpose_5fright',['CV_VOC_POSE_RIGHT',['../bagofwords__classification_8cpp.html#a64c3a5177131019758d4a386d8b18150a6b4ca54c24bca9c9c39aa56b1fa0b300',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5fpose_5funspecified',['CV_VOC_POSE_UNSPECIFIED',['../bagofwords__classification_8cpp.html#a64c3a5177131019758d4a386d8b18150aab008d0daa3c71f343f56cc1596de792',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5ftask_5fclassification',['CV_VOC_TASK_CLASSIFICATION',['../bagofwords__classification_8cpp.html#a8453e90c379aabdea39070a17a9f63e2a6fdb7acd65b92736c319763de3179a56',1,'bagofwords_classification.cpp']]],
+  ['cv_5fvoc_5ftask_5fdetection',['CV_VOC_TASK_DETECTION',['../bagofwords__classification_8cpp.html#a8453e90c379aabdea39070a17a9f63e2a3be59601575320851f6ae94b6ebbda1d',1,'bagofwords_classification.cpp']]]
+];

@@ -1,0 +1,43 @@
+\hypertarget{Salient_8cpp}{\section{Base\-Station/\-A\-D\-L\-C/src/\-Salient.cpp File Reference}
+\label{Salient_8cpp}\index{Base\-Station/\-A\-D\-L\-C/src/\-Salient.\-cpp@{Base\-Station/\-A\-D\-L\-C/src/\-Salient.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}opencv2/core/core.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/highgui/highgui.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}opencv2/imgproc/imgproc.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Mat \hyperlink{Salient_8cpp_ad2a03c2e19c75a7a5d55f8e8c5e497cd}{gradient} (Mat src)
+\item 
+Mat \hyperlink{Salient_8cpp_a72a85ee7c487dde945adeb0fee10d98e}{Canny\-Threshold} (Mat src, Mat grad)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{Salient_8cpp_a72a85ee7c487dde945adeb0fee10d98e}{\index{Salient.\-cpp@{Salient.\-cpp}!Canny\-Threshold@{Canny\-Threshold}}
+\index{Canny\-Threshold@{Canny\-Threshold}!Salient.cpp@{Salient.\-cpp}}
+\subsubsection[{Canny\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}Mat Canny\-Threshold (
+\begin{DoxyParamCaption}
+\item[{Mat}]{src, }
+\item[{Mat}]{grad}
+\end{DoxyParamCaption}
+)}}\label{Salient_8cpp_a72a85ee7c487dde945adeb0fee10d98e}
+Reduce noise with a kernel 3x3
+
+Canny detector \hypertarget{Salient_8cpp_ad2a03c2e19c75a7a5d55f8e8c5e497cd}{\index{Salient.\-cpp@{Salient.\-cpp}!gradient@{gradient}}
+\index{gradient@{gradient}!Salient.cpp@{Salient.\-cpp}}
+\subsubsection[{gradient}]{\setlength{\rightskip}{0pt plus 5cm}Mat gradient (
+\begin{DoxyParamCaption}
+\item[{Mat}]{src}
+\end{DoxyParamCaption}
+)}}\label{Salient_8cpp_ad2a03c2e19c75a7a5d55f8e8c5e497cd}
+Gradient X
+
+Gradient Y
+
+Total Gradient (approximate) 
