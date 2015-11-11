@@ -30,3 +30,7 @@
 # Swap files
 *.swp
 *.swa
+
+# Generated doxygen files
+Documentation/html
+Documentation/latex
