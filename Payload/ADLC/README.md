@@ -1,3 +1,6 @@
+ADLC
+=====
+
 This file contains code to complete ADLC task specified in the AUVSI rules:
 
 7.3. AUTOMATIC DETECTION, LOCALIZATION, AND CLASSIFICATION (ADLC) TASK (SECONDARY)

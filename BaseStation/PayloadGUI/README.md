@@ -5,9 +5,9 @@ This is the GUI for controlling the payload system; this includes the camera, ne
 Files
 ======
 
-***main.cpp*** --- Main program file
+**main.cpp** --- Main program file
 
-***MainWindow.cpp/h*** --- Priamry window that all the other widgets dock into.
+**MainWindow.cpp/h** --- Priamry window that all the other widgets dock into.
 
 **CameraWidget.cpp/h** --- Widget for controlling the camera.
 
