@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['readme',['README',['../md_Payload_ADLC_README.html',1,'']]],
   ['read',['read',['../structDDMParams.html#a13b08a3275f499f7f54efc6f61dbbf2e',1,'DDMParams::read()'],['../structVocabTrainParams.html#aa4fb87c424b7644299f6967648181357',1,'VocabTrainParams::read()'],['../structSVMTrainParamsExt.html#a56e04fde17aa019cf1b64dc8631d412f',1,'SVMTrainParamsExt::read()']]],
   ['readclassifiergroundtruth',['readClassifierGroundTruth',['../classVocData.html#a9580d183da05a4abd31a84699ab23302',1,'VocData::readClassifierGroundTruth(const string &amp;obj_class, const ObdDatasetType dataset, vector&lt; ObdImage &gt; &amp;images, vector&lt; char &gt; &amp;object_present)'],['../classVocData.html#a664471c4279bd2ac2e5bb6a0ef8de9c1',1,'VocData::readClassifierGroundTruth(const string &amp;filename, vector&lt; string &gt; &amp;image_codes, vector&lt; char &gt; &amp;object_present)']]],
   ['readclassifierresultsfile',['readClassifierResultsFile',['../classVocData.html#ad947e69a36f9569a2f479ac51786a365',1,'VocData::readClassifierResultsFile(const std::string &amp;input_file, vector&lt; ObdImage &gt; &amp;images, vector&lt; float &gt; &amp;scores)'],['../classVocData.html#aac2d3f030a95224c8dafde8e2e4b3d06',1,'VocData::readClassifierResultsFile(const string &amp;input_file, vector&lt; string &gt; &amp;image_codes, vector&lt; float &gt; &amp;scores)']]],

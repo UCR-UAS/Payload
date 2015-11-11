@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['description',['Description',['../md_Payload_ADLC_SalientDetection_README.html',1,'']]],
-  ['description',['Description',['../md_Payload_ADLC_ShapeCharacterization_README.html',1,'']]]
+  ['basestation',['BaseStation',['../md_BaseStation_README.html',1,'']]]
 ];
