@@ -3,6 +3,8 @@
 NetworkWidget::NetworkWidget(QWidget *parent):
 	QDockWidget(parent)
 {
+	setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable); //!This sets the features of the Network widget allowing it to be movalbe and floatable.
+
 	setWindowTitle("Network");
 	setFixedSize(400,200);
 
