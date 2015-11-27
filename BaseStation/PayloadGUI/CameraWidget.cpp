@@ -2,7 +2,9 @@
 
 CameraWidget::CameraWidget(QWidget *parent):
 	QDockWidget(parent)
-{
+{	
+	setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable); //!This sets the features of the Camera widget allowing it to be movalbe and floatable.
+	
 	setWindowTitle("Camera");
 	setFixedSize(400,200);
 
