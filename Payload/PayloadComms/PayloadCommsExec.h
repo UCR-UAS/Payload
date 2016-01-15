@@ -1,12 +1,12 @@
 
-#ifndef _BASESTATIONCOMMSEXEC_H
-#define _BASESTATIONCOMMSEXEC_H
+#ifndef _PAYLOADCOMMSEXEC_H
+#define _PAYLOADCOMMSEXEC_H
 
 #include "Network.h"
 
-class BaseStationCommsExec{
+class PayloadCommsExec{
     public:
-		BaseStationCommsExec(PayloadStatus* payload_status);
+		PayloadCommsExec(PayloadStatus* payload_status);
     private:
 		uint32_t myIp;
 		uint8_t myPort;
