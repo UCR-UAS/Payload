@@ -9,5 +9,5 @@ QT += core gui
 QT += widgets
 
 # Input
-HEADERS += CameraWidget.h MainWindow.h NetworkWidget.h
-SOURCES += CameraWidget.cpp main.cpp MainWindow.cpp NetworkWidget.cpp
+HEADERS += CameraWidget.h MainWindow.h NetworkWidget.h ImageViewer.h
+SOURCES += CameraWidget.cpp main.cpp MainWindow.cpp NetworkWidget.cpp ImageViewer.cpp

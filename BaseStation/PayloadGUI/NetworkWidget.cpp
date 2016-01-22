@@ -8,12 +8,17 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 	setWindowTitle("Network");
 	setFixedSize(400,200);
 
-	// Initialize Start Ping button
-	startButton = new QPushButton("Start Ping",this);
-	startButton->setGeometry(50,60,200,30);
+	// Initialize ip address input field
+	ipInput = new QLineEdit(this);
+	ipInput->setGeometry(50,40,200,30);
 
-	// Initialize Stop Ping button
-	stopButton = new QPushButton("Stop Ping",this);
-	stopButton->setGeometry(50,100,200,30);
+	// Initialize Connect button
+	connectButton = new QPushButton("Connect",this);
+	connectButton->setGeometry(50,80,100,30);
+
+	// Initialize Disconnect button
+	disconnectButton = new QPushButton("Disconnect",this);
+	disconnectButton->setGeometry(150,80,100,30);
+
 
 }

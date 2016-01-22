@@ -17,8 +17,11 @@ class MainWindow : public QMainWindow{
 	public:
 		explicit MainWindow(QMainWindow *parent=0);
 	private:
-		NetworkWidget *Network; //!< The widget that controlls the network.
-		CameraWidget *Camera; //!< The widget that controlls the camera.
+		//! The widget that controlls the network.
+		NetworkWidget *Network; 
+		//! The widget that controlls the camera.
+		CameraWidget *Camera; 
+		//! The widget that controlls the viewing of images.
 		ImageViewer *Viewer;
 };
 
