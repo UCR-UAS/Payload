@@ -8,12 +8,29 @@ CameraWidget::CameraWidget(QWidget *parent):
 	setWindowTitle("Camera");
 	setFixedSize(400,200);
 
-	// Initialize Start Ping button
-	startButton = new QPushButton("Start Ping",this);
-	startButton->setGeometry(50,60,200,30);
+	// Initialize Camera Capture Start/Stop button
+	startButton = new QPushButton("Start/Stop Camera Capture",this);
+	startButton->setGeometry(50,60,250,30);
+	
+	//Initialize Camera status label
+	cameraLabel = new QLabel("Camera Status:",this);
+	cameraLabel->setGeometry(50, 100, 100, 30);
+	
+	//Initialize Camera status display box
+	cameraStatus = new QLineEdit(this);
+	cameraStatus->setGeometry(160,100,100,30);
+	cameraStatus->setReadOnly(true);
 
-	// Initialize Stop Ping button
-	stopButton = new QPushButton("Stop Ping",this);
-	stopButton->setGeometry(50,100,200,30);
+	//Initialize Image counter label
+	counterLabel = new QLabel("Image Counter:",this);
+	counterLabel->setGeometry(50,140,100,30);
 
+	//Initialize Image counter display box
+	imageCounter = new QLineEdit(this);
+	imageCounter->setGeometry(160,140,100,30);
+	imageCounter->setReadOnly(true);
+
+	//Assign button functions
+	QObject::connect(startCamera, SIGNAL(clicked()), this, SLOT(nextImg()));
+	QObject::connect(stopCamera, SIGNAL(clicked()), this, SLOT(lastImg()));	
 }
