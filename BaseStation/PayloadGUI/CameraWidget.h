@@ -8,7 +8,7 @@
 #include <QString>
 #include <QLabel>
 
-
+//! Camera Widget Class
 class CameraWidget : public QDockWidget{
 	public:
 		explicit CameraWidget(QWidget *parent=0);
