@@ -11,7 +11,11 @@
 #include <sys/types.h>
 #include <dirent.h>
 #include <stdio.h>
-
+/*!
+ ImageViewer Class Definition
+ This class is used to view incoming images from the UAV
+ It can move forward, backward, and just play through the images
+*/
 class ImageViewer : public QDockWidget
 {
 	Q_OBJECT
@@ -33,9 +37,9 @@ class ImageViewer : public QDockWidget
 	signals:
 
 	public slots:
-		//! Next img function
+		//! Next image function
 		void nextImg();
-		//! Prev image function
+		//! Previous image function
 		void prevImg();
 		//! Play image function
 		void playImg();

@@ -1,7 +1,8 @@
 #include "PayloadStatus.h"
-//x is the number to edit
-//k selects the bit (0 - 31)
-//b is what to set the bit to (1 or 0)
+//! SetBit Function is Used to set a specific bit of the packet
+//! x is the number to edit
+//! k selects the bit (0 - 31)
+//! b is what to set the bit to (1 or 0)
 uint32_t SetBit(uint32_t x, unsigned char k, bool b) {
 	if(b) {
 	    return ( x | (0x01 << k) );
@@ -10,12 +11,14 @@ uint32_t SetBit(uint32_t x, unsigned char k, bool b) {
 	    return ( x & ~(0x01 << k) );
 	}
 }
-//x is the number to check
-//k is the bit to report within x
+//! GetBit Function is used to get a specific bit of the packet
+//! x is the number to check
+//! k is the bit to report within x
 bool GetBit(uint32_t x, unsigned char k) {
 	return ( x & (0x01 << k) ) != 0;
 }
 
+//! Packet initialized to asterisk
 PayloadStatus::PayloadStatus() {
     packet = 0x0002A; //asterisk = 0x2A
 }
