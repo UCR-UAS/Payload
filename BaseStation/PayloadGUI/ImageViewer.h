@@ -7,13 +7,17 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QString>
+#include "../../Resources/PayloadStatus.h"
 
 class ImageViewer : public QDockWidget
 {
 	Q_OBJECT
 	public:
 		explicit ImageViewer(QWidget *parent=0);
+                explicit ImageViewer(PayloadStatus* payload_status, QWuidget *parent=0;)
 	private:
+                PayloadStatus *MyPayloadStatus;
+
 		QPushButton* play;
 		QPushButton* next;
 		QPushButton* prev;
