@@ -5,25 +5,25 @@
 using namespace std;
 using namespace cv;
 
+
+// Mat regionGrowing(Mat I, Point seed, double reg_maxdist)
+// {
+//   Mat J;
+//   resize()
+// }
 //returns true if black
 bool blackWhite(Mat chans[3],int y, int x)
 {
 
-
-    chans[0];
-    chans[1];
-    chans[2];
-
-
-    if(chans[0].at<unsigned char>(y,x) < 20 || chans[0].at<unsigned char>(y,x) > 150)
+    if(chans[0].at<unsigned char>(y,x) < 20 || chans[0].at<unsigned char>(y,x) > 120)
     {
-      if(chans[1].at<unsigned char>(y,x)<40)
+      if(chans[1].at<unsigned char>(y,x)<25)
         {
           return true;
         }
       else
         {
-          if(chans[2].at<unsigned char>(y,x) < 30 || chans[2].at<unsigned char>(y,x) > 230 )
+          if(chans[2].at<unsigned char>(y,x) < 10 || chans[2].at<unsigned char>(y,x) > 255 )
             {
               return true;
             }
@@ -111,9 +111,9 @@ Mat sailencySegmentation(Mat& I)
       }
     }
   }
+  imshow("Binary",chans[0]);
 
-
-
+  int numOfWhite = 256;
   vector<cv::Point> seeds;
   int num_w = cvFloor(((double)chans[0].rows)/16);
   int num_h = cvFloor(((double)chans[0].cols)/16);
@@ -125,7 +125,7 @@ Mat sailencySegmentation(Mat& I)
       {
         Mat small_J = chans[0](Rect(0,0,16,16));
         int num_Pixels = numPixels(small_J);
-        if(num_Pixels >= 60)
+        if(num_Pixels >= numOfWhite)
         {
           seeds.push_back(Point(8,8));
 
@@ -137,7 +137,7 @@ Mat sailencySegmentation(Mat& I)
         Mat small_J = chans[0](Rect(0,((i)*16),16,16));
         int num_Pixels = numPixels(small_J);
 
-        if (num_Pixels >= 60)
+        if (num_Pixels >= numOfWhite)
         {
           seeds.push_back(Point(16*(i),8));
 
@@ -149,7 +149,7 @@ Mat sailencySegmentation(Mat& I)
         Mat small_J = chans[0](Rect(((j)*16),0,16,16));
         int num_Pixels = numPixels(small_J);
 
-        if (num_Pixels >= 60)
+        if (num_Pixels >= numOfWhite)
         {
           seeds.push_back(Point(8,16*(j)));
         }
@@ -160,7 +160,7 @@ Mat sailencySegmentation(Mat& I)
         //neeed to adjust the numbers of offset
         Mat small_J = chans[0](Rect(((j)*16),((i)*16),16,16));
         int num_Pixels = numPixels(small_J);
-        if(num_Pixels >= 60)
+        if(num_Pixels >= numOfWhite)
         {
 
           seeds.push_back(Point((16*(j)),(16*(i))));
@@ -194,7 +194,7 @@ Mat sailencySegmentation(Mat& I)
   vector< vector<cv::Point> > useablecons;
   for(int i =0; i < conAreas.size(); ++i)
   {
-    if(conAreas.at(i) >=60.0)//will need to adjust
+    if(conAreas.at(i) >=numOfWhite)//will need to adjust
     {
       useablecons.push_back(contours.at(i));
 
@@ -206,7 +206,7 @@ Mat sailencySegmentation(Mat& I)
 
   // TEMP COMMENT
   Mat cons = Mat::zeros(chans[0].rows, chans[0].cols, CV_8UC3);
-  Scalar white(255,0,255);
+  Scalar white(255,255,255);
 
 
 
@@ -234,9 +234,13 @@ Mat sailencySegmentation(Mat& I)
       // cout <<"FIlling "<<((double)i )/ seeds.size()<<endl;
       // cout <<lo <<","<<up<<endl;
       cout << seeds[i].x << ","<<seeds[i].y<<endl;
-
-      floodFill(cons, seeds.at(i), white, &ccomp, Scalar(lo, lo, lo),
-                Scalar(up, up, up), 4);
+      if(cons.at<unsigned char>(seeds[i].x,seeds[i].y) > 0 && seeds[i].x >= 0 && seeds[i].x < cons.cols && seeds[i].y >= 0 && seeds[i].x < cons.rows)
+      {
+        floodFill(cons, seeds.at(i), white, &ccomp, Scalar(lo, lo, lo),
+                  Scalar(up, up, up), 4);
+      }
+      // floodFill(cons, seeds.at(i), white, &ccomp, Scalar(lo, lo, lo),
+      //           Scalar(up, up, up), 4);
     }
 
     t = 1000*((double)getTickCount() - t)/getTickFrequency();
