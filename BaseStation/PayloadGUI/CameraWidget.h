@@ -8,7 +8,7 @@
 #include <QString>
 #include <QLabel>
 
-
+//! Camera Widget Class
 class CameraWidget : public QDockWidget{
 	public:
 		explicit CameraWidget(QWidget *parent=0);
@@ -23,6 +23,7 @@ class CameraWidget : public QDockWidget{
 
 	public slots:
 		//Start camera capture function
+		/*
 		void startCamera() {
 			if( ) {
 			
@@ -34,4 +35,5 @@ class CameraWidget : public QDockWidget{
 			
 			}	
 		}
+		*/
 };

@@ -9,8 +9,8 @@ CameraWidget::CameraWidget(QWidget *parent):
 	setFixedSize(400,200);
 
 	// Initialize Camera Capture Start/Stop button
-	startButton = new QPushButton("Start/Stop Camera Capture",this);
-	startButton->setGeometry(50,60,250,30);
+	cameraButton = new QPushButton("Start/Stop Camera Capture",this);
+	cameraButton->setGeometry(50,60,250,30);
 	
 	//Initialize Camera status label
 	cameraLabel = new QLabel("Camera Status:",this);
@@ -31,6 +31,8 @@ CameraWidget::CameraWidget(QWidget *parent):
 	imageCounter->setReadOnly(true);
 
 	//Assign button functions
+	/*
 	QObject::connect(startCamera, SIGNAL(clicked()), this, SLOT(nextImg()));
 	QObject::connect(stopCamera, SIGNAL(clicked()), this, SLOT(lastImg()));	
+	*/
 }

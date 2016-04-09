@@ -7,7 +7,15 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QString>
-
+#include <QTimer>
+#include <sys/types.h>
+#include <dirent.h>
+#include <stdio.h>
+/*!
+ ImageViewer Class Definition
+ This class is used to view incoming images from the UAV
+ It can move forward, backward, and just play through the images
+*/
 class ImageViewer : public QDockWidget
 {
 	Q_OBJECT
@@ -18,40 +26,22 @@ class ImageViewer : public QDockWidget
 		QPushButton* next;
 		QPushButton* prev;
 		QLabel* image;
-		QString imgName;
-
+		DIR *dirp;
+		struct dirent *inFile;
+		char imagePath[60];
+		char nameBuffer[1000][20];
+		int imageCounter;
+		int curImage;
+		QTimer *timer;
+		bool playFlag;
 	signals:
 
 	public slots:
-		//next img function
-		void nextImg() {
-			if(imgName[7].unicode() == '3') {
-				imgName.replace("3", "1");
-			}
-			else {
-				imgName[7].unicode()++;
-				image->setPixmap(imgName);
-			}
-		}
-		//prev image function
-		void lastImg() {
-			if(imgName[7].unicode() == '1') {
-				imgName.replace("1", "3");
-			}
-			else {
-				imgName[7].unicode()--;
-				image->setPixmap(imgName);
-			}
-		}
-		//play image function
-		void playImg() {
-			if(imgName[7].unicode() == '1') {
-				imgName.replace("1", "3");
-			}
-			else {
-				imgName[7].unicode()++;
-				image->setPixmap(imgName);
-			}
-		}
+		//! Next image function
+		void nextImg();
+		//! Previous image function
+		void prevImg();
+		//! Play image function
+		void playImg();
 
 };
