@@ -13,8 +13,8 @@ MAKEFILE      = Makefile
 CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
-CFLAGS        = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE $(DEFINES) -std=c++11
-CXXFLAGS      = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE $(DEFINES) -std=c++11
+CFLAGS        = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIE $(DEFINES)
+CXXFLAGS      = -m64 -pipe -std=c++11 -O2 -Wall -W -D_REENTRANT -fPIE $(DEFINES)
 INCPATH       = -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I. -I. -I/usr/include/qt5 -I/usr/include/qt5/QtWidgets -I/usr/include/qt5/QtGui -I/usr/include/qt5/QtCore -I.
 LINK          = g++
 LFLAGS        = -m64 -Wl,-O1
@@ -301,7 +301,8 @@ compiler_rcc_clean:
 compiler_moc_header_make_all: moc_CameraWidget.cpp moc_ImageViewer.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_CameraWidget.cpp moc_ImageViewer.cpp
-moc_CameraWidget.cpp: /usr/include/qt5/QtWidgets/QPushButton \
+moc_CameraWidget.cpp: StarPacket0x01.h \
+		/usr/include/qt5/QtWidgets/QPushButton \
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
 		/usr/include/qt5/QtGui/qicon.h \
@@ -567,6 +568,7 @@ compiler_clean: compiler_moc_header_clean
 ####### Compile
 
 CameraWidget.o: CameraWidget.cpp CameraWidget.h \
+		StarPacket0x01.h \
 		/usr/include/qt5/QtWidgets/QPushButton \
 		/usr/include/qt5/QtWidgets/qpushbutton.h \
 		/usr/include/qt5/QtWidgets/qabstractbutton.h \
@@ -827,6 +829,7 @@ main.o: main.cpp /usr/include/qt5/QtWidgets/QApplication \
 		/usr/include/qt5/QtGui/qtextoption.h \
 		/usr/include/qt5/QtCore/QString \
 		CameraWidget.h \
+		StarPacket0x01.h \
 		/usr/include/qt5/QtWidgets/QLabel \
 		/usr/include/qt5/QtWidgets/qlabel.h \
 		/usr/include/qt5/QtCore/QObject \
@@ -964,6 +967,7 @@ MainWindow.o: MainWindow.cpp MainWindow.h \
 		/usr/include/qt5/QtGui/qtextoption.h \
 		/usr/include/qt5/QtCore/QString \
 		CameraWidget.h \
+		StarPacket0x01.h \
 		/usr/include/qt5/QtWidgets/QLabel \
 		/usr/include/qt5/QtWidgets/qlabel.h \
 		/usr/include/qt5/QtCore/QObject \
