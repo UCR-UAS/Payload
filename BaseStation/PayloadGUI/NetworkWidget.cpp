@@ -20,5 +20,20 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 	disconnectButton = new QPushButton("Disconnect",this);
 	disconnectButton->setGeometry(150,80,100,30);
 
+	//Assign button functions
+	QObject::connect(connectButton, SIGNAL(clicked()), this, SLOT(setConnect()));
+	QObject::connect(disconnectButton, SIGNAL(clicked()), this, SLOT(setDisconnect()));
+
+}
+
+//Event functions
+// NOTE: Need network api for network functions!
+void NetworkWidget::setConnect(){
+
+
+}
+
+void NetworkWidget::setDisconnect(){
+
 
 }
