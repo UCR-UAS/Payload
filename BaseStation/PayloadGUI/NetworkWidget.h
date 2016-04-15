@@ -14,6 +14,14 @@ class NetworkWidget : public QDockWidget{
 		QLineEdit *ipInput;
 		QPushButton *connectButton;
 		QPushButton *disconnectButton;
+
+	signals:
+
+	public slots:
+		//Connect function
+		void setConnect();
+		//Disconnect function
+		void setDisconnect();
 };
 
 #endif
