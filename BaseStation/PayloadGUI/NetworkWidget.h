@@ -1,6 +1,7 @@
 #ifndef _NETWORK_WIDGET_H
 #define _NETWORK_WIDGET_H
 
+#include "Network.h"
 #include <QPushButton>
 #include <QDockWidget>
 #include <QLineEdit>
@@ -18,6 +19,7 @@ class NetworkWidget : public QDockWidget{
 		QLabel *portLabel;
 		QPushButton *connectButton;
 		QPushButton *disconnectButton;
+		Network *net;
 
 	signals:
 

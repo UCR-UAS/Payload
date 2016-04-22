@@ -41,8 +41,11 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 //Event functions
 // NOTE: Need network api for network functions!
 void NetworkWidget::setConnect(){
+	QString ipString = ipInput->text();
+	QString portString = portInput->text();
+	string temp = portString.toStdString();
 
-
+	net = new Network(ipString.toStdString(), atoi( temp.c_str() ), 0);
 }
 
 void NetworkWidget::setDisconnect(){
