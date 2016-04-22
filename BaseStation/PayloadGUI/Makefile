@@ -50,7 +50,8 @@ SOURCES       = CameraWidget.cpp \
 		MainWindow.cpp \
 		NetworkWidget.cpp \
 		ImageViewer.cpp \
-		StarPacket0x01.cpp moc_CameraWidget.cpp \
+		StarPacket0x01.cpp \
+		Network.cpp moc_CameraWidget.cpp \
 		moc_ImageViewer.cpp
 OBJECTS       = CameraWidget.o \
 		main.o \
@@ -58,6 +59,7 @@ OBJECTS       = CameraWidget.o \
 		NetworkWidget.o \
 		ImageViewer.o \
 		StarPacket0x01.o \
+		Network.o \
 		moc_CameraWidget.o \
 		moc_ImageViewer.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -275,7 +277,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/PayloadGUI1.0.0 || mkdir -p .tmp/PayloadGUI1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/PayloadGUI1.0.0/ && $(COPY_FILE) --parents CameraWidget.h MainWindow.h NetworkWidget.h ImageViewer.h StarPacket0x01.h .tmp/PayloadGUI1.0.0/ && $(COPY_FILE) --parents CameraWidget.cpp main.cpp MainWindow.cpp NetworkWidget.cpp ImageViewer.cpp StarPacket0x01.cpp .tmp/PayloadGUI1.0.0/ && (cd `dirname .tmp/PayloadGUI1.0.0` && $(TAR) PayloadGUI1.0.0.tar PayloadGUI1.0.0 && $(COMPRESS) PayloadGUI1.0.0.tar) && $(MOVE) `dirname .tmp/PayloadGUI1.0.0`/PayloadGUI1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/PayloadGUI1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/PayloadGUI1.0.0/ && $(COPY_FILE) --parents CameraWidget.h MainWindow.h NetworkWidget.h ImageViewer.h StarPacket0x01.h Network.h .tmp/PayloadGUI1.0.0/ && $(COPY_FILE) --parents CameraWidget.cpp main.cpp MainWindow.cpp NetworkWidget.cpp ImageViewer.cpp StarPacket0x01.cpp Network.cpp .tmp/PayloadGUI1.0.0/ && (cd `dirname .tmp/PayloadGUI1.0.0` && $(TAR) PayloadGUI1.0.0.tar PayloadGUI1.0.0 && $(COMPRESS) PayloadGUI1.0.0.tar) && $(MOVE) `dirname .tmp/PayloadGUI1.0.0`/PayloadGUI1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/PayloadGUI1.0.0
 
 
 clean:compiler_clean 
@@ -1228,6 +1230,9 @@ ImageViewer.o: ImageViewer.cpp ImageViewer.h \
 
 StarPacket0x01.o: StarPacket0x01.cpp StarPacket0x01.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o StarPacket0x01.o StarPacket0x01.cpp
+
+Network.o: Network.cpp Network.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Network.o Network.cpp
 
 moc_CameraWidget.o: moc_CameraWidget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_CameraWidget.o moc_CameraWidget.cpp
