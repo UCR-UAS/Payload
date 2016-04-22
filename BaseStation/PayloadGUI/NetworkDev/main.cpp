@@ -20,5 +20,7 @@ int main( int argc, char *argv[])
 	cout << "Port int: " << atoi(argv[2]) << endl;
 
 	Network n = Network(argv[1], atoi(argv[2]), s);
+	n.setMems(argv[1], atoi(argv[2]), s);
+
 	return 0;
 }

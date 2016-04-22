@@ -8,6 +8,7 @@ class Network{
 		Network(string ip, int port, bool server);
 		void SendPacket(uint32_t packet);
 		void SendFile(string message);
+		void setMems(string i, int p, bool s);
     private:
 		void ServerWorker();
 		void ClientWorker();
