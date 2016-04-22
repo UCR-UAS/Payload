@@ -1,4 +1,6 @@
 #include "NetworkWidget.h"
+#include <iostream>
+ using namespace std;
 
 NetworkWidget::NetworkWidget(QWidget *parent):
 	QDockWidget(parent)
@@ -24,18 +26,34 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 	portInput = new QLineEdit(this);
 	portInput->setGeometry(160,80,100,30);
 
+	// Initialize network status label
+	networkLabel = new QLabel("Network Status: ",this);
+	networkLabel->setGeometry(50, 120, 100,30);
+
+	//Initialize network status display box
+	networkStatus = new QLineEdit(this);
+	networkStatus->setGeometry(160,120,100,30);
+	networkStatus->setReadOnly(true);
+
+	// Initialize network status button
+	networkButton = new QPushButton("Check Status",this);
+	networkButton->setGeometry(270,160,100,30);
+	
 	// Initialize Connect button
 	connectButton = new QPushButton("Connect",this);
-	connectButton->setGeometry(50,120,100,30);
+	connectButton->setGeometry(50,160,100,30);
 
 	// Initialize Disconnect button
 	disconnectButton = new QPushButton("Disconnect",this);
-	disconnectButton->setGeometry(160,120,100,30);
+	disconnectButton->setGeometry(160,160,100,30);
 
 	//Assign button functions
 	QObject::connect(connectButton, SIGNAL(clicked()), this, SLOT(setConnect()));
 	QObject::connect(disconnectButton, SIGNAL(clicked()), this, SLOT(setDisconnect()));
+	QObject::connect(networkButton, SIGNAL(clicked()), this, SLOT(checkNetwork()));
 
+	testPacket.setNetworkBit(0); //set this function to 0 or 1 to test the button.
+	cout << "NETWORK IS Initially: " << testPacket.getNetworkBit() << endl;
 }
 
 //Event functions
@@ -52,3 +70,17 @@ void NetworkWidget::setDisconnect(){
 
 
 }
+
+void NetworkWidget::checkNetwork(){
+	if (testPacket.getNetworkBit()==1) {
+		networkStatus->setText("Connected");
+		cout << "Check: " << testPacket.getNetworkBit() << endl;
+	}
+	else {
+		networkStatus->setText("Disconnected");
+		cout << "Check: " << testPacket.getNetworkBit() << endl;
+	}
+
+}
+
+

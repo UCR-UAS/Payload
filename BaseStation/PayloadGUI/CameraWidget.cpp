@@ -42,7 +42,6 @@ CameraWidget::CameraWidget(QWidget *parent):
 
 	//Check if camera capture is currently on or off with this test packet. 
 	testPacket.setCaptureBit(0); //set this function to 0 or 1 to test the button.
-	cout << "Initially: " << testPacket.getCaptureBit() << endl;
 
 }
 
