@@ -10,11 +10,15 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 
 	// Initialize ip address input field
 	ipInput = new QLineEdit(this);
-	ipInput->setGeometry(50,40,200,30);
+	ipInput->setGeometry(50,40,100,30);
+	
+	// Initialize port input field
+	portInput = new QLineEdit(this);
+	portInput->setGeometry(50,70,100,30);
 
 	// Initialize Connect button
 	connectButton = new QPushButton("Connect",this);
-	connectButton->setGeometry(50,80,100,30);
+	connectButton->setGeometry(50,100,100,30);
 
 	// Initialize Disconnect button
 	disconnectButton = new QPushButton("Disconnect",this);

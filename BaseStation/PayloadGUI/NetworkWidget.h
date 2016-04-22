@@ -12,6 +12,7 @@ class NetworkWidget : public QDockWidget{
 	private:
 		QString ipAddress;
 		QLineEdit *ipInput;
+		QLineEdit *portInput;
 		QPushButton *connectButton;
 		QPushButton *disconnectButton;
 
