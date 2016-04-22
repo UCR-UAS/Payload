@@ -10,27 +10,27 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 	
 	// Initialize ip address input label
 	ipLabel = new QLabel("IP Address: ",this);
-	ipLabel->setGeometry(50, 20, 100,30);
+	ipLabel->setGeometry(50, 40, 100,30);
 
 	// Initialize ip address input field
 	ipInput = new QLineEdit(this);
-	ipInput->setGeometry(160,20,150,30);
+	ipInput->setGeometry(160,40,150,30);
 	
 	// Initialize port input label
 	portLabel = new QLabel("Port: ",this);
-	portLabel->setGeometry(50, 60, 100,30);
+	portLabel->setGeometry(50, 80, 100,30);
 
 	// Initialize port input field
 	portInput = new QLineEdit(this);
-	portInput->setGeometry(160,60,100,30);
+	portInput->setGeometry(160,80,100,30);
 
 	// Initialize Connect button
 	connectButton = new QPushButton("Connect",this);
-	connectButton->setGeometry(50,100,100,30);
+	connectButton->setGeometry(50,120,100,30);
 
 	// Initialize Disconnect button
 	disconnectButton = new QPushButton("Disconnect",this);
-	disconnectButton->setGeometry(160,100,100,30);
+	disconnectButton->setGeometry(160,120,100,30);
 
 	//Assign button functions
 	QObject::connect(connectButton, SIGNAL(clicked()), this, SLOT(setConnect()));
