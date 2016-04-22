@@ -5,6 +5,7 @@
 #include <QDockWidget>
 #include <QLineEdit>
 #include <QString>
+#include <QLabel>
 
 class NetworkWidget : public QDockWidget{
 	public:
@@ -13,6 +14,8 @@ class NetworkWidget : public QDockWidget{
 		QString ipAddress;
 		QLineEdit *ipInput;
 		QLineEdit *portInput;
+		QLabel *ipLabel;
+		QLabel *portLabel;
 		QPushButton *connectButton;
 		QPushButton *disconnectButton;
 

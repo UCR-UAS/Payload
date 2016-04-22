@@ -26,11 +26,11 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 
 	// Initialize Connect button
 	connectButton = new QPushButton("Connect",this);
-	connectButton->setGeometry(50,100,100,30);
+	connectButton->setGeometry(50,110,100,30);
 
 	// Initialize Disconnect button
 	disconnectButton = new QPushButton("Disconnect",this);
-	disconnectButton->setGeometry(160,100,100,30);
+	disconnectButton->setGeometry(160,110,100,30);
 
 	//Assign button functions
 	QObject::connect(connectButton, SIGNAL(clicked()), this, SLOT(setConnect()));
