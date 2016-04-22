@@ -3,7 +3,8 @@
 
 using namespace std;
 
-class Network{
+class Network 
+{
     public:
 		Network(string ip, int port, bool server);
 		void SendPacket(uint32_t packet);
