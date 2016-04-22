@@ -51,13 +51,13 @@ void CameraWidget::setCameraCapture(){
 	if (testPacket.getCaptureBit()==0) {
 		testPacket.setCaptureBit(1); //ON
 		cameraStatus->setText("On");
-		cout << "Now: " << testPacket.getCaptureBit() << endl;
+		//cout << "Now: " << testPacket.getCaptureBit() << endl;
 	}
 	//If camera capture is currently on, turn it off.
 	else {
 		testPacket.setCaptureBit(0); //OFF
 		cameraStatus->setText("Off");
-		cout << "Now: " << testPacket.getCaptureBit() << endl;
+		//cout << "Now: " << testPacket.getCaptureBit() << endl;
 	}
 
 }
@@ -65,11 +65,11 @@ void CameraWidget::setCameraCapture(){
 void CameraWidget::checkStatus(){
 	if (testPacket.getCaptureBit()==1) {
 		cameraStatus->setText("Currently on");
-		cout << "Check: " << testPacket.getCaptureBit() << endl;
+		//cout << "Check: " << testPacket.getCaptureBit() << endl;
 	}
 	else {
 		cameraStatus->setText("Currently off");
-		cout << "Check: " << testPacket.getCaptureBit() << endl;
+		//cout << "Check: " << testPacket.getCaptureBit() << endl;
 	}
 
 }

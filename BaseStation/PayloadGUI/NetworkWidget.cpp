@@ -53,7 +53,7 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 	QObject::connect(networkButton, SIGNAL(clicked()), this, SLOT(checkNetwork()));
 
 	testPacket.setNetworkBit(0); //set this function to 0 or 1 to test the button.
-	cout << "NETWORK IS Initially: " << testPacket.getNetworkBit() << endl;
+
 }
 
 //Event functions
@@ -74,11 +74,11 @@ void NetworkWidget::setDisconnect(){
 void NetworkWidget::checkNetwork(){
 	if (testPacket.getNetworkBit()==1) {
 		networkStatus->setText("Connected");
-		cout << "Check: " << testPacket.getNetworkBit() << endl;
+		//cout << "Check: " << testPacket.getNetworkBit() << endl;
 	}
 	else {
 		networkStatus->setText("Disconnected");
-		cout << "Check: " << testPacket.getNetworkBit() << endl;
+		//cout << "Check: " << testPacket.getNetworkBit() << endl;
 	}
 
 }
