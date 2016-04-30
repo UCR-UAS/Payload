@@ -53,6 +53,7 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 	QObject::connect(networkButton, SIGNAL(clicked()), this, SLOT(checkNetwork()));
 
 	testPacket.setNetworkBit(0); //set this function to 0 or 1 to test the button.
+
 }
 
 //Event functions
