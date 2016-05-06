@@ -9,12 +9,12 @@ MainWindow::MainWindow(QMainWindow *parent):
 	// Set window properties	
 	setWindowTitle("PayloadGCS");
 
-	Network = new NetworkWidget(this);
+	NetworkW = new NetworkWidget(this);
 	Camera = new CameraWidget(this);
 	Viewer = new ImageViewer(this);
 
 	// Adds the Network widget to QMainWindow, with a specified location.
-	addDockWidget(Qt::DockWidgetArea (Qt::RightDockWidgetArea), Network); 
+	addDockWidget(Qt::DockWidgetArea (Qt::RightDockWidgetArea), NetworkW); 
 	// Adds the Camera Widget to QMainWindow, with a specified location.
 	addDockWidget(Qt::DockWidgetArea (Qt::RightDockWidgetArea), Camera); 
 

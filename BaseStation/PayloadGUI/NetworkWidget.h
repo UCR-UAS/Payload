@@ -1,6 +1,7 @@
 #ifndef _NETWORK_WIDGET_H
 #define _NETWORK_WIDGET_H
 
+
 #include "StarPacket0x01.h"
 #include "Network.h"
 #include <QPushButton>

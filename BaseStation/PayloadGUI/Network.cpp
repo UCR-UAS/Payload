@@ -286,3 +286,7 @@ void Network::ClientWorker(){
 	cout << "Client closing" << endl;
 	close(sockfd);
 }
+
+void Network::setMems(string i, int p, bool s) {
+	myIP = i; myPort = p; isServer = s;
+}

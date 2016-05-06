@@ -6,6 +6,7 @@ using namespace std;
 class Network 
 {
     public:
+		Network() {};
 		Network(string ip, int port, bool server);
 		void SendPacket(uint32_t packet);
 		void SendFile(string message);

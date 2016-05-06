@@ -10,6 +10,10 @@ NetworkWidget::NetworkWidget(QWidget *parent):
 	setWindowTitle("Network");
 	setFixedSize(400,200);
 	
+	//keepptr
+	MainWindow* parentPtr = (MainWindow*)parent;
+	net = parentPtr->getNetwork();
+		
 	// Initialize ip address input label
 	ipLabel = new QLabel("IP Address: ",this);
 	ipLabel->setGeometry(50, 40, 100,30);
@@ -62,8 +66,8 @@ void NetworkWidget::setConnect(){
 	QString ipString = ipInput->text();
 	QString portString = portInput->text();
 	string temp = portString.toStdString();
-
-	net = new Network(ipString.toStdString(), atoi( temp.c_str() ), 0);
+	
+	net->setMems( ipString.toStdString(), atoi( temp.c_str() ), 0);
 }
 
 void NetworkWidget::setDisconnect(){
