@@ -25,7 +25,7 @@ class MainWindow : public QMainWindow{
 		CameraWidget *Camera; 
 		//! The widget that controlls the viewing of images.
 		ImageViewer *Viewer;
-		//!
+		// !
 		Network *netPtr;
 };
 

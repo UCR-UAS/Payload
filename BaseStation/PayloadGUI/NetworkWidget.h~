@@ -9,6 +9,7 @@
 #include <QString>
 #include <QLabel>
 #include <QObject>
+#include <iostream>
 
 class NetworkWidget : public QDockWidget{
 	Q_OBJECT
