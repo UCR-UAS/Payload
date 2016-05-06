@@ -9,7 +9,7 @@ class Network
 		Network(string ip, int port, bool server);
 		void SendPacket(uint32_t packet);
 		void SendFile(string message);
-		void setFields(string ip, int port, bool server);
+		void setMems(string ip, int port, bool server);
 	
     private:
 		void ServerWorker();
