@@ -37,12 +37,6 @@ split(const string s, const string pat ) {
     }
 }
 
-Network::Network(string ip, int port, bool server) {
-	this->ip = ip;
-	this->port = port;
-	this->server = server;
-}
-
 Network::Network(string ip, int port, bool server):
 	myIP(ip),
 	myPort(port),
