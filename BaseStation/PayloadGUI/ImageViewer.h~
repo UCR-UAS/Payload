@@ -3,7 +3,6 @@
 #include <string>
 #include <dirent.h>
 #include <QPushButton>
-#include <QLineEdit>
 #include <QDockWidget>
 #include <QLabel>
 #include <QPixmap>

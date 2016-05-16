@@ -673,16 +673,23 @@ moc_ImageViewer.cpp: /usr/include/qt5/QtWidgets/QPushButton \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		/usr/include/qt5/QtWidgets/QLineEdit \
+		/usr/include/qt5/QtWidgets/qlineedit.h \
+		/usr/include/qt5/QtWidgets/qframe.h \
+		/usr/include/qt5/QtGui/qtextcursor.h \
+		/usr/include/qt5/QtGui/qtextformat.h \
+		/usr/include/qt5/QtGui/qpen.h \
+		/usr/include/qt5/QtGui/qtextoption.h \
 		/usr/include/qt5/QtWidgets/QDockWidget \
 		/usr/include/qt5/QtWidgets/qdockwidget.h \
 		/usr/include/qt5/QtWidgets/QLabel \
 		/usr/include/qt5/QtWidgets/qlabel.h \
-		/usr/include/qt5/QtWidgets/qframe.h \
 		/usr/include/qt5/QtGui/QPixmap \
 		/usr/include/qt5/QtCore/QString \
 		/usr/include/qt5/QtCore/QTimer \
 		/usr/include/qt5/QtCore/qtimer.h \
 		/usr/include/qt5/QtCore/qbasictimer.h \
+		/usr/include/qt5/QtCore/QObject \
 		ImageViewer.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) $(INCPATH) -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ImageViewer.h -o moc_ImageViewer.cpp
 
@@ -1354,16 +1361,23 @@ ImageViewer.o: ImageViewer.cpp ImageViewer.h \
 		/usr/include/qt5/QtCore/qfiledevice.h \
 		/usr/include/qt5/QtGui/qvector2d.h \
 		/usr/include/qt5/QtGui/qtouchdevice.h \
+		/usr/include/qt5/QtWidgets/QLineEdit \
+		/usr/include/qt5/QtWidgets/qlineedit.h \
+		/usr/include/qt5/QtWidgets/qframe.h \
+		/usr/include/qt5/QtGui/qtextcursor.h \
+		/usr/include/qt5/QtGui/qtextformat.h \
+		/usr/include/qt5/QtGui/qpen.h \
+		/usr/include/qt5/QtGui/qtextoption.h \
 		/usr/include/qt5/QtWidgets/QDockWidget \
 		/usr/include/qt5/QtWidgets/qdockwidget.h \
 		/usr/include/qt5/QtWidgets/QLabel \
 		/usr/include/qt5/QtWidgets/qlabel.h \
-		/usr/include/qt5/QtWidgets/qframe.h \
 		/usr/include/qt5/QtGui/QPixmap \
 		/usr/include/qt5/QtCore/QString \
 		/usr/include/qt5/QtCore/QTimer \
 		/usr/include/qt5/QtCore/qtimer.h \
-		/usr/include/qt5/QtCore/qbasictimer.h
+		/usr/include/qt5/QtCore/qbasictimer.h \
+		/usr/include/qt5/QtCore/QObject
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ImageViewer.o ImageViewer.cpp
 
 StarPacket0x01.o: StarPacket0x01.cpp StarPacket0x01.h

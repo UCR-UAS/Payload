@@ -24,6 +24,24 @@ ImageViewer::ImageViewer(QWidget *parent):
 	next = new QPushButton("Next",this);
 	next->setGeometry(500,590,200,30);
 
+	//Initialize coordinates label
+	coordLabel = new QLabel("Coordinates:",this);
+	coordLabel->setGeometry(80,550,100, 30);
+
+	//Initalize coordinates text box
+	coordBox = new QLineEdit(this);
+	coordBox->setGeometry(160,550,200,30);
+	coordBox->setReadOnly(true);
+
+	//Initialize target characteristics label
+	charLabel = new QLabel("Target Characteristics:",this);
+	charLabel->setGeometry(365,550,150,30);
+	
+	//Initialize target characteristics text box
+	charBox = new QLineEdit(this);
+	charBox->setGeometry(500,550,200,30);
+	charBox->setReadOnly(true);
+
 	//! Open directory and initialize first image
 	dirp = opendir("images");
 	do{
@@ -40,7 +58,7 @@ ImageViewer::ImageViewer(QWidget *parent):
 
 	//! QLabel image used as the "frame" in the window, holding the image
 	image = new QLabel("Dank Memes", this);
-	image->setGeometry(0, 30, 800, 550);
+	image->setGeometry(0, 30, 800, 500);
 	image->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 	image->setPixmap(QPixmap(imagePath));
 	
@@ -49,6 +67,9 @@ ImageViewer::ImageViewer(QWidget *parent):
 	QObject::connect(prev, SIGNAL(clicked()), this, SLOT(prevImg()));
 	QObject::connect(play, SIGNAL(clicked()), this, SLOT(playImg()));
 }
+
+//READ THIS: "Play" and "Next" functions probably need to use "coordBox->setText" and 
+//	"charBox-	>setText" to change what is displayed with each image
 
 //! Next Image shows the next image in the folder
 void ImageViewer::nextImg(){
