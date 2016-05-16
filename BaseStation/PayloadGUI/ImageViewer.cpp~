@@ -10,7 +10,7 @@ ImageViewer::ImageViewer(QWidget *parent):
 {
 	//! Initialize window attributes
 	setWindowTitle("  Image Viewer");
-	setFixedSize(800,650);
+	setFixedSize(800,700);
 
 	//! Initialize play button
 	play = new QPushButton("Play",this);

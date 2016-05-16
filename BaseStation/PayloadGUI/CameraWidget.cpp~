@@ -16,7 +16,7 @@ CameraWidget::CameraWidget(QWidget *parent):
 
 	// Initialize Check camera status button. REMOVE IF NOT NEEDED
 	statusButton = new QPushButton("Check Status",this);
-	statusButton->setGeometry(250,40,100,30);
+	statusButton->setGeometry(245,40,100,30);
 	
 	//Initialize Camera status label
 	cameraLabel = new QLabel("Camera Status:",this);
