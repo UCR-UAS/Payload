@@ -20,21 +20,33 @@ class ShapeDetector:
             shape = "triangle"
         # if square or rectangle
         elif len(approx) == 4:
+            #use shape factors
             # In order to determine which one we can calculate the ratio of the contours
+            #figure out shape factor
             (x ,y ,w ,h) = cv2.boundingRect(approx)
-            
+            area = w*h
+            areac = cv2.contourArea(c)
+            print(area)
+            print(areac)
             aspRatio = w / float(h)
             print(aspRatio)
-            shape = "Square" if aspRatio >= .95 and aspRatio <= 1.05 else "Rectangle"
-
+            if aspRatio >= .95 and aspRatio <= 1.05:
+                shape = "Square"
+            elif aspRatio >= 1.05 and aspRatio <= 1.5:
+                shape = "Rectangle"
+            elif aspRatio > 1.5:
+                shape = "Trapezoid"
+            else:
+                shape = "Diamond"
         elif len(approx) == 5:
             shape = "Pentagon"
+        elif len(approx) == 10:
+            shape = "Star"
 
         elif len(approx) == 12:
             shape = "Plus"
-        
-        
         else:
+            #utilize hough circle to identify circles
             shape = "Circle"
         return shape
 
