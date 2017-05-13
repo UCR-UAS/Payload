@@ -1,5 +1,4 @@
 import time
-import cv2
 
 filesPath = './testImages/images.txt'
 file = open(filesPath)
