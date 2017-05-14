@@ -17,12 +17,12 @@ string intToString(int number){
 	return ss.str();
 }
 
-string letter(char * string){
+int main(int argc, char* argv[]){
 //original image
 Mat frame;
 //grey scale image
 Mat grey;
-frame = imread(string,1 );
+frame = imread(argv[1],1);
 namedWindow("original image",1);
 namedWindow("gray image",1);
 //convert image
@@ -46,34 +46,49 @@ else{
 cout << "shifted :" <<  angle << endl;
 cv::Point2f vertices[4];
 box.points(vertices);
+for(int i = 0; i < 4; ++i){
+  cv::line(grey, vertices[i], vertices[(i + 1) % 4], cv::Scalar(255, 0, 0));
+}
 Mat M = getRotationMatrix2D(box.center,angle,1.0);
 warpAffine(grey,grey,M,grey.size(),INTER_CUBIC);
-imwrite("./rotatedImg.jpg",grey);
 
-//name of the output file, do not need to input extension
-string outPutFile;
-//result of classification
-string result;
+Point2f loc = Point2f(10,20);
+putText(grey, "Angle:" + intToString(angle),loc,FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255));
 
-cout << endl << "Enter the output file Name: ";
-cin >> outPutFile;
-command = "tesseract ./rotatedImg.jpg " + outPutFile  + " -psm 10" ;
-  
-system(command.c_str());
+imwrite("grey.jpg",grey);
 
-ifstream iFile;
-iFile.open((outPutFile + ".txt").c_str());
+
+
+
+
+
+  int choice;
+  //command passed into tesseract
+  string command;
+  //name of the image file
+  string fileName;
+  //name of the output file, do not need to input extension
+  string outPutFile;
+  //result of classification
+  string result;
+
+  string image = "./grey.jpg";
+  cin >> outPutFile;
+  command = "tesseract " + image + " " + outPutFile  + " -psm 10" ;
+
+  system(command.c_str());
+
+  ifstream iFile;
+  iFile.open((outPutFile + ".txt").c_str());
   if(!iFile.is_open())
   {
     return -1;
   }
 
-iFile >> result;
-iFile.close();
-return result;
-}
+  iFile >> result;
+  iFile.close();
+  cout << "the result is " << result << endl;
 
-int main(int args, char* argv[])
-{
-cout << letter(argv[1]) << endl;
+
+return 0;
 }
