@@ -3,6 +3,7 @@
 #include <opencv2/ml.hpp>
 #include <string>
 #include <assert.h>
+#include <colorID.h>
 
 using namespace std;
 using namespace cv::ml;
