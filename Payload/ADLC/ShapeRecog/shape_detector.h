@@ -8,7 +8,7 @@ class shape_detector
 
  public:
   shape_detector();
-  std::string detect(std::vector < cv::Point >  c, cv::Mat img);
+  std::string detect(cv::Mat img);
 
 };
 #endif

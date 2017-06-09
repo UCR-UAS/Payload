@@ -40,7 +40,7 @@ vector<uchar> preproccess(Mat img)
 
 int main(int argc, char** argv)
 {
-  //data directory
+  // data directory
   string training_path = "./Testing/results/";
   vector<vector<uchar>>training_data;
   vector<int> training_labels;
@@ -49,6 +49,13 @@ int main(int argc, char** argv)
   cv::String circle_p = training_path+"Circle/*.jpg";
   cv::String Scircle_p = training_path+"Semicircle/*.jpg";
   cv::String Qcircle_p = training_path+"QuarterCircle/*.jpg";
+  cv::String Diamond_p = training_path+"Diamond/*.jpg";
+  cv::String Plus_p = training_path+"Plus/*.jpg";
+  cv::String Rectangle_p = training_path+"Rectangle/*.jpg";
+  cv::String Square_p = training_path+"Square/*.jpg";
+  cv::String Star_p = training_path+"Star/*.jpg";
+  cv::String Trapezoid_p = training_path+"Trapezoid/*.jpg";
+  cv::String Triangle_p = training_path+"Triangle/*.jpg";
   vector<cv::String> fn;
   cv::glob(circle_p,fn,true); // recurse
   for (size_t k=0; k<fn.size(); ++k)
@@ -81,6 +88,86 @@ int main(int argc, char** argv)
       training_labels.push_back(2);
     }
 
+  cv::glob(Qcircle_p,fn,true); // recurse
+  for (size_t k=0; k<fn.size(); ++k)
+    {
+      cv::Mat im = cv::imread(fn[k]);
+      if (im.empty()) continue; //only proceed if sucsessful
+      // you probably want to do some preprocessing
+      vector<uchar> d = preproccess(im);
+      training_data.push_back(d);
+      training_labels.push_back(2);
+    }
+  cv::glob(Diamond_p,fn,true); // recurse
+  for (size_t k=0; k<fn.size(); ++k)
+    {
+      cv::Mat im = cv::imread(fn[k]);
+      if (im.empty()) continue; //only proceed if sucsessful
+      // you probably want to do some preprocessing
+      vector<uchar> d = preproccess(im);
+      training_data.push_back(d);
+      training_labels.push_back(3);
+    }
+  cv::glob(Plus_p,fn,true); // recurse
+  for (size_t k=0; k<fn.size(); ++k)
+    {
+      cv::Mat im = cv::imread(fn[k]);
+      if (im.empty()) continue; //only proceed if sucsessful
+      // you probably want to do some preprocessing
+      vector<uchar> d = preproccess(im);
+      training_data.push_back(d);
+      training_labels.push_back(4);
+    }
+  cv::glob(Rectangle_p,fn,true); // recurse
+  for (size_t k=0; k<fn.size(); ++k)
+    {
+      cv::Mat im = cv::imread(fn[k]);
+      if (im.empty()) continue; //only proceed if sucsessful
+      // you probably want to do some preprocessing
+      vector<uchar> d = preproccess(im);
+      training_data.push_back(d);
+      training_labels.push_back(5);
+    }
+  cv::glob(Square_p,fn,true); 
+  for (size_t k=0; k<fn.size(); ++k)
+    {
+      cv::Mat im = cv::imread(fn[k]);
+      if (im.empty()) continue; //only proceed if sucsessful
+      // you probably want to do some preprocessing
+      vector<uchar> d = preproccess(im);
+      training_data.push_back(d);
+      training_labels.push_back(6);
+    }
+  cv::glob(Star_p,fn,true);
+  for (size_t k=0; k<fn.size(); ++k)
+    {
+      cv::Mat im = cv::imread(fn[k]);
+      if (im.empty()) continue; //only proceed if sucsessful
+      // you probably want to do some preprocessing
+      vector<uchar> d = preproccess(im);
+      training_data.push_back(d);
+      training_labels.push_back(7);
+    }
+  cv::glob(Trapezoid_p,fn,true);
+  for (size_t k=0; k<fn.size(); ++k)
+    {
+      cv::Mat im = cv::imread(fn[k]);
+      if (im.empty()) continue; //only proceed if sucsessful
+      // you probably want to do some preprocessing
+      vector<uchar> d = preproccess(im);
+      training_data.push_back(d);
+      training_labels.push_back(8);
+    }
+  cv::glob(Triangle_p,fn,true);
+  for (size_t k=0; k<fn.size(); ++k)
+    {
+      cv::Mat im = cv::imread(fn[k]);
+      if (im.empty()) continue; //only proceed if sucsessful
+      // you probably want to do some preprocessing
+      vector<uchar> d = preproccess(im);
+      training_data.push_back(d);
+      training_labels.push_back(9);
+    }
   int height = training_data.size();
   std::vector<uchar> vectorData = training_data[0];
   int width = vectorData.size();
@@ -92,7 +179,7 @@ int main(int argc, char** argv)
         {
           mat->at<float>(i,j) = training_data[i][j];
         }
-    }
+      }
 
   height = training_labels.size();
   Mat responses(height,1,CV_32S);
@@ -100,7 +187,7 @@ int main(int argc, char** argv)
   for(unsigned i = 0; i < height; i++)
     {
       responses.at<int>(i,0) = training_labels.at(i);
-    }
+      }
   vector<vector<uchar>>(training_data).swap(training_data);
 
   cout << responses.cols <<"," << responses.rows << endl;
@@ -112,9 +199,7 @@ int main(int argc, char** argv)
   svm_classifier->setType(ml::SVM::C_SVC);
   svm_classifier->setKernel(ml::SVM::RBF);
   svm_classifier->setGamma(3);
-  //cout <<"training" << endl;
-  //cout << td->getTrainNormCatResponses() << endl;
-  cout << svm_classifier->train(td) << endl;
+  svm_classifier->trainAuto(td);
 
   string s = "./circle1.jpg";
   cv::Mat testimg = cv::imread(s);

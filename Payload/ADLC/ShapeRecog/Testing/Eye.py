@@ -2,7 +2,9 @@
 import numpy as np
 import cv2
 import random
-from matplotlib import pyplot as plt
+#import pandas as pd
+import argparse
+#from matplotlib import pyplot as plt
 
 def getShape(num):
     if num == 1:
@@ -29,28 +31,59 @@ def getShape(num):
 def getImage(num):
     if num == 1:
         shape = cv2.imread('./shapes/Circle.jpg')
+        print("circle")
     elif num == 2:
+        print("diamond")
         shape = cv2.imread('./shapes/Diamond.jpg')
     elif num == 3:
+        print("plus")
         shape = cv2.imread('./shapes/Plus.jpg')
     elif num == 4:
+        print("quarterC")
         shape = cv2.imread('./shapes/QuarterCircle.jpg')
     elif num == 5:
+        print("rect")
         shape = cv2.imread('./shapes/Rectangle.jpg')
     elif num == 6:
+        print("semi")
         shape = cv2.imread('./shapes/Semicircle.jpg')
     elif num == 7:
+        print("sqr")
         shape = cv2.imread('./shapes/Square.jpg')
     elif num == 8:
+        print("star")
         shape = cv2.imread('./shapes/Star.jpg')
     elif num == 9:
+        print("trapezoid")
         shape = cv2.imread('./shapes/Trapezoid.jpg')
     elif num == 10:
+        print("triangle")
         shape = cv2.imread('./shapes/Triangle.jpg')
     return shape
 def saveImage(name,img,num):
-    prefix = 'Image#' + str(num) + '-' + name + '.jpg'
-    path = './results/' + prefix
+    print("Saving")
+    prefix = ".jpg"
+    #if num == 1:
+    #    name = 'Circle'
+    #elif num == 2:
+    #    name = 'Diamond'
+    #elif num == 3:
+    #    name = 'Plus'
+    #elif num == 4:
+    #    name = 'QuarterCircle'
+    #elif num == 5:
+    #    name = 'Rectangle'
+    #elif num == 6:
+    #    name = 'Semicircle'
+    #elif num == 7:
+    #    name = 'Square'
+    #elif num == 8:
+    #    name = 'Star'
+    #elif num == 9:
+    #    name = 'Trapezoid'
+    #elif num == 10:
+    #    name = 'Triangle'
+    path = './results/'+name+'/'+name +str(num)+ prefix
     cv2.imwrite(path,img)
 def Rotate(img):
     angle = random.randint(30,270)
@@ -85,28 +118,18 @@ def RandomShift(arr):
     NY4 = arr[3][1] - random.randint(0,7)
     arg2 = [(NX1,NY1),(NX2,NY2),(NX3,NY3),(NX4,NY4)]
     return arg2;
-
-n = 0
-while n < 10:
-    num = random.randint(1,10)
-    name = getShape(num)
-    img = getImage(num)
-    img = Rotate(img)
-#get my points
-    array = GetPoints()
-    array2 = RandomShift(array)
-#transformation
-    pts1 = np.float32([array[0],array[1],array[2],array[3]])
-    pts2 = np.float32([array2[0],array2[1],array2[2],array2[3]])
-    M = cv2.getPerspectiveTransform(pts1,pts2)
-    dst = cv2.warpPerspective(img,M,(100,100))
-
-#plt.subplot(121),plt.imshow(img),plt.title('Input')
-#plt.subplot(122),plt.imshow(dst),plt.title('Output')
-#plt.show()
-    #show the image
-    cv2.imshow('new',dst)
-    saveImage(name,dst,n)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-    n +=1
+ap = argparse.ArgumentParser()
+ap.add_argument("-n","--num",type=int,default=100,help="Number of training images")
+args = vars(ap.parse_args())
+print(args)
+n = args["num"]
+training_data = []
+file_names = []
+for i in range(1,11):
+    for j in range(n):
+        num = i
+        name = getShape(num)
+        print("Expected shape {}".format(name))
+        img = getImage(num)
+        img = Rotate(img)
+        saveImage(name,img,j)
