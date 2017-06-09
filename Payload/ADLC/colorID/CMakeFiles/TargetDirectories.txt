@@ -1,3 +1,0 @@
-/home/ubuntu/Payload/Payload/ADLC/colorID/CMakeFiles/edit_cache.dir
-/home/ubuntu/Payload/Payload/ADLC/colorID/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/Payload/Payload/ADLC/colorID/CMakeFiles/colorID.dir

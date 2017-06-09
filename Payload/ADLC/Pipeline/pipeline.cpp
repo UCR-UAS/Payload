@@ -81,6 +81,10 @@ while(i<2){
 	string temp;
 	/*
 	while(crp.size()>0){
+		//TODO
+		SEGMENT
+		GET CONTOURS
+		RUN CONTOURS AS SEPERATE IMAGE(FOR SHAPE AND LETTER)
 		//retreive the color
 		//string color = ColorID(crp.at(0));
 		retreive the letter
