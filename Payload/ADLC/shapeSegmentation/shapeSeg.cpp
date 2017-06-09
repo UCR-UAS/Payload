@@ -63,8 +63,20 @@ int numPixels(Mat& I)
 }
 
 //returns segmented image
-Mat sailencySegmentation(Mat& I)
+//Mat sailencySegmentation(Mat& I)
+Mat saliencySegmentation(string f)
 {
+	Mat I;
+	Mat error;
+
+	I = imread(f, 1);
+	if (!I.data)
+	{
+		cout << "Could not load image" << endl;
+		waitKey(0);
+		return error;
+	}
+
 	double t;
 
 	t = (double)getTickCount();
@@ -367,7 +379,7 @@ int main() {
 	resize(I, dst, size);//resize image
 
 	//imshow("Original",dst);
-	sailencySegmentation(I);
+	saliencySegmentation(f);
 	waitKey(0);
 	return 0;
 }
