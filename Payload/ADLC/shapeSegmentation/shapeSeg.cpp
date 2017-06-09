@@ -63,17 +63,35 @@ int numPixels(Mat& I)
 }
 
 //returns segmented image
-Mat sailencySegmentation(Mat& I)
+//Mat sailencySegmentation(Mat& I)
+Mat saliencySegmentation(string f)
 {
+	Mat I;
+	Mat error;
+
+	I = imread(f, 1);
+	if (!I.data)
+	{
+		cout << "Could not load image" << endl;
+		waitKey(0);
+		return error;
+	}
+
 	double t;
 
 	t = (double)getTickCount();
 
-	imshow("I", I);
+	//imshow("I", I);
+
+	Size size(800, 600);//the dst image size,e.g.100x100
+	Mat dst;//dst image
+			//Mat src;//src image
+
+	resize(I, dst, size);//resize image
 
 	Mat hsvI;
 	//Convert the color of the image to HSV
-	cvtColor(I, hsvI, CV_RGB2HSV, 0);
+	cvtColor(dst, hsvI, CV_RGB2HSV, 0);
 	Mat chans[3];
 
 	// may not actually be seperated as hsv order
@@ -181,17 +199,18 @@ Mat sailencySegmentation(Mat& I)
 
 	//draw seed points
 
-	// for(int i =0; i < seeds.size();++i)
-	// {
-	//   // cout << "drawing point " << i << endl;
-	//   circle(chans[0],seeds.at(i),1,Scalar(155,55,5),1,8,0);
-	// }
-	// imwrite("pointsonbinary.jpg",chans[0]);
+	 //for(int i =0; i < seeds.size();++i)
+	 //{
+	 //  // cout << "drawing point " << i << endl;
+	 //  circle(chans[0],seeds.at(i),1,Scalar(155,55,5),1,8,0);
+	 //}
+	 //imwrite("pointsonbinary.jpg",chans[0]);
 	// find contours
 	vector< vector<cv::Point> > contours;
+	vector<Vec4i> hierarchy;
 
 	//CV_RETR_EXTERNAL removes the letter on the target.
-	findContours(chans[0], contours, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE);
+	findContours(chans[0], contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE);
 	//find contour area
 	vector<double> conAreas(contours.size());
 	
@@ -223,53 +242,104 @@ Mat sailencySegmentation(Mat& I)
 		convexHull(Mat(useablecons[i]), hull[i], false);
 	}
 
+	drawContours(cons, useablecons, -1, white, 1, LINE_8, noArray());
+
 
 	//cout << "Before contours" << endl;
-	drawContours(cons, useablecons, -1, white, 1, LINE_8, noArray());
-	//cout << "After contours" << endl;
+	//drawContours(cons, useablecons, -1, white, 1, LINE_8, noArray());
+	//drawContours(cons, useablecons, 42, white, CV_FILLED);
+	//for (size_t i = 0; i < contours.size(); i++) {
+		//approxPolyDP(contours[i], approxShape, arcLength(Mat(contours[i]), true)*0.04, true);
+		//drawContours(cons, contours, i, Scalar(255, 0, 0), CV_FILLED);   // fill BLUE
+	//}
+	//cout << "After contours" << endl;\
 
 	//cout << "Seeds:" << seeds.size() << endl;
-	//cout << "Hull: " << hull.size() << endl;
 	//cout << "Cons:" << cons.size() << endl;
+	//cout << "Mat: " << norm_hsv.size() << endl;
 
-	// //finding centroids
-	// vector< cv::Point > cntroids;
-	// for(int i =0; i < seeds.size(); ++i)
-	// {
-	// Rect bRect = boundingRect(seeds.at(i));
-	//
-	// int x = bRect.x + (bRect.width / 2);
-	// int y = bRect.y + (bRect.height / 2);
-	// cntroids.push_back(Point(x,y));
-	// }
+	 //finding centroids
+	 /*vector< cv::Point > cntroids;
+	 for(int i =0; i < seeds.size(); ++i)
+	 {
+	 Rect bRect = boundingRect(seeds.at(i));
+	
+	 int x = bRect.x + (bRect.width / 2);
+	 int y = bRect.y + (bRect.height / 2);
+	 cntroids.push_back(Point(x,y));
+	 }*/
 
-	// flood fill
-	//Rect ccomp;
-	//int ffillMode = 1;
-	//int loDiff = 0, upDiff = 0;
-	//int lo = ffillMode == 0 ? 0 : loDiff;
-	//int up = ffillMode == 0 ? 0 : upDiff;
-	////cout << "Before contours again" << endl;
-	//
-	////TODO: Change to Hull points, instead of seed points? Seed points dont seem to work
+	 //flood fill
+	Rect ccomp;
+	int ffillMode = 1;
+	int loDiff = 0, upDiff = 0;
+	int lo = ffillMode == 0 ? 0 : loDiff;
+	int up = ffillMode == 0 ? 0 : upDiff;
+	//cout << "Before contours again" << endl;
+
+	//cout << cons.cols << " " << cons.rows << endl;
+
+	/*for (int i = 0;i<hierarchy.size();i++)
+	{
+		cout << hierarchy[i] << endl;
+
+	}*/
+
+	int lastParent = -1;
+	int lastChild = -1;
+
+	if (!contours.empty() && !hierarchy.empty()) {
+		
+		// loop through the contours/hierarchy
+		for (int i = 0; i < useablecons.size(); i++) {
+			//cout << hierarchy[i][1] << endl;
+			if (hierarchy[i][0] > 0) {
+				if (hierarchy[i][0] > lastParent && hierarchy[i][0] < hull.size()) {
+					lastParent = hierarchy[i][0];
+					//cout << lastParent << endl;
+				}
+			}
+
+			if (hierarchy[i][1] > lastChild) {
+				lastChild = hierarchy[i][1];
+			}
+		}
+
+		//cout << lastChild << " " << lastParent << endl;
+		//cout << useablecons.at(lastChild) << endl;
+	}
+
+	drawContours(cons, useablecons, lastParent, Scalar(255, 255, 255), CV_FILLED);   // fill BLUE
+	drawContours(cons, useablecons, lastChild, Scalar(0, 0, 0), CV_FILLED);   
+
+	//TODO: Change to Hull points, instead of seed points? Seed points dont seem to work
 	//for (unsigned i = 0; i < seeds.size(); ++i)
 	//{
 	//	// cout <<"FIlling "<<((double)i )/ seeds.size()<<endl;
 	//	// cout <<lo <<","<<up<<endl;
-	//	//cout << seeds[i].x << ","<<seeds[i].y<<endl;
-	//	//cout << cons.at<unsigned char>(seeds[i].x, seeds[i].y) << " these points" << endl;
-	//	
-	//	if (cons.at<unsigned char>(seeds[i].x, seeds[i].y) > 0 && seeds[i].x >= 0 && seeds[i].x < cons.cols && seeds[i].y >= 0 && seeds[i].x < cons.rows)
+	//	cout << seeds[i].x << ","<<seeds[i].y<<endl;
+	//	/*cout << cons.at<unsigned char>(seeds[i].x, seeds[i].y) << " these points" << endl;*/
+
+	//	//cout << norm_hsv.at<char>(seeds[i].y, seeds[i].x) << endl;
+	//	//
+
+	//	/*if (cons.at<unsigned char>(seeds[i].x, seeds[i].y) > 0 && seeds[i].x >= 0 && seeds[i].x < cons.cols && seeds[i].y >= 0 && seeds[i].y < cons.rows)
 	//	{
-	//		cout << "in" << endl;
 	//		floodFill(cons, seeds.at(i), white, &ccomp, Scalar(lo, lo, lo),
 	//			Scalar(up, up, up), 4);
-	//	}
+	//	}*/
 	//	// floodFill(cons, seeds.at(i), white, &ccomp, Scalar(lo, lo, lo),
 	//	//           Scalar(up, up, up), 4);
 	//}
 
 	drawContours(cons, hull, -1, green, 0.001, LINE_8, noArray());
+
+	/*for (unsigned i = 0; i < 800; i++) {
+		for (unsigned j = 0; j < 600; j++) {
+			cout << cons.at<unsigned char>(i, j) << " a" << endl;
+		}
+	}*/
+
 	t = 1000 * ((double)getTickCount() - t) / getTickFrequency();
 
 	//cout << "After contours again" << endl;
@@ -304,10 +374,12 @@ int main() {
 	Size size(800, 600);//the dst image size,e.g.100x100
 	Mat dst;//dst image
 			//Mat src;//src image
+
+	//cout << "SIZE: " << I.size() << endl;
 	resize(I, dst, size);//resize image
 
 	//imshow("Original",dst);
-	sailencySegmentation(dst);
+	saliencySegmentation(f);
 	waitKey(0);
 	return 0;
 }
