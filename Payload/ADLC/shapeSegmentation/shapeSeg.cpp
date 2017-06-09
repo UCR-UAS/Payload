@@ -230,6 +230,8 @@ Mat sailencySegmentation(Mat& I)
 		convexHull(Mat(useablecons[i]), hull[i], false);
 	}
 
+	drawContours(cons, useablecons, -1, white, 1, LINE_8, noArray());
+
 
 	//cout << "Before contours" << endl;
 	//drawContours(cons, useablecons, -1, white, 1, LINE_8, noArray());
@@ -295,8 +297,8 @@ Mat sailencySegmentation(Mat& I)
 		//cout << useablecons.at(lastChild) << endl;
 	}
 
-	drawContours(cons, hull, lastParent, Scalar(255, 255, 255), CV_FILLED);   // fill BLUE
-	drawContours(cons, hull, lastChild, Scalar(0, 0, 0), CV_FILLED);   
+	drawContours(cons, useablecons, lastParent, Scalar(255, 255, 255), CV_FILLED);   // fill BLUE
+	drawContours(cons, useablecons, lastChild, Scalar(0, 0, 0), CV_FILLED);   
 
 	//TODO: Change to Hull points, instead of seed points? Seed points dont seem to work
 	//for (unsigned i = 0; i < seeds.size(); ++i)
