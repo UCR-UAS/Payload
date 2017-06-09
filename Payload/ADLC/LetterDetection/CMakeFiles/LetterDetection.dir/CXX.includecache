@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/Payload/Payload/ADLC/LetterDetection/tess.cpp
+iostream
+-
+fstream
+-
+stdlib.h
+-
+opencv2/opencv.hpp
+/home/ubuntu/Payload/Payload/ADLC/LetterDetection/opencv2/opencv.hpp
+stdint.h
+-
+iostream
+-
+string
+-
+vector
+-
+

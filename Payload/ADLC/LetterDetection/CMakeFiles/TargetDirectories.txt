@@ -1,0 +1,3 @@
+/home/ubuntu/Payload/Payload/ADLC/LetterDetection/CMakeFiles/edit_cache.dir
+/home/ubuntu/Payload/Payload/ADLC/LetterDetection/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Payload/Payload/ADLC/LetterDetection/CMakeFiles/LetterDetection.dir

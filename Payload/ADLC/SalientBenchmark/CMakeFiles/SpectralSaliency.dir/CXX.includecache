@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/Payload/Payload/ADLC/SalientBenchmark/OnlySpec.cpp
+iostream
+-
+opencv2/opencv.hpp
+-
+dirent.h
+-
+unistd.h
+-
+stdlib.h
+-
+

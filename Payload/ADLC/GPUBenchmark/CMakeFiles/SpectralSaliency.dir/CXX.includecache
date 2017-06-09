@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/Payload/Payload/ADLC/GPUBenchmark/OnlySpec.cpp
+iostream
+-
+opencv2/opencv.hpp
+-
+stdlib.h
+-
+

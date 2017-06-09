@@ -27,59 +27,73 @@ void moveTofinished(string path){
 
 int main(int argc, char ** argv){
 
-  //variables to create
-  string imagepath = "./crp";
-  //command argument needed
-  if(argc < 2){
-    return -1;
-  }
-  ifstream file(argv[1]);
-  if(!file.is_open()){
-    return -1;
-  }
-  file.close();
+//variables to create
+string imagepath = "./crp";
+//command argument needed
+if(argc < 2){
+	return -1;
+}
 
+ifstream file(argv[1]);
+if(!file.is_open()){
+	return -1;
+}
+file.close();
 
-  //while you can take an image
-  while(true){
-system("/home/ubuntu/a01/a01.py");
-      //retrieve the image list, place it into a file
-      system("/home/ubuntu/a01/a01.py --getImageList > list.txt");
-      std::cout << "retrieved the list " << endl;
-      ifstream file("list.txt");
-      if(!file.is_open()){
-          return -1;
-      }
-      string image;
-      file >> image;
-      file.close();
-      //transfer the image
-      string cmd = "/home/ubuntu/a01/a01.py --getImage ";
-      cmd += image;
-      system(cmd.c_str());
-      //wait for the image to transfer
-      system("sleep 5");
-      //delete the image from the camera
-      cmd = "/home/ubuntu/a01/a01.py --delImage ";
-      cmd += image;
-      system(cmd.c_str());
+int i = 1;
+//while you can take an image
+while(i<2){
+	//take an image
+	system("/home/ubuntu/a01/a01.py");
+	//sleep for a second
+	//retrieve the image list, place it into a file
+	system("/home/ubuntu/a01/a01.py --getImageList > list.txt");
+		
+	ifstream file("list.txt");
+	if(!file.is_open()){
+		return -1;
+	}
+	string image;
+	file >> image;
+	cout << "image:" << image << endl;
+	file.close();
+	//transfer the image
+	string cmd = "/home/ubuntu/a01/a01.py --getImage ";
+	cmd += image;
+	system(cmd.c_str());
+	cout << "got image" << endl;
+	//wait for the image to transfer(if needed)
+	//system("sleep 5");
 
-      //remove the list.txt file
-      system("rm -rf list.txt");
+	//delete the image from the camera
+	cmd = "/home/ubuntu/a01/a01.py --delImage ";
+	cmd += image;
+	system(cmd.c_str());
 
-      //apply the Saliency on the image
-      vector<Mat> crp;
-      //cp  = Saliency(image);
+	//remove the list.txt file
+	system("rm -rf list.txt");
 
-      //do the algorithms for each cropped image
-      string temp;
-      while(crp.size()>0){
-        //string color = ColorID(crp.at(0));
-        //string letter = letter(crp.at(0));
-        //string shape = shape(crp.at(0));
-        //somehow get the geo location
+	//begin algorithms on the retreived image
+	vector<Mat> crp;
+	//cp  = Saliency(image);
 
-      }
-  }
+	//do the algorithms for each cropped image
+	string temp;
+	/*
+	while(crp.size()>0){
+		//retreive the color
+		//string color = ColorID(crp.at(0));
+		retreive the letter
+		//string letter = letter(crp.at(0));
+		//retreive the shape 
+		//string shape = shape(crp.at(0));
+		//somehow get the geo location
+		//work on qr code 
+
+		crp.pop_front();
+	}
+	*/
+	++i;
+}
   return 0;
 }

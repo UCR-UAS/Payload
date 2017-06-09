@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/Payload/Payload/ADLC/Pipeline/pipeline.cpp
+iostream
+-
+opencv2/opencv.hpp
+-
+dirent.h
+-
+unistd.h
+-
+stdlib.h
+-
+fstream
+-
+dirent.h
+-
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+errno.h
+-
+sys/types.h
+-
+sys/inotify.h
+-
+

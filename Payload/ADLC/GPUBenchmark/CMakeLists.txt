@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project(SpectralSaliency )
+set(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
+find_package( OpenCV REQUIRED )
+#add_executable( SpectralSaliency FrequencySaliencyDetection7_1.cpp )
+add_executable( SpectralSaliency OnlySpec.cpp)
+target_link_libraries( SpectralSaliency ${OpenCV_LIBS} )

@@ -59,7 +59,7 @@ int main(int argc, char** argv)
   merge(planes,2,complexI);
 
   //discrete fourier transform 
-  dft(complexI,complexI);
+  for(int ii = 0; ii < 1; ii++) dft(complexI,complexI);
   split(complexI,planes);
 
   Mat magI, phaseI;
