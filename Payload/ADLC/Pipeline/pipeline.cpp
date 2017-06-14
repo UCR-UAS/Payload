@@ -3,9 +3,9 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <stdlib.h>
-//#include "OnlySpec.h"
 #include <fstream>
 #include<dirent.h>
+#include <utility>      // std::pair, std::make_pair
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,91 +13,126 @@
 #include <sys/types.h>
 #include <sys/inotify.h>
 
+//include the files from the algorithms
+#include "Json.h"
+
 using namespace cv;
 using namespace std;
 
+
+//SO WE DONT READ THE SAME IMAGE, AFTER WE READ THAT IMAGE, MOVE IT to a new directroy called finished
 void moveTofinished(string path){
-  //first let us move the file into the finished folder
-  string mv = "mv ";
-  string dest_folder =  " ./Finished/";
-  string command = mv + path + dest_folder;
-  //move image to finished folder
-  system(command.c_str());
+   //first let us move the file into the finished folder
+   string mv = "mv ";
+   string dest_folder =  " ./Finished/";
+   string command = mv + path + dest_folder;
+   //move image to finished folder
+   system(command.c_str());
+ }
+
+//this is going to find and image and return the name
+string readCurrentDirectory(string path){
+  DIR *dir;
+  struct dirent *ent;
+  string result;
+  if ((dir = opendir(path.c_str())) != NULL) {
+    /* print all the files and directories within directory */
+    while ((ent = readdir (dir)) != NULL) {
+      //printf ("%s\n", ent->d_name);
+      result = ent->d_name;
+    }
+  closedir (dir);
+  return result;
+  }
+  else {
+  /* could not open directory */
+  perror ("");
+  return 0;
+  }
 }
 
-int main(int argc, char ** argv){
+bool inVec(const vector<Json> &v, Json b){
+  for(unsigned i = 0; i < v.size(); ++i){
+    if(v.at(i) == b){
+      return true;
+    }
+  }
+  return false;
+}
 
-//variables to create
-string imagepath = "./crp";
+
+int main(int argc, char ** argv){
 //command argument needed
 if(argc < 2){
 	return -1;
 }
-
+//read file
 ifstream file(argv[1]);
 if(!file.is_open()){
 	return -1;
 }
+//WHAT EVER IS NEEDED FROM THE FILE
+//FORMAT OF file
+//1.image source list
+
+//read the directory to get the image
+string dir;
+file >> dir;
+
+
 file.close();
 
 int i = 1;
+int j = 1;
+vector<Json> labels;
+
 //while you can take an image
-while(i<2){
-	//take an image
-	system("/home/ubuntu/a01/a01.py");
-	//sleep for a second
-	//retrieve the image list, place it into a file
-	system("/home/ubuntu/a01/a01.py --getImageList > list.txt");
-		
-	ifstream file("list.txt");
-	if(!file.is_open()){
-		return -1;
-	}
-	string image;
-	file >> image;
-	cout << "image:" << image << endl;
-	file.close();
-	//transfer the image
-	string cmd = "/home/ubuntu/a01/a01.py --getImage ";
-	cmd += image;
-	system(cmd.c_str());
-	cout << "got image" << endl;
-	//wait for the image to transfer(if needed)
-	//system("sleep 5");
+while(i){
+  j++;
 
-	//delete the image from the camera
-	cmd = "/home/ubuntu/a01/a01.py --delImage ";
-	cmd += image;
-	system(cmd.c_str());
+  //retreive gets the images from the directory and stores them as mats
+  string name = readCurrentDirectory(dir);
+  Mat image = imread(name, CV_LOAD_IMAGE_COLOR);
+  string p = dir + "/" + name;
+  moveTofinished(p);
 
-	//remove the list.txt file
-	system("rm -rf list.txt");
+  //segment the image
+  vector<Mat> crp ;//= saliency(image);
 
-	//begin algorithms on the retreived image
-	vector<Mat> crp;
-	//cp  = Saliency(image);
-
-	//do the algorithms for each cropped image
-	string temp;
-	/*
-	while(crp.size()>0){
+  for(unsigned k = 0; k < crp.size(); ++k){
+    //create the json container
+    Json temp;
 		//TODO
-		SEGMENT
-		GET CONTOURS
-		RUN CONTOURS AS SEPERATE IMAGE(FOR SHAPE AND LETTER)
-		//retreive the color
-		//string color = ColorID(crp.at(0));
-		retreive the letter
-		//string letter = letter(crp.at(0));
-		//retreive the shape 
-		//string shape = shape(crp.at(0));
-		//somehow get the geo location
-		//work on qr code 
+    //Use the algorithms to fill the JSON
+    //NUMBER
+    temp.number = j;
+    //get the type- not sure what this is exactly
+    temp.type = "normal";
+    //GEOTAGGING
+    pair<float, float> coord; // = GEO;
+    temp.lat = coord.first;
+    temp.lng = coord.second;
+    //ANGLE
+    temp.angle;
+    //SHAPE
+    //temp.shape = shape(crp.at(0));
+    //BCKGROUND COLOR
+    //temp.bck_color = ;
+    //LETTER
+    //temp.let = letter(crp.at(k));
+    //COLOR
+    //temp.color = color(crp.at(k));
 
-		crp.pop_front();
+    if(!inVec(labels,temp)){
+      labels.push_back(temp);
+    }
+
 	}
-	*/
-	++i;
+  crp.clear();
+  //after that batch of images
+  //check the Json images
+  //send them somewhere
 }
+
   return 0;
 }
