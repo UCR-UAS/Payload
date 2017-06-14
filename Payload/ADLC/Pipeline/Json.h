@@ -4,7 +4,7 @@
 using namespace std;
 struct Json{
 int number;
-string type; 
+string type;
 float lat;
 float lng;
 int angle;
@@ -14,7 +14,7 @@ char let;
 string color;
 
 void createJson();
-bool operator==(const Json& b)const;
+bool operator==(const Json& b) const;
 
 };
 

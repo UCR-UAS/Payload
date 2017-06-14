@@ -22,11 +22,11 @@ json << "    \"alphanumeric\": \"" << let << "\", " << endl;
 json << "    \"alphanumeric_color\": \"" << color << "\", " << endl;
 json << "}";
 json.close();
-return; 
+return;
 }
 
 
-bool Json::operator==(const Json& b) const {
-	return (number == b.number && type == b.type && lat == b.lat && lng == b.lng && 
-		angle == b.angle && shape == b.shape && bck_color == b.bck_color && let == b.let && color == b.color); 
+ bool Json::operator==(const Json& b) const {
+	return ( type == b.type && lat == b.lat && lng == b.lng &&
+		angle == b.angle && shape == b.shape && bck_color == b.bck_color && let == b.let && color == b.color);
 }
