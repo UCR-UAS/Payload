@@ -14,8 +14,12 @@ char let;
 string color;
 
 void createJson();
-bool operator==(const Json& b) const;
-
+bool operator==(const Json& b) const{
+  return ( type == b.type && lat == b.lat && lng == b.lng &&
+           angle == b.angle && shape == b.shape && bck_color == b.bck_color
+           && let == b.let && color == b.color);
+}
+Json & operator=(const Json&b);
 };
 
 #endif

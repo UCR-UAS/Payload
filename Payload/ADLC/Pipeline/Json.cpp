@@ -25,8 +25,18 @@ json.close();
 return;
 }
 
-
- bool Json::operator==(const Json& b) const {
-	return ( type == b.type && lat == b.lat && lng == b.lng &&
-		angle == b.angle && shape == b.shape && bck_color == b.bck_color && let == b.let && color == b.color);
+Json & Json::operator=(const Json&b){
+	if(this == &rhs){
+  return *this;
+	}
+	number = b.number;
+	type = b.type;
+	lat = b.lat;
+	lng = b.lng;
+	angle = b.angle;
+	shape = b.shape;
+	bck_color = b.bck_color;
+	let = b.let;
+	color = b.color;
+	return *this;
 }
