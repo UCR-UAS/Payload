@@ -1,0 +1,3 @@
+/home/ubuntu/Payload/Payload/ADLC/SalientBenchmark/CMakeFiles/edit_cache.dir
+/home/ubuntu/Payload/Payload/ADLC/SalientBenchmark/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Payload/Payload/ADLC/SalientBenchmark/CMakeFiles/SpectralSaliency.dir

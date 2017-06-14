@@ -141,6 +141,7 @@ string colorID(Mat src) {
  string classified  = colorClassify(r,g,b);
  return classified;
 }
+/*
 int main(int argc, char**argv) {
     assert(argc > 1);
 
@@ -154,3 +155,4 @@ int main(int argc, char**argv) {
 
     return 0;
 }
+*/

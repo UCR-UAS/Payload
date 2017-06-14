@@ -1,0 +1,3 @@
+/home/ubuntu/Payload/Payload/ADLC/GPUBenchmark/CMakeFiles/edit_cache.dir
+/home/ubuntu/Payload/Payload/ADLC/GPUBenchmark/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Payload/Payload/ADLC/GPUBenchmark/CMakeFiles/SpectralSaliency.dir
