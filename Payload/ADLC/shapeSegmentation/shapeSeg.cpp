@@ -1,17 +1,4 @@
-#include "opencv2/opencv.hpp"
-#include <iostream>
-#include <vector>
-
-using namespace std;
-using namespace cv;
-
-
-// Mat regionGrowing(Mat I, Point seed, double reg_maxdist)
-// {
-//   Mat J;
-//   resize()
-// }
-
+#include "shapeSeg.h"
 
 //returns true if black
 bool blackWhite(Mat chans[3], int y, int x)
@@ -20,7 +7,7 @@ bool blackWhite(Mat chans[3], int y, int x)
 	if (chans[0].at<unsigned char>(y, x) < 20 || chans[0].at<unsigned char>(y, x) > 120)
 	{
 		//25 seems to be the best choice
-		//However 100 isolates just the letter 
+		//However 100 isolates just the letter
 		if (chans[1].at<unsigned char>(y, x)<22.5)
 		{
 			return true;
@@ -72,7 +59,7 @@ Mat saliencySegmentation(string f)
 	I = imread(f, 1);
 	if (!I.data)
 	{
-		cout << "Could not load image" << endl;
+		//cout << "Could not load image" << endl;
 		waitKey(0);
 		return error;
 	}
@@ -213,7 +200,7 @@ Mat saliencySegmentation(string f)
 	findContours(chans[0], contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE);
 	//find contour area
 	vector<double> conAreas(contours.size());
-	
+
 	for (unsigned i = 0; i < contours.size(); ++i)
 	{
 		conAreas.at(i) = contourArea(contours.at(i));
@@ -231,7 +218,7 @@ Mat saliencySegmentation(string f)
 	}
 
 	//cout << "USable cons size: " << useablecons.size() << endl;
-	
+
 	Mat cons = Mat::zeros(chans[0].rows, chans[0].cols, CV_8UC3);
 	Scalar white(255, 255, 255);
 	Scalar green(0, 255, 0); //BGR
@@ -263,7 +250,7 @@ Mat saliencySegmentation(string f)
 	 for(int i =0; i < seeds.size(); ++i)
 	 {
 	 Rect bRect = boundingRect(seeds.at(i));
-	
+
 	 int x = bRect.x + (bRect.width / 2);
 	 int y = bRect.y + (bRect.height / 2);
 	 cntroids.push_back(Point(x,y));
@@ -289,7 +276,7 @@ Mat saliencySegmentation(string f)
 	int lastChild = -1;
 
 	if (!contours.empty() && !hierarchy.empty()) {
-		
+
 		// loop through the contours/hierarchy
 		for (int i = 0; i < useablecons.size(); i++) {
 			//cout << hierarchy[i][1] << endl;
@@ -310,7 +297,7 @@ Mat saliencySegmentation(string f)
 	}
 
 	drawContours(cons, useablecons, lastParent, Scalar(255, 255, 255), CV_FILLED);   // fill BLUE
-	drawContours(cons, useablecons, lastChild, Scalar(0, 0, 0), CV_FILLED);   
+	drawContours(cons, useablecons, lastChild, Scalar(0, 0, 0), CV_FILLED);
 
 	//TODO: Change to Hull points, instead of seed points? Seed points dont seem to work
 	//for (unsigned i = 0; i < seeds.size(); ++i)
@@ -344,7 +331,7 @@ Mat saliencySegmentation(string f)
 
 	//cout << "After contours again" << endl;
 
-	cout << "Time of segmenting image " << t << " milliseconds." << endl;
+	//cout << "Time of segmenting image " << t << " milliseconds." << endl;
 
 	//cout << "end" << endl;
 
