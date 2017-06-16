@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsaliency_detection.a  CMakeFiles/saliency_detection.dir/saliency_detection.cpp.o
+/usr/bin/ranlib libsaliency_detection.a
