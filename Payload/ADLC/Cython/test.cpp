@@ -50,46 +50,51 @@ int main(int argc, char *argv[])
 {
     PyObject *pName, *pModule, *pDict, *pFunc;
     PyObject *pValue, *pArgs;
-    std::clock_t start;
-    double duration;
-
-
-
-    //Mat mat = imread("owl.jpg",1);
-    //namedWindow("frame",1);
 
     std::vector<float> v;
     for(int i= 0; i < 1000000;++i){
       v.push_back(i);
     }
 
+		///TURN THE VECTOR INTO PYTHON OBJECT THAT CAN BE PASSED IN
     PyObject * vec = vectorToTuple_Float(v);
     pArgs = PyTuple_New(1);
     PyTuple_SetItem(pArgs, 0, vec);
 
-    std::string filename = "test";
-    std::string funcname = "multiply";
-    start = std::clock();
-    Py_Initialize();
+		//
+		///name of the file the function is in, no .py extension
+    ///
+		std::string filename = "test";
+		///
+		///name of the function in the file
+    ///
+		std::string funcname = "multiply";
+
+
+		Py_Initialize();
     pName = PyString_FromString(filename.c_str());
     /* Error checking of pName left out */
 
     pModule = PyImport_Import(pName);
+		//i think Py_DECREF is deleting memory not used anmore?
     Py_DECREF(pName);
-
     if (pModule != NULL) {
 
         pFunc = PyObject_GetAttrString(pModule, funcname.c_str());
         /* pFunc is a new reference */
 
         if (pFunc && PyCallable_Check(pFunc)) {
-          std::cout << "passing in vec to tuple: " ;
+						//this makes the function call
             pValue = PyObject_CallObject(pFunc, pArgs);
             Py_DECREF(pArgs);
             if (pValue != NULL) {
-            std::vector<float> res = listTupleToVector_Float(pValue);
-            std::cout  << "turning python tuple back to vec: ";
-            std::cout << endl;
+
+						//RETURN AS A STRING
+						string a = PyBytes_AsString(pValue);
+
+						//RETURN AS A TUPLE
+						//std::vector<float> res = listTupleToVector_Float(pValue);
+								//delete the value
                 Py_DECREF(pValue);
             }
             else {
@@ -113,9 +118,7 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Failed to load \"%s\"\n", argv[1]);
         return 1;
     }
-    
-    duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-    std::cout<<"printf: "<< duration <<'\n';
+
     Py_Finalize();
     return 0;
 }

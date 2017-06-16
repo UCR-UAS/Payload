@@ -25,31 +25,50 @@ string colorClassify(float r, float g, float b){
    else if (r < 65 && g < 40 && b < 40){
      return "black";
    }
-   else if( ( r <= 255 && r > 191) && ( g < 229 && g > 55 ) && ( b >= 0 && b < 215 )){
+   else if(( 90 < r && r < 160 )&& ( 90 < g && g < 160 ) && (90 < b && b <=160 )){
+       return "grey";
+  }
+   else if( ( 191 < r &&  r <= 255) && ( 55 < g && g < 229 ) && (0 <= b && b < 215 )){
       return "orange";
    }
-
-   else if ((r <= 255 && r > 171 ) && (g <=255 && g > 175 ) && (b >= 5 && b < 90 ) )
+   else if ((171 < r && r <= 255 ) && ( 175 < g && g <=255) && (5 <= b && b < 90 ) )
    {
     return "yellow";
    }
 
-   else if((r <=255 && r > 134) && (g < 55 && g >=0 ) && (b >=0  && b < 47)){
+   else if(( 134 < r && r <=255) && (0 <= g && g < 55 ) && (0 <= b && b < 47)){
      return "red";
    }
 
-   else if(( r >= 0 && r < 30 ) && (g < 120 && g > 30 ) && ( b <=255 && b > 171 ) ){
+   else if(( 200 < r && r < 255 )&& ( 0 < g && g < 70 ) && (140< b && b <=170)){
+     return "pink";
+   }
+
+   else if(( 0 <= r && r < 30 ) && ( 0 <= g && g < 120) && (  171 < b &&  b <=255) ){
      return "blue";
    }
+   else if((  40 <= r && r < 90 ) && ( 140 < g && g < 190) && (  171 < b &&  b <=255) ){
+     return "light blue";
+   }
 
-   else if(( r > 30 && r < 110) && (g > 74 && g <= 255 ) && ( b >= 0 && b < 50  ) ){
+   else if((30 < r && r < 110) && (74 < g && g <= 255 ) && (0 <= b && b < 90  ) ){
      return "green";
    }
+   else if((140 < r && r < 210) && (160 < g && g <= 255 ) && (120 <= b && b < 190   ) ){
+     return " light green";
+   }
+   else if((150 < r && r < 234 )&& (10 < g && g < 70 ) && ( 150 < b && b <=255 )){
+     return "violet";
+   }
 
-   else if((r > 110 && r < 234 )&& ( g > 10 && g < 230 ) && (b > 100 && b <=255 )){
+   else if((110 < r && r < 234 )&& (10 < g && g < 230 ) && ( 100 < b && b <=255 )){
      return "purple";
    }
-   return "brown";
+
+  else if(( 110 < r && r < 170 )&& ( 100 < g && g < 230 ) && (20 < b && b <=90 )){
+      return "brown";
+    }
+   return "grey";
  }
 
 vector<string> colorID(Mat src) {
@@ -138,7 +157,7 @@ cout << endl;
  float g1 = (float)color_1[1];
  float b1 = (float)color_1[0];
 
-//cout << r1 << "," <<g1 << ","<<b1 << endl;
+cout << r1 << "," <<g1 << ","<<b1 << endl;
 
  Vec3b color_2;
  color_2[0] = centers.at<float>(second,0);
@@ -148,7 +167,7 @@ cout << endl;
  float r2 = (float)color_2[2];
  float g2 = (float)color_2[1];
  float b2 = (float)color_2[0];
-//cout << r2 << "," <<g2 << ","<<b2 << endl;
+cout << r2 << "," <<g2 << ","<<b2 << endl;
 //store the colors
 //first index holds biggest color
 //second index holds the second biggest color
@@ -163,7 +182,7 @@ return colors;
 int main(int argc, char**argv) {
 
 
-    string input("red.jpg");
+    string input(argv[1]);
     //string input("obj.jpg");
     Mat im = imread(input);
     resize(im,im,Size(800,600));
