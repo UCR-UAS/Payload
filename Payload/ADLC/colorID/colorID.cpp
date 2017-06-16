@@ -3,17 +3,26 @@
 #include <opencv2/ml.hpp>
 #include <string>
 #include <assert.h>
-#include <colorID.h>
+#include "colorID.h"
 
 using namespace std;
 using namespace cv::ml;
 using namespace cv;
 
+
+struct Pair {
+    int A;
+    int B;
+
+    bool operator<( const Pair& rhs ) const
+        { return A < rhs.A; }
+};
+
 string colorClassify(float r, float g, float b){
-  if(r > 230 && g > 230 && b > 230){
+  if(r > 200 && g > 200 && b > 200){
      return  "white";
    }
-   else if (r < 30 && g < 30 && b < 30){
+   else if (r < 65 && g < 40 && b < 40){
      return "black";
    }
    else if( ( r <= 255 && r > 191) && ( g < 229 && g > 55 ) && ( b >= 0 && b < 215 )){
@@ -33,17 +42,17 @@ string colorClassify(float r, float g, float b){
      return "blue";
    }
 
-   else if(( r > 30 && r < 80 ) && (g > 74 && g <= 255 ) && ( b >= 0 && b < 50  ) ){
+   else if(( r > 30 && r < 110) && (g > 74 && g <= 255 ) && ( b >= 0 && b < 50  ) ){
      return "green";
    }
 
    else if((r > 110 && r < 234 )&& ( g > 10 && g < 230 ) && (b > 100 && b <=255 )){
      return "purple";
    }
-   return "NaN";
+   return "brown";
  }
 
-string colorID(Mat src) {
+vector<string> colorID(Mat src) {
 
   GaussianBlur(src,src,Size(7,7), .1,.1);
 
@@ -56,9 +65,8 @@ string colorID(Mat src) {
      for( int z = 0; z < 3; z++)
        samples.at<float>(y + x*src.rows, z) = src.at<Vec3b>(y,x)[z];
 
-
- int clusterCount = 2;
- Mat labels;
+ int clusterCount = 4;
+ vector<int>labels;
  int attempts = 2;
  Mat centers;//holds colors for each cluster
  kmeans(samples, clusterCount, labels, TermCriteria(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS, 10000, 0.0001), attempts, KMEANS_PP_CENTERS, centers );
@@ -70,89 +78,102 @@ string colorID(Mat src) {
  for( int y = 0; y < src.rows; y++ )
    for( int x = 0; x < src.cols; x++ )
    {
-     int cluster_idx = labels.at<int>(y + x*src.rows,0);
+     int cluster_idx = labels[y + x*src.rows];
+     //change the rgb values
      new_image.at<Vec3b>(y,x)[0] = centers.at<float>(cluster_idx, 0);
      new_image.at<Vec3b>(y,x)[1] = centers.at<float>(cluster_idx, 1);
      new_image.at<Vec3b>(y,x)[2] = centers.at<float>(cluster_idx, 2);
    }
 
  //imshow( "clustered image", new_image );
+ //waitKey(0);
+ //count the cluster count
 
 
+ std::vector<int> counts(clusterCount);
+ std::vector<int> tracker(clusterCount);
+ std::vector<Pair> hopes;
 
- Mat matTrainFeatures(2,src.rows * src.cols,CV_32F);
-
-
- Mat matTrainLabels(1,labels.rows,CV_32S);
-
-
- Mat matResults;
-
- //etcetera code for loading data into Mat variables suppressed
- for(int y = 0; y < new_image.rows * new_image.cols;y++)
- {
-  matTrainFeatures.at<float>(1,y)= y%new_image.rows;
-
+//count labels
+ for(unsigned i = 0; i < labels.size()-1; ++i){
+   counts.at(labels.at(i)) +=1;
  }
 
- for(int x = 0; x <  new_image.rows * new_image.cols;x++)
- {
-
-  matTrainFeatures.at<float>(0,x)= x%new_image.cols;
- }
-
- for(int i =0; i < labels.rows; i++)
- {
-
-   matTrainLabels.at<int>(0,i) =labels.at<int>(0,i);
- }
-//cout << "here" << endl;
-
- Ptr<TrainData> trainingData;
- Ptr<KNearest> kclassifier=KNearest::create();
-
- trainingData=TrainData::create(matTrainFeatures,
-                         SampleTypes::COL_SAMPLE,matTrainLabels);
-//cout << "here1" << endl;
-
-
- kclassifier->setIsClassifier(true);
- kclassifier->setAlgorithmType(KNearest::Types::BRUTE_FORCE);
- kclassifier->setDefaultK(9);
- Mat matSample(1,2,CV_32F);
- matSample.at<float>(0,0) = src.rows/2;
- matSample.at<float>(0,1) = src.cols/2;
- //matSample.at<float>(1,0) = 1;
- //matSample.at<float>(1,1) = 1;
-
- kclassifier->train(trainingData);
- float value = kclassifier->findNearest(matSample,kclassifier->getDefaultK(),matResults);
- //cout << matResults << endl;
-
- Vec3b color;
- color[0] = centers.at<float>(value,0);
- color[1] = centers.at<float>(value,1);
- color[2] = centers.at<float>(value,2);
-
- float r = (float)color[2];
- float g = (float)color[1];
- float b = (float)color[0];
-
- string classified  = colorClassify(r,g,b);
- return classified;
+ //set up the tracker
+for(unsigned i = 0; i < tracker.size(); ++i){
+  tracker.at(i) = i;
 }
-/*
-int main(int argc, char**argv) {
-    assert(argc > 1);
 
-    string input(argv[1]);
+//std::cout << endl << endl << endl;
+ for(unsigned i = 0; i < tracker.size(); ++i){
+   //std::cout << i <<": " << centers.at<float>(i,2) << ", " << centers.at<float>(i,1) << ", " << centers.at<float>(i,0) << ":  " << counts[i];
+   Pair p;
+   p.A = counts[i];
+   p.B = i;
+   hopes.push_back(p);
+   //std::cout << endl;
+ }
+
+std::sort(hopes.begin(),hopes.end());
+
+/*
+for(unsigned i = 0; i < hopes.size(); ++i){
+  cout << hopes[i].B << " " <<  hopes[i].A;
+  cout << endl;
+}
+cout << endl;
+*/
+
+ //have my clusters sorted
+ //cluster count index
+ unsigned first = tracker.at(hopes[clusterCount - 1].B);
+ unsigned second = tracker.at(hopes[clusterCount - 2].B);
+
+ Vec3b color_1;
+ color_1[0] = centers.at<float>(first,0);
+ color_1[1] = centers.at<float>(first,1);
+ color_1[2] = centers.at<float>(first,2);
+
+ float r1 = (float)color_1[2];
+ float g1 = (float)color_1[1];
+ float b1 = (float)color_1[0];
+
+//cout << r1 << "," <<g1 << ","<<b1 << endl;
+
+ Vec3b color_2;
+ color_2[0] = centers.at<float>(second,0);
+ color_2[1] = centers.at<float>(second,1);
+ color_2[2] = centers.at<float>(second,2);
+
+ float r2 = (float)color_2[2];
+ float g2 = (float)color_2[1];
+ float b2 = (float)color_2[0];
+//cout << r2 << "," <<g2 << ","<<b2 << endl;
+//store the colors
+//first index holds biggest color
+//second index holds the second biggest color
+vector<string> colors;
+colors.push_back(colorClassify(r1,g1,b1));
+colors.push_back(colorClassify(r2,g2,b2));
+
+
+return colors;
+}
+
+int main(int argc, char**argv) {
+
+
+    string input("red.jpg");
+    //string input("obj.jpg");
     Mat im = imread(input);
     resize(im,im,Size(800,600));
     if(!im.data)
         return -1;
-    cout << colorID(im) << endl;
+    std::vector<string> v =  colorID(im);
+    for(unsigned i = 0; i < v.size(); ++i){
+        std::cout <<"cluster " << i << ": " << v.at(i) << endl;
+    }
     //waitKey(0);
 
     return 0;
 }
-*/
