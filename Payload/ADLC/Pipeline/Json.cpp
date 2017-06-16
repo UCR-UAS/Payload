@@ -26,7 +26,7 @@ return;
 }
 
 Json & Json::operator=(const Json&b){
-	if(this == &rhs){
+	if(this == &b){
   return *this;
 	}
 	number = b.number;
